@@ -1,0 +1,217 @@
+// --------------------------------------------------------------------------------ICS2
+// tmpl_1(szin,csuklo,rakodas)
+// tmpl_depo(szin,csuklo)
+spriteset(ICS2_purchase, "src/ics2.png")				{tmpl_purchase()}
+spriteset(ICS2_1_depo_1cc, "src/ics2.png")				{tmpl_depo(1,1)}
+spriteset(ICS2_2_depo_1cc, "src/ics2.png")				{tmpl_depo(1,2)}
+spriteset(ICS2_3_depo_1cc, "src/ics2.png")				{tmpl_depo(1,3)}
+spriteset(ICS2_4_depo_1cc, "src/ics2.png")				{tmpl_depo(1,4)}
+spriteset(ICS2_5_depo_1cc, "src/ics2.png")				{tmpl_depo(1,5)}
+spriteset(ICS2_6_depo_1cc, "src/ics2.png")				{tmpl_depo(1,6)}
+spriteset(ICS2_1_depo_2cc, "src/ics2.png")				{tmpl_depo(2,1)}
+spriteset(ICS2_2_depo_2cc, "src/ics2.png")				{tmpl_depo(2,2)}
+spriteset(ICS2_3_depo_2cc, "src/ics2.png")				{tmpl_depo(2,3)}
+spriteset(ICS2_4_depo_2cc, "src/ics2.png")				{tmpl_depo(2,4)}
+spriteset(ICS2_5_depo_2cc, "src/ics2.png")				{tmpl_depo(2,5)}
+spriteset(ICS2_6_depo_2cc, "src/ics2.png")				{tmpl_depo(2,6)}
+spriteset(spriteset_ICS2_1_1cc, "src/ics2.png")			{tmpl_1(1,1,0,-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+spriteset(spriteset_ICS2_2_1cc, "src/ics2.png")			{tmpl_1(1,2,0,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(spriteset_ICS2_3_1cc, "src/ics2.png")			{tmpl_1(1,3,0,-3,-6,-9,-7,-9,-7,-1,-4,-3,-6,-18,-5,-9,-7,-9,-10)}
+spriteset(spriteset_ICS2_4_1cc, "src/ics2.png")			{tmpl_1(1,4,0,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(spriteset_ICS2_5_1cc, "src/ics2.png")			{tmpl_1(1,5,0,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(spriteset_ICS2_6_1cc, "src/ics2.png")			{tmpl_1(1,6,0,-3,-4,-9,-9,-8,-10,-1,-4,-3,-4,-18,-5,-8,-10,-9,-12)}
+spriteset(spriteset_ICS2_1_2cc, "src/ics2.png")			{tmpl_1(2,1,0,-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+spriteset(spriteset_ICS2_2_2cc, "src/ics2.png")			{tmpl_1(2,2,0,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(spriteset_ICS2_3_2cc, "src/ics2.png")			{tmpl_1(2,3,0,-3,-6,-9,-7,-9,-7,-1,-4,-3,-6,-18,-5,-9,-7,-9,-10)}
+spriteset(spriteset_ICS2_4_2cc, "src/ics2.png")			{tmpl_1(2,4,0,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(spriteset_ICS2_5_2cc, "src/ics2.png")			{tmpl_1(2,5,0,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(spriteset_ICS2_6_2cc, "src/ics2.png")			{tmpl_1(2,6,0,-3,-4,-9,-9,-8,-10,-1,-4,-3,-4,-18,-5,-8,-10,-9,-12)}
+spriteset(spriteset_ICS2_1_1cc_rak, "src/ics2.png")		{tmpl_1(1,1,1,-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+spriteset(spriteset_ICS2_2_1cc_rak, "src/ics2.png")		{tmpl_1(1,2,1,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(spriteset_ICS2_3_1cc_rak, "src/ics2.png")		{tmpl_1(1,3,1,-3,-6,-9,-7,-9,-7,-1,-4,-3,-6,-18,-5,-9,-7,-9,-10)}
+spriteset(spriteset_ICS2_4_1cc_rak, "src/ics2.png")		{tmpl_1(1,4,1,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(spriteset_ICS2_5_1cc_rak, "src/ics2.png")		{tmpl_1(1,5,1,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(spriteset_ICS2_6_1cc_rak, "src/ics2.png")		{tmpl_1(1,6,1,-3,-4,-9,-9,-8,-10,-1,-4,-3,-4,-18,-5,-8,-10,-9,-12)}
+spriteset(spriteset_ICS2_1_2cc_rak, "src/ics2.png")		{tmpl_1(2,1,1,-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+spriteset(spriteset_ICS2_2_2cc_rak, "src/ics2.png")		{tmpl_1(2,2,1,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(spriteset_ICS2_3_2cc_rak, "src/ics2.png")		{tmpl_1(2,3,1,-3,-6,-9,-7,-9,-7,-1,-4,-3,-6,-18,-5,-9,-7,-9,-10)}
+spriteset(spriteset_ICS2_4_2cc_rak, "src/ics2.png")		{tmpl_1(2,5,1,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(spriteset_ICS2_5_2cc_rak, "src/ics2.png")		{tmpl_1(2,5,1,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(spriteset_ICS2_6_2cc_rak, "src/ics2.png")		{tmpl_1(2,6,1,-3,-4,-9,-9,-8,-10,-1,-4,-3,-4,-18,-5,-8,-10,-9,-12)}
+
+
+spritegroup spritegroup_ICS2_1_1cc {loaded:  [spriteset_ICS2_1_1cc];	loading: [spriteset_ICS2_1_1cc_rak];}
+spritegroup spritegroup_ICS2_2_1cc {loaded:  [spriteset_ICS2_2_1cc];    loading: [spriteset_ICS2_2_1cc_rak];}
+spritegroup spritegroup_ICS2_3_1cc {loaded:  [spriteset_ICS2_3_1cc];    loading: [spriteset_ICS2_3_1cc_rak];}
+spritegroup spritegroup_ICS2_4_1cc {loaded:  [spriteset_ICS2_4_1cc];	loading: [spriteset_ICS2_4_1cc_rak];}
+spritegroup spritegroup_ICS2_5_1cc {loaded:  [spriteset_ICS2_5_1cc];    loading: [spriteset_ICS2_5_1cc_rak];}
+spritegroup spritegroup_ICS2_6_1cc {loaded:  [spriteset_ICS2_6_1cc];    loading: [spriteset_ICS2_6_1cc_rak];}
+spritegroup spritegroup_ICS2_1_2cc {loaded:  [spriteset_ICS2_1_2cc];    loading: [spriteset_ICS2_1_2cc_rak];}
+spritegroup spritegroup_ICS2_2_2cc {loaded:  [spriteset_ICS2_2_2cc];    loading: [spriteset_ICS2_2_2cc_rak];}
+spritegroup spritegroup_ICS2_3_2cc {loaded:  [spriteset_ICS2_3_2cc];    loading: [spriteset_ICS2_3_2cc_rak];}
+spritegroup spritegroup_ICS2_4_2cc {loaded:  [spriteset_ICS2_4_2cc];    loading: [spriteset_ICS2_4_2cc_rak];}
+spritegroup spritegroup_ICS2_5_2cc {loaded:  [spriteset_ICS2_5_2cc];    loading: [spriteset_ICS2_5_2cc_rak];}
+spritegroup spritegroup_ICS2_6_2cc {loaded:  [spriteset_ICS2_6_2cc];    loading: [spriteset_ICS2_6_2cc_rak];}
+
+switch(FEAT_ROADVEHS, SELF, sw_ICS2_1_1cc, (extra_callback_info1 & 0x12)) {
+   0x10: ICS2_1_depo_1cc; // Depot GUI
+   0x11: ICS2_1_depo_1cc; // Vehicle Details/Refit GUI
+   0x12: ICS2_1_depo_1cc; // Vehicle List
+   0x00: spritegroup_ICS2_1_1cc; // Vehicle in game
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS2_2_1cc, (extra_callback_info1 & 0x12)) {
+   0x10: ICS2_2_depo_1cc; // Depot GUI
+   0x11: ICS2_2_depo_1cc; // Vehicle Details/Refit GUI
+   0x12: ICS2_2_depo_1cc; // Vehicle List
+   0x00: spritegroup_ICS2_2_1cc; // Vehicle in game
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS2_3_1cc, (extra_callback_info1 & 0x12)) {
+   0x10: ICS2_3_depo_1cc; // Depot GUI
+   0x11: ICS2_3_depo_1cc; // Vehicle Details/Refit GUI
+   0x12: ICS2_3_depo_1cc; // Vehicle List
+   0x00: spritegroup_ICS2_3_1cc; // Vehicle in game
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS2_4_1cc, (extra_callback_info1 & 0x12)) {
+   0x10: ICS2_4_depo_1cc; // Depot GUI
+   0x11: ICS2_4_depo_1cc; // Vehicle Details/Refit GUI
+   0x12: ICS2_4_depo_1cc; // Vehicle List
+   0x00: spritegroup_ICS2_4_1cc; // Vehicle in game
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS2_5_1cc, (extra_callback_info1 & 0x12)) {
+   0x10: ICS2_5_depo_1cc; // Depot GUI
+   0x11: ICS2_5_depo_1cc; // Vehicle Details/Refit GUI
+   0x12: ICS2_5_depo_1cc; // Vehicle List
+   0x00: spritegroup_ICS2_5_1cc; // Vehicle in game
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS2_6_1cc, (extra_callback_info1 & 0x12)) {
+   0x10: ICS2_6_depo_1cc; // Depot GUI
+   0x11: ICS2_6_depo_1cc; // Vehicle Details/Refit GUI
+   0x12: ICS2_6_depo_1cc; // Vehicle List
+   0x00: spritegroup_ICS2_6_1cc; // Vehicle in game
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS2_1_2cc, (extra_callback_info1 & 0x12)) {
+   0x10: ICS2_1_depo_2cc; // Depot GUI
+   0x11: ICS2_1_depo_2cc; // Vehicle Details/Refit GUI
+   0x12: ICS2_1_depo_2cc; // Vehicle List
+   0x00: spritegroup_ICS2_1_2cc; // Vehicle in game
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS2_2_2cc, (extra_callback_info1 & 0x12)) {
+   0x10: ICS2_2_depo_2cc; // Depot GUI
+   0x11: ICS2_2_depo_2cc; // Vehicle Details/Refit GUI
+   0x12: ICS2_2_depo_2cc; // Vehicle List
+   0x00: spritegroup_ICS2_2_2cc; // Vehicle in game
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS2_3_2cc, (extra_callback_info1 & 0x12)) {
+   0x10: ICS2_3_depo_2cc; // Depot GUI
+   0x11: ICS2_3_depo_2cc; // Vehicle Details/Refit GUI
+   0x12: ICS2_3_depo_2cc; // Vehicle List
+   0x00: spritegroup_ICS2_3_2cc; // Vehicle in game
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS2_4_2cc, (extra_callback_info1 & 0x12)) {
+   0x10: ICS2_4_depo_2cc; // Depot GUI
+   0x11: ICS2_4_depo_2cc; // Vehicle Details/Refit GUI
+   0x12: ICS2_4_depo_2cc; // Vehicle List
+   0x00: spritegroup_ICS2_4_2cc; // Vehicle in game
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS2_5_2cc, (extra_callback_info1 & 0x12)) {
+   0x10: ICS2_5_depo_2cc; // Depot GUI
+   0x11: ICS2_5_depo_2cc; // Vehicle Details/Refit GUI
+   0x12: ICS2_5_depo_2cc; // Vehicle List
+   0x00: spritegroup_ICS2_5_2cc; // Vehicle in game
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS2_6_2cc, (extra_callback_info1 & 0x12)) {
+   0x10: ICS2_6_depo_2cc; // Depot GUI
+   0x11: ICS2_6_depo_2cc; // Vehicle Details/Refit GUI
+   0x12: ICS2_6_depo_2cc; // Vehicle List
+   0x00: spritegroup_ICS2_6_2cc; // Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_1cc_spriteset, position_in_consist ) {
+    1: sw_ICS2_2_1cc;
+	2: sw_ICS2_3_1cc;
+	3: sw_ICS2_4_1cc;
+	4: sw_ICS2_5_1cc;
+	5: sw_ICS2_6_1cc;
+    sw_ICS2_1_1cc;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_2cc_spriteset, position_in_consist ) {
+    1: sw_ICS2_2_2cc;
+	2: sw_ICS2_3_2cc;
+	3: sw_ICS2_4_2cc;
+	4: sw_ICS2_5_2cc;
+	5: sw_ICS2_6_2cc;
+    sw_ICS2_1_2cc;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_spriteset, cargo_subtype) {
+	1: sw_ICS2_2cc_spriteset;
+	sw_ICS2_1cc_spriteset;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_articulated, extra_callback_info1) {
+    1: item_ICS2;
+	2: item_ICS2;
+	3: item_ICS2;
+	4: item_ICS2;
+	5: item_ICS2;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_capacity, position_in_consist) {
+	1: 0;
+	2: 0;
+	3: 0;
+	4: 0;
+	5: 0;
+	380;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_length, position_in_consist) {
+    1: 6;
+	2: 6;
+	3: 8;
+	4: 6;
+	5: 8;
+    8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_livery_text, cargo_subtype) {
+	0: return string(STR_PARAM_COLOUR_SCHEME_1CC);			// 1CC
+	1: return string(STR_PARAM_COLOUR_SCHEME_2CC);			// 2CC
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_ICS2) {
+	property {
+        name:                           string(STR_ICS2_NAME);
+        climates_available:             bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:              date(1968,01,01);
+        model_life:                     22;
+        vehicle_life:                   40;
+        reliability_decay:              80;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:   bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:                  100;
+        cost_factor:                    98;
+        running_cost_factor:            190;
+        /* RV-specific properties */
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
+        speed:                          55 km/h;
+        misc_flags:                     bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:                     0; // Refitting is free
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        power:                          180 kW;
+        weight:                         34 ton;
+        cargo_capacity:                 200;
+		cargo_age_period:				165;
+        sound_effect:                   SOUND_SHEEP;
+    }
+	
+	 /* Define graphics */
+    graphics {
+		articulated_part:        		sw_ICS2_articulated;
+		length:                  		sw_ICS2_length;
+		cargo_subtype_text: 			sw_ICS2_livery_text;
+		additional_text: 				string(STR_ICS2_ADAT);
+		purchase:						ICS2_purchase;
+		cargo_capacity: 				sw_ICS2_capacity;
+		purchase_cargo_capacity:		380 / 6;
+		default:                 		sw_ICS2_spriteset;
+    }
+}
+// --------------------------------------------------------------------------------ICS2 End
