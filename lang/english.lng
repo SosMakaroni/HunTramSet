@@ -3,16 +3,34 @@
 
 # GRF name and description definitions
 STR_GRF_NAME	:HunTramSet
-STR_GRF_DESC	:{LTBLUE}Hungarian {WHITE}Tram Set {} 2021.07.19 {} {GREEN}SosMakaroni & Collosal404{} {COPYRIGHT}2017 SosMakaroni & {COPYRIGHT}2017 Collosal404{}{GRAY}License: GPLv2
+STR_GRF_DESC	:{LTBLUE}Hungarian {WHITE}Tram Set {} 2021.08.16 {} {GREEN}SosMakaroni & Collosal404{} {COPYRIGHT}2017 SosMakaroni & {COPYRIGHT}2017 Collosal404{}{GRAY}License: GPLv2
+
+STR_A_a_NAME:BURV A (Wooden frame){SILVER}1896{BLACK}
+STR_A_a_ADAT:Usage: {LTBLUE}Hungary - Budapest (BURV){BLACK}{}Manufacturer: {LTBLUE}GANZ{BLACK}{}
+STR_Ap_a_NAME:BURV A + Trailer (Wooden frame){SILVER}1896{BLACK}
+STR_Ap_a_ADAT:Usage: {LTBLUE}Hungary - Budapest (BURV){BLACK}{}Manufacturer: {LTBLUE}GANZ{BLACK}{}
+STR_A_b_NAME:BURV A {SILVER}1901{BLACK}
+STR_A_b_ADAT:Usage: {LTBLUE}Hungary - Budapest (BURV){BLACK}{}Manufacturer: {LTBLUE}GANZ{BLACK}{}
+STR_Ap_b_NAME:BURV A + Trailer {SILVER}1901{BLACK}
+STR_Ap_b_ADAT:Usage: {LTBLUE}Hungary - Budapest (BURV){BLACK}{}Manufacturer: {LTBLUE}GANZ{BLACK}{}
+
+STR_F_a_NAME:BVVV F (Wooden frame){SILVER}1914{BLACK}
+STR_F_a_ADAT:Usage: {LTBLUE}Hungary - Budapest (BVVV){BLACK}{}Manufacturer: {LTBLUE}Schlick{BLACK}{}
+STR_Fp_a_NAME:BVVV F + Trailer (Wooden frame){SILVER}1914{BLACK}
+STR_Fp_a_ADAT:Usage: {LTBLUE}Hungary - Budapest (BVVV){BLACK}{}Manufacturer: {LTBLUE}Schlick{BLACK}{}
+STR_F_b_NAME:FVV F {SILVER}1941{BLACK}
+STR_F_b_ADAT:Usage: {LTBLUE}Hungary - Budapest (FVV){BLACK}{}Manufacturer: {LTBLUE}Schlick{BLACK}{}
+STR_Fp_b_NAME:FVV F + Trailer {SILVER}1941{BLACK}
+STR_Fp_b_ADAT:Usage: {LTBLUE}Hungary - Budapest (FVV){BLACK}{}Manufacturer: {LTBLUE}Schlick{BLACK}{}
 
 STR_ICS_NAME:ICS {SILVER}1970{BLACK}
-STR_ICS_ADAT:Usage: {LTBLUE}Hungary - Budapest{BLACK}{}Manufacturer: {LTBLUE}GANZ{BLACK}{}
+STR_ICS_ADAT:Usage: {LTBLUE}Hungary - Budapest (BKV){BLACK}{}Manufacturer: {LTBLUE}GANZ{BLACK}{}
 STR_ICS2_NAME:ICS double {SILVER}1968{BLACK}
-STR_ICS2_ADAT:Usage: {LTBLUE}Hungary - Budapest{BLACK}{}Manufacturer: {LTBLUE}GANZ{BLACK}{}
+STR_ICS2_ADAT:Usage: {LTBLUE}Hungary - Budapest (BKV){BLACK}{}Manufacturer: {LTBLUE}GANZ{BLACK}{}
 STR_KCSV6_NAME:KCSV6 {SILVER}1997{BLACK}
-STR_KCSV6_ADAT:Usage: {LTBLUE}Hungary - Debrecen{BLACK}{}Manufacturer: {LTBLUE}GANZ{BLACK}{}
-STR_COMBINO_NAME:Combino {SILVER}1970{BLACK}
-STR_COMBINO_ADAT:Usage: {LTBLUE}Hungary - Budapest{BLACK}{}Manufacturer: {LTBLUE}Siemens{BLACK}{}
+STR_KCSV6_ADAT:Usage: {LTBLUE}Hungary - Debrecen (DKV){BLACK}{}Manufacturer: {LTBLUE}GANZ{BLACK}{}
+STR_Combino_NAME:Combino {SILVER}1970{BLACK}
+STR_Combino_ADAT:Usage: {LTBLUE}Hungary - Budapest (BKV){BLACK}{}Manufacturer: {LTBLUE}Siemens{BLACK}{}
 
 STR_PARAM_COLOUR_SCHEME_1CC: - Color Scheme 1
 STR_PARAM_COLOUR_SCHEME_2CC: - Color Scheme 1 inverse

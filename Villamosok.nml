@@ -192,7 +192,7 @@ spritegroup spritegroup_ICS2_4_2cc {loaded:  [spriteset_ICS2_4_2cc];    loading:
 spritegroup spritegroup_ICS2_5_2cc {loaded:  [spriteset_ICS2_5_2cc];    loading: [spriteset_ICS2_5_2cc_rak];}
 spritegroup spritegroup_ICS2_6_2cc {loaded:  [spriteset_ICS2_6_2cc];    loading: [spriteset_ICS2_6_2cc_rak];}
 
-switch(FEAT_ROADVEHS, SELF, sw_ICS2_1_1cc, (extra_callback_info1 & 0x12)) {	  0x10: ICS2_1_depo_1cc;   0x11: ICS2_1_depo_1cc;   0x12: ICS2_1_depo_1cc;   0x00: spritegroup_ICS2_1_1cc;}
+switch(FEAT_ROADVEHS, SELF, sw_ICS2_1_1cc, (extra_callback_info1 & 0x12)) {   0x10: ICS2_1_depo_1cc;   0x11: ICS2_1_depo_1cc;   0x12: ICS2_1_depo_1cc;   0x00: spritegroup_ICS2_1_1cc;}
 switch(FEAT_ROADVEHS, SELF, sw_ICS2_2_1cc, (extra_callback_info1 & 0x12)) {   0x10: ICS2_2_depo_1cc;   0x11: ICS2_2_depo_1cc;   0x12: ICS2_2_depo_1cc;   0x00: spritegroup_ICS2_2_1cc;}
 switch(FEAT_ROADVEHS, SELF, sw_ICS2_3_1cc, (extra_callback_info1 & 0x12)) {   0x10: ICS2_3_depo_1cc;   0x11: ICS2_3_depo_1cc;   0x12: ICS2_3_depo_1cc;   0x00: spritegroup_ICS2_3_1cc;}
 switch(FEAT_ROADVEHS, SELF, sw_ICS2_4_1cc, (extra_callback_info1 & 0x12)) {   0x10: ICS2_4_depo_1cc;   0x11: ICS2_4_depo_1cc;   0x12: ICS2_4_depo_1cc;   0x00: spritegroup_ICS2_4_1cc;}

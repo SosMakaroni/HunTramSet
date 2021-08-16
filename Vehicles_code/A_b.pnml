@@ -1,0 +1,88 @@
+// --------------------------------------------------------------------------------A_a
+
+spriteset(A_a_purchase, "src/A_ap.png")				{tmpl_purchase()}
+spriteset(A_a_1_depo_1cc, "src/A_ap.png")				{tmpl_depo(1,1)}
+spriteset(A_a_1_depo_2cc, "src/A_ap.png")				{tmpl_depo(2,1)}
+spriteset(spriteset_A_a_1_1cc, "src/A_ap.png")			{tmpl_1(1,1,0,-3,-3,-15,-4,-6,-6,-5,-5,-3,-3,-13,-6,-6,-6,-5,-7)}
+spriteset(spriteset_A_a_1_2cc, "src/A_ap.png")			{tmpl_1(2,1,0,-3,-3,-15,-4,-6,-6,-5,-5,-3,-3,-13,-6,-6,-6,-5,-7)}
+spriteset(spriteset_A_a_1_1cc_rak, "src/A_ap.png")		{tmpl_1(1,1,1,-3,-3,-15,-4,-6,-6,-5,-5,-3,-3,-13,-6,-6,-6,-5,-7)}
+spriteset(spriteset_A_a_1_2cc_rak, "src/A_ap.png")		{tmpl_1(2,1,1,-3,-3,-15,-4,-6,-6,-5,-5,-3,-3,-13,-6,-6,-6,-5,-7)}
+
+
+spritegroup spritegroup_A_a_1_1cc {loaded:  [spriteset_A_a_1_1cc];  loading: [spriteset_A_a_1_1cc_rak];}
+spritegroup spritegroup_A_a_1_2cc {loaded:  [spriteset_A_a_1_2cc];  loading: [spriteset_A_a_1_2cc_rak];}
+
+switch(FEAT_ROADVEHS, SELF, sw_A_a_1_1cc, (extra_callback_info1 & 0x12)) {
+   0x10: A_a_1_depo_1cc; // Depot GUI
+   0x11: A_a_1_depo_1cc; // Vehicle Details/Refit GUI
+   0x12: A_a_1_depo_1cc; // Vehicle List
+   0x00: spritegroup_A_a_1_1cc; // Vehicle in game
+}
+switch(FEAT_ROADVEHS, SELF, sw_A_a_1_2cc, (extra_callback_info1 & 0x12)) {
+   0x10: A_a_1_depo_2cc; // Depot GUI
+   0x11: A_a_1_depo_2cc; // Vehicle Details/Refit GUI
+   0x12: A_a_1_depo_2cc; // Vehicle List
+   0x00: spritegroup_A_a_1_2cc; // Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_A_a_1cc_spriteset, position_in_consist ) {
+    sw_A_a_1_1cc;
+}
+switch (FEAT_ROADVEHS, SELF, sw_A_a_2cc_spriteset, position_in_consist ) {
+    sw_A_a_1_2cc;
+}
+switch (FEAT_ROADVEHS, SELF, sw_A_a_spriteset, cargo_subtype) {
+	1: sw_A_a_2cc_spriteset;
+	sw_A_a_1cc_spriteset;
+}
+switch (FEAT_ROADVEHS, SELF, sw_A_a_articulated, extra_callback_info1) {
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_A_a_capacity, position_in_consist) {
+	30;
+}
+switch (FEAT_ROADVEHS, SELF, sw_A_a_length, position_in_consist) {
+    8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_A_a_livery_text, cargo_subtype) {
+	0: return string(STR_PARAM_COLOUR_SCHEME_1CC);
+	1: return string(STR_PARAM_COLOUR_SCHEME_2CC);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_A_a) {
+	property {
+        name: 								string(STR_A_a_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1896,01,01);
+        model_life:						5;
+        vehicle_life:						40;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					25;
+        cost_factor:						98;
+        running_cost_factor:				190;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								35 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					30;
+		cargo_age_period:					74;
+        sound_effect:						SOUND_SHEEP;
+    }
+    graphics {
+		articulated_part:				sw_A_a_articulated;
+		length:						sw_A_a_length;
+		cargo_subtype_text:			sw_A_a_livery_text;
+		additional_text:				string(STR_A_a_ADAT);
+		purchase:						A_a_purchase;
+		cargo_capacity:				sw_A_a_capacity;
+		purchase_cargo_capacity:		30;
+		default:						sw_A_a_spriteset;
+    }
+}
+// --------------------------------------------------------------------------------A_a End
