@@ -1,0 +1,119 @@
+// --------------------------------------------------------------------------------KCSV7
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_KCSV7_purchase, "src/KCSV7.png")			{tmpl_purchase()}
+spriteset(ss_KCSV7_1_1cc_depo, "src/KCSV7.png")		{tmpl_depo(1,1)}
+spriteset(ss_KCSV7_2_1cc_depo, "src/KCSV7.png")		{tmpl_depo(1,2)}
+spriteset(ss_KCSV7_1_2cc_depo, "src/KCSV7.png")		{tmpl_depo(2,1)}
+spriteset(ss_KCSV7_2_2cc_depo, "src/KCSV7.png")		{tmpl_depo(2,2)}
+spriteset(ss_KCSV7_1_1cc, "src/KCSV7.png")			{tmpl_1(1,1,0,-3,-6,-12,-6,-8,-7,-5,-7,-3,-6,-13,-8,-8,-7,-5,-8)}
+spriteset(ss_KCSV7_2_1cc, "src/KCSV7.png")			{tmpl_1(1,2,0,-3,-5,-6,-8,-3,-11,1,-4,-3,-5,-16,-5,-3,-11,-7,-10)}
+spriteset(ss_KCSV7_3_1cc, "src/KCSV7.png")			{tmpl_1(1,3,0,-3,-6,-7,-9,-8,-7,-1,-4,-3,-6,-18,-5,-8,-7,-9,-11)}
+spriteset(ss_KCSV7_1_2cc, "src/KCSV7.png")			{tmpl_1(2,1,0,-3,-6,-12,-6,-8,-7,-5,-7,-3,-6,-13,-8,-8,-7,-5,-8)}
+spriteset(ss_KCSV7_2_2cc, "src/KCSV7.png")			{tmpl_1(2,2,0,-3,-5,-6,-8,-3,-11,1,-4,-3,-5,-16,-5,-3,-11,-7,-10)}
+spriteset(ss_KCSV7_3_2cc, "src/KCSV7.png")			{tmpl_1(2,3,0,-3,-6,-7,-9,-8,-7,-1,-4,-3,-6,-18,-5,-8,-7,-9,-11)}
+spriteset(ss_KCSV7_1_1cc_rak, "src/KCSV7.png")	{tmpl_1(1,1,1,-3,-6,-12,-6,-8,-7,-5,-7,-3,-6,-13,-8,-8,-7,-5,-8)}
+spriteset(ss_KCSV7_2_1cc_rak, "src/KCSV7.png")	{tmpl_1(1,2,1,-3,-5,-6,-8,-3,-11,1,-4,-3,-5,-16,-5,-3,-11,-7,-10)}
+spriteset(ss_KCSV7_3_1cc_rak, "src/KCSV7.png")	{tmpl_1(1,3,1,-3,-6,-7,-9,-8,-7,-1,-4,-3,-6,-18,-5,-8,-7,-9,-11)}
+spriteset(ss_KCSV7_1_2cc_rak, "src/KCSV7.png")	{tmpl_1(2,1,1,-3,-6,-12,-6,-8,-7,-5,-7,-3,-6,-13,-8,-8,-7,-5,-8)}
+spriteset(ss_KCSV7_2_2cc_rak, "src/KCSV7.png")	{tmpl_1(2,2,1,-3,-5,-6,-8,-3,-11,1,-4,-3,-5,-16,-5,-3,-11,-7,-10)}
+spriteset(ss_KCSV7_3_2cc_rak, "src/KCSV7.png")	{tmpl_1(2,3,1,-3,-6,-7,-9,-8,-7,-1,-4,-3,-6,-18,-5,-8,-7,-9,-11)}
+
+
+spritegroup sg_KCSV7_1_1cc {	loaded:  [ss_KCSV7_1_1cc];	loading: [ss_KCSV7_1_1cc_rak];}
+spritegroup sg_KCSV7_2_1cc {	loaded:  [ss_KCSV7_2_1cc];	loading: [ss_KCSV7_2_1cc_rak];}
+spritegroup sg_KCSV7_3_1cc {	loaded:  [ss_KCSV7_3_1cc];	loading: [ss_KCSV7_3_1cc_rak];}
+spritegroup sg_KCSV7_1_2cc {	loaded:  [ss_KCSV7_1_2cc];	loading: [ss_KCSV7_1_2cc_rak];}
+spritegroup sg_KCSV7_2_2cc {	loaded:  [ss_KCSV7_2_2cc];	loading: [ss_KCSV7_2_2cc_rak];}
+spritegroup sg_KCSV7_3_2cc {	loaded:  [ss_KCSV7_3_2cc];	loading: [ss_KCSV7_3_2cc_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_KCSV7_1cc_depo, position_in_consist ) {
+    0: ss_KCSV7_1_1cc_depo;
+    ss_KCSV7_2_1cc_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_KCSV7_1cc, position_in_consist ) {
+    1: sg_KCSV7_2_1cc;
+	2: sg_KCSV7_3_1cc;
+    sg_KCSV7_1_1cc;
+}
+switch(FEAT_ROADVEHS, SELF, sw_KCSV7_1cc_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_KCSV7_1cc_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_KCSV7_1cc; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, ss_KCSV7_2cc_depo, position_in_consist ) {
+    0: ss_KCSV7_1_2cc_depo;
+    ss_KCSV7_2_2cc_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_KCSV7_2cc, position_in_consist ) {
+    1: sg_KCSV7_2_2cc;
+	2: sg_KCSV7_3_2cc;
+    sg_KCSV7_1_2cc;
+}
+switch(FEAT_ROADVEHS, SELF, sw_KCSV7_2cc_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_KCSV7_2cc_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_KCSV7_2cc; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_KCSV7_ss, cargo_subtype) {
+	1: sw_KCSV7_2cc_ss;
+	sw_KCSV7_1cc_ss;
+}
+switch (FEAT_ROADVEHS, SELF, sw_KCSV7_articulated, extra_callback_info1) {
+    0..2: item_KCSV7;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_KCSV7_capacity, position_in_consist) {
+	1: return 35;
+	2: return 80;
+	return 80;
+}
+switch (FEAT_ROADVEHS, SELF, sw_KCSV7_length, position_in_consist) {
+	1: return 4;
+	2: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_KCSV7_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1CC);
+	1: return string(STR_COLOUR_SCHEME_2CC);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_KCSV7) {
+	property {
+        name:								string(STR_KCSV7_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1997,06,10);
+        model_life:						25;
+        vehicle_life:						50;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								60 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								264 kW;
+        weight:							34 ton;
+        cargo_capacity:					10;
+		cargo_age_period:					74;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_KCSV7_ss;
+		purchase:						ss_KCSV7_purchase;
+		articulated_part:        		sw_KCSV7_articulated;
+		length:                  		sw_KCSV7_length;
+		cargo_subtype_text: 			sw_KCSV7_livery_text;
+		cargo_capacity: 				sw_KCSV7_capacity;
+		purchase_cargo_capacity:		return 195 / 3;
+		additional_text: 				string(STR_KCSV7_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------KCSV7 End

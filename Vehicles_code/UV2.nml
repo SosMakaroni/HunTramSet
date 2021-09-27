@@ -1,0 +1,109 @@
+// --------------------------------------------------------------------------------UV2
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_UV2_purchase, "src/UV2.png")			{tmpl_purchase()}
+spriteset(ss_UV2_1_1cc_depo, "src/UV2.png")		{tmpl_depo(1,1)}
+spriteset(ss_UV2_2_1cc_depo, "src/UV2.png")		{tmpl_depo(1,2)}
+spriteset(ss_UV2_1_2cc_depo, "src/UV2.png")		{tmpl_depo(2,1)}
+spriteset(ss_UV2_2_2cc_depo, "src/UV2.png")		{tmpl_depo(2,2)}
+spriteset(ss_UV2_1_1cc, "src/UV2.png")			{tmpl_1(1,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV2_2_1cc, "src/UV2.png")			{tmpl_1(1,2,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV2_1_2cc, "src/UV2.png")			{tmpl_1(2,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV2_2_2cc, "src/UV2.png")			{tmpl_1(2,2,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV2_1_1cc_rak, "src/UV2.png")	{tmpl_1(1,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV2_2_1cc_rak, "src/UV2.png")	{tmpl_1(1,2,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV2_1_2cc_rak, "src/UV2.png")	{tmpl_1(2,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV2_2_2cc_rak, "src/UV2.png")	{tmpl_1(2,2,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+
+
+spritegroup sg_UV2_1_1cc {	loaded:  [ss_UV2_1_1cc];	loading: [ss_UV2_1_1cc_rak];}
+spritegroup sg_UV2_2_1cc {	loaded:  [ss_UV2_2_1cc];	loading: [ss_UV2_2_1cc_rak];}
+spritegroup sg_UV2_1_2cc {	loaded:  [ss_UV2_1_2cc];	loading: [ss_UV2_1_2cc_rak];}
+spritegroup sg_UV2_2_2cc {	loaded:  [ss_UV2_2_2cc];	loading: [ss_UV2_2_2cc_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_UV2_1cc_depo, position_in_consist ) {
+    0: ss_UV2_1_1cc_depo;
+    ss_UV2_2_1cc_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV2_1cc, position_in_consist ) {
+    1: sg_UV2_2_1cc;
+    sg_UV2_1_1cc;
+}
+switch(FEAT_ROADVEHS, SELF, sw_UV2_1cc_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_UV2_1cc_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_UV2_1cc; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, ss_UV2_2cc_depo, position_in_consist ) {
+    0: ss_UV2_1_2cc_depo;
+    ss_UV2_2_2cc_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV2_2cc, position_in_consist ) {
+    1: sg_UV2_2_2cc;
+    sg_UV2_1_2cc;
+}
+switch(FEAT_ROADVEHS, SELF, sw_UV2_2cc_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_UV2_2cc_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_UV2_2cc; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV2_ss, cargo_subtype) {
+	1: sw_UV2_2cc_ss;
+	sw_UV2_1cc_ss;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV2_articulated, extra_callback_info1) {
+    0..1: item_UV2;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV2_capacity, position_in_consist) {
+	1: return 94;
+	return 94;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV2_length, position_in_consist) {
+	1: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV2_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1CC);
+	1: return string(STR_COLOUR_SCHEME_2CC);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_UV2) {
+	property {
+        name:								string(STR_UV2_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1956,04,03);
+        model_life:						30;
+        vehicle_life:						50;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					48;
+        cost_factor:						20;
+        running_cost_factor:				20;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								60 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								296 kW;
+        weight:							48 ton;
+        cargo_capacity:					10;
+		cargo_age_period:					74;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_UV2_ss;
+		purchase:						ss_UV2_purchase;
+		articulated_part:        		sw_UV2_articulated;
+		length:                  		sw_UV2_length;
+		cargo_subtype_text: 			sw_UV2_livery_text;
+		cargo_capacity: 				sw_UV2_capacity;
+		purchase_cargo_capacity:		return 94 / 2;
+		additional_text: 				string(STR_UV2_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------UV2 End

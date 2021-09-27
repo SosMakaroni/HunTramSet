@@ -1,0 +1,119 @@
+// --------------------------------------------------------------------------------UV2p
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_UV2p_purchase, "src/UV2p.png")			{tmpl_purchase()}
+spriteset(ss_UV2p_1_1cc_depo, "src/UV2p.png")		{tmpl_depo(1,1)}
+spriteset(ss_UV2p_2_1cc_depo, "src/UV2p.png")		{tmpl_depo(1,2)}
+spriteset(ss_UV2p_1_2cc_depo, "src/UV2p.png")		{tmpl_depo(2,1)}
+spriteset(ss_UV2p_2_2cc_depo, "src/UV2p.png")		{tmpl_depo(2,2)}
+spriteset(ss_UV2p_1_1cc, "src/UV2p.png")			{tmpl_1(1,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV2p_2_1cc, "src/UV2p.png")			{tmpl_1(1,2,0,-3,-5,-13,-6,-7,-7,-3,-6,-3,-5,-15,-7,-7,-7,-5,-9)}
+spriteset(ss_UV2p_3_1cc, "src/UV2p.png")			{tmpl_1(1,3,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV2p_1_2cc, "src/UV2p.png")			{tmpl_1(2,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV2p_2_2cc, "src/UV2p.png")			{tmpl_1(2,2,0,-3,-5,-13,-6,-7,-7,-3,-6,-3,-5,-15,-7,-7,-7,-5,-9)}
+spriteset(ss_UV2p_3_2cc, "src/UV2p.png")			{tmpl_1(2,3,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV2p_1_1cc_rak, "src/UV2p.png")	{tmpl_1(1,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV2p_2_1cc_rak, "src/UV2p.png")	{tmpl_1(1,2,1,-3,-5,-13,-6,-7,-7,-3,-6,-3,-5,-15,-7,-7,-7,-5,-9)}
+spriteset(ss_UV2p_3_1cc_rak, "src/UV2p.png")	{tmpl_1(1,3,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV2p_1_2cc_rak, "src/UV2p.png")	{tmpl_1(2,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV2p_2_2cc_rak, "src/UV2p.png")	{tmpl_1(2,2,1,-3,-5,-13,-6,-7,-7,-3,-6,-3,-5,-15,-7,-7,-7,-5,-9)}
+spriteset(ss_UV2p_3_2cc_rak, "src/UV2p.png")	{tmpl_1(2,3,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+
+
+spritegroup sg_UV2p_1_1cc {	loaded:  [ss_UV2p_1_1cc];	loading: [ss_UV2p_1_1cc_rak];}
+spritegroup sg_UV2p_2_1cc {	loaded:  [ss_UV2p_2_1cc];	loading: [ss_UV2p_2_1cc_rak];}
+spritegroup sg_UV2p_3_1cc {	loaded:  [ss_UV2p_3_1cc];	loading: [ss_UV2p_3_1cc_rak];}
+spritegroup sg_UV2p_1_2cc {	loaded:  [ss_UV2p_1_2cc];	loading: [ss_UV2p_1_2cc_rak];}
+spritegroup sg_UV2p_2_2cc {	loaded:  [ss_UV2p_2_2cc];	loading: [ss_UV2p_2_2cc_rak];}
+spritegroup sg_UV2p_3_2cc {	loaded:  [ss_UV2p_3_2cc];	loading: [ss_UV2p_3_2cc_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_UV2p_1cc_depo, position_in_consist ) {
+    0: ss_UV2p_1_1cc_depo;
+    ss_UV2p_2_1cc_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV2p_1cc, position_in_consist ) {
+    1: sg_UV2p_2_1cc;
+	2: sg_UV2p_3_1cc;
+    sg_UV2p_1_1cc;
+}
+switch(FEAT_ROADVEHS, SELF, sw_UV2p_1cc_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_UV2p_1cc_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_UV2p_1cc; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, ss_UV2p_2cc_depo, position_in_consist ) {
+    0: ss_UV2p_1_2cc_depo;
+    ss_UV2p_2_2cc_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV2p_2cc, position_in_consist ) {
+    1: sg_UV2p_2_2cc;
+	2: sg_UV2p_3_2cc;
+    sg_UV2p_1_2cc;
+}
+switch(FEAT_ROADVEHS, SELF, sw_UV2p_2cc_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_UV2p_2cc_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_UV2p_2cc; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV2p_ss, cargo_subtype) {
+	1: sw_UV2p_2cc_ss;
+	sw_UV2p_1cc_ss;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV2p_articulated, extra_callback_info1) {
+    0..2: item_UV2p;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV2p_capacity, position_in_consist) {
+	1: return 91;
+	2: return 94;
+	return 94;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV2p_length, position_in_consist) {
+	1: return 6;
+	2: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV2p_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1CC);
+	1: return string(STR_COLOUR_SCHEME_2CC);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_UV2p) {
+	property {
+        name:								string(STR_UV2p_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1957,02,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								60 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								296 kW;
+        weight:							48 ton;
+        cargo_capacity:					10;
+		cargo_age_period:					74;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_UV2p_ss;
+		purchase:						ss_UV2p_purchase;
+		articulated_part:        		sw_UV2p_articulated;
+		length:                  		sw_UV2p_length;
+		cargo_subtype_text: 			sw_UV2p_livery_text;
+		cargo_capacity: 				sw_UV2p_capacity;
+		purchase_cargo_capacity:		return 279 / 3;
+		additional_text: 				string(STR_UV2p_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------UV2p End

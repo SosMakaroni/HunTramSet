@@ -1,0 +1,47 @@
+grf {
+	grfid: "HS\15\01";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESC);
+	version: 0;
+	min_compatible_version: 0;
+}
+
+template tmpl_purchase() {
+	[10,				63,									99,	16,	-25,-9]}
+	
+template tmpl_depo(szin,csuklo) {
+	[570,				((szin-1)*270)+((csuklo-1)*30)+80,	199,16,	-15,-10]}
+	
+template tmpl_1(szin,csuklo,rakodas,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8){
+	[rakodas*280+10,	((szin-1)*270)+((csuklo-1)*30)+80,	9,	29,	x1,	y1, ANIM]
+	[rakodas*280+20,	((szin-1)*270)+((csuklo-1)*30)+80,	39,	29,	x2,	y2, ANIM]
+	[rakodas*280+60,	((szin-1)*270)+((csuklo-1)*30)+80,	49,	29,	x3,	y3, ANIM]
+	[rakodas*280+110,	((szin-1)*270)+((csuklo-1)*30)+80,	39,	29,	x4,	y4, ANIM]
+	[rakodas*280+150,	((szin-1)*270)+((csuklo-1)*30)+80,	9,	29,	x5,	y5, ANIM]
+	[rakodas*280+160,	((szin-1)*270)+((csuklo-1)*30)+80,	39,	29,	x6,	y6, ANIM]
+	[rakodas*280+200,	((szin-1)*270)+((csuklo-1)*30)+80,	49,	29,	x7,	y7, ANIM]
+	[rakodas*280+250,	((szin-1)*270)+((csuklo-1)*30)+80,	39,	29,	x8,	y8, ANIM]}
+	
+template tmpl_toldat() {
+	[0,	0,	1,	1,	1,	1]}	
+
+template tmpl_cng() {
+	[20,	80,	17,	12,	1,	1]}	
+template tmpl_hybrid() {
+	[60,	80,	25,	12,	1,	1]}	
+template tmpl_diesel() {
+	[110,	80,	25,	12,	1,	1]}	
+	
+alternative_sprites(ico_cng, ZOOM_LEVEL_NORMAL, BIT_DEPTH_8BPP, "src/icons.png") {
+  [20,	80,	17,	12,	1,	1]
+}
+
+font_glyph ico_cng (NORMAL, 65, "src/icons.png") {
+	[20,	80,	17,	12,	1,	1]}	
+	
+
+/*spriteset(ss_cng, "src/icons.png")			{tmpl_cng()}
+spriteset(ss_hybrid, "src/icons.png")			{tmpl_hybrid()}
+spriteset(ss_diesel, "src/icons.png")			{tmpl_diesel()}
+
+*/

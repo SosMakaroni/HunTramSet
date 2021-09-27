@@ -1,0 +1,78 @@
+// --------------------------------------------------------------------------------UV
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_UV_purchase, "src/UV.png")			{tmpl_purchase()}
+spriteset(ss_UV_1_1cc_depo, "src/UV.png")		{tmpl_depo(1,1)}
+spriteset(ss_UV_1_2cc_depo, "src/UV.png")		{tmpl_depo(2,1)}
+spriteset(ss_UV_1_1cc, "src/UV.png")			{tmpl_1(1,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV_1_2cc, "src/UV.png")			{tmpl_1(2,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV_1_1cc_rak, "src/UV.png")	{tmpl_1(1,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV_1_2cc_rak, "src/UV.png")	{tmpl_1(2,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+
+
+spritegroup sg_UV_1_1cc {	loaded:  [ss_UV_1_1cc];	loading: [ss_UV_1_1cc_rak];}
+spritegroup sg_UV_1_2cc {	loaded:  [ss_UV_1_2cc];	loading: [ss_UV_1_2cc_rak];}
+
+switch(FEAT_ROADVEHS, SELF, sw_UV_1cc_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_UV_1_1cc_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sg_UV_1_1cc; // 0x00 Vehicle in game
+}
+switch(FEAT_ROADVEHS, SELF, sw_UV_2cc_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_UV_1_2cc_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sg_UV_1_2cc; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV_ss, cargo_subtype) {
+	1: sw_UV_2cc_ss;
+	sw_UV_1cc_ss;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV_capacity, position_in_consist) {
+	return 94;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV_length, position_in_consist) {
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_UV_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1CC);
+	1: return string(STR_COLOUR_SCHEME_2CC);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_UV) {
+	property {
+        name:								string(STR_UV_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1956,04,03);
+        model_life:						30;
+        vehicle_life:						50;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					24;
+        cost_factor:						20;
+        running_cost_factor:				20;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								60 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								148 kW;
+        weight:							20 ton;
+        cargo_capacity:					94;
+		cargo_age_period:					74;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_UV_ss;
+		purchase:						ss_UV_purchase;
+		length:                  		sw_UV_length;
+		cargo_subtype_text: 			sw_UV_livery_text;
+		cargo_capacity: 				sw_UV_capacity;
+		purchase_cargo_capacity:		return 94;
+		additional_text: 				string(STR_UV_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------UV End

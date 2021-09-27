@@ -1,0 +1,119 @@
+// --------------------------------------------------------------------------------TW6000
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_TW6000_purchase, "src/TW6000.png")			{tmpl_purchase()}
+spriteset(ss_TW6000_1_1cc_depo, "src/TW6000.png")		{tmpl_depo(1,1)}
+spriteset(ss_TW6000_2_1cc_depo, "src/TW6000.png")		{tmpl_depo(1,2)}
+spriteset(ss_TW6000_1_2cc_depo, "src/TW6000.png")		{tmpl_depo(2,1)}
+spriteset(ss_TW6000_2_2cc_depo, "src/TW6000.png")		{tmpl_depo(2,2)}
+spriteset(ss_TW6000_1_1cc, "src/TW6000.png")			{tmpl_1(1,1,0,-3,-7,-14,-7,-8,-7,-7,-8,-3,-7,-13,-9,-9,-7,-5,-9)}
+spriteset(ss_TW6000_2_1cc, "src/TW6000.png")			{tmpl_1(1,2,0,-3,-7,-6,-8,-3,-13,0,-5,-3,-7,-14,-6,-4,-10,-6,-9)}
+spriteset(ss_TW6000_3_1cc, "src/TW6000.png")			{tmpl_1(1,3,0,-3,-7,-13,-7,9,-7,-7,-8,-3,-7,-14,-9,-8,-7,-5,-9)}
+spriteset(ss_TW6000_1_2cc, "src/TW6000.png")			{tmpl_1(2,1,0,-3,-7,-14,-7,-8,-7,-7,-8,-3,-7,-13,-9,-9,-7,-5,-9)}
+spriteset(ss_TW6000_2_2cc, "src/TW6000.png")			{tmpl_1(2,2,0,-3,-7,-6,-8,-3,-13,0,-5,-3,-7,-14,-6,-4,-10,-6,-9)}
+spriteset(ss_TW6000_3_2cc, "src/TW6000.png")			{tmpl_1(2,3,0,-3,-7,-13,-7,9,-7,-7,-8,-3,-7,-14,-9,-8,-7,-5,-9)}
+spriteset(ss_TW6000_1_1cc_rak, "src/TW6000.png")	{tmpl_1(1,1,1,-3,-7,-14,-7,-8,-7,-7,-8,-3,-7,-13,-9,-9,-7,-5,-9)}
+spriteset(ss_TW6000_2_1cc_rak, "src/TW6000.png")	{tmpl_1(1,2,1,-3,-7,-6,-8,-3,-13,0,-5,-3,-7,-14,-6,-4,-10,-6,-9)}
+spriteset(ss_TW6000_3_1cc_rak, "src/TW6000.png")	{tmpl_1(1,3,1,-3,-7,-13,-7,9,-7,-7,-8,-3,-7,-14,-9,-8,-7,-5,-9)}
+spriteset(ss_TW6000_1_2cc_rak, "src/TW6000.png")	{tmpl_1(2,1,1,-3,-7,-14,-7,-8,-7,-7,-8,-3,-7,-13,-9,-9,-7,-5,-9)}
+spriteset(ss_TW6000_2_2cc_rak, "src/TW6000.png")	{tmpl_1(2,2,1,-3,-7,-6,-8,-3,-13,0,-5,-3,-7,-14,-6,-4,-10,-6,-9)}
+spriteset(ss_TW6000_3_2cc_rak, "src/TW6000.png")	{tmpl_1(2,3,1,-3,-7,-13,-7,9,-7,-7,-8,-3,-7,-14,-9,-8,-7,-5,-9)}
+
+
+spritegroup sg_TW6000_1_1cc {	loaded:  [ss_TW6000_1_1cc];	loading: [ss_TW6000_1_1cc_rak];}
+spritegroup sg_TW6000_2_1cc {	loaded:  [ss_TW6000_2_1cc];	loading: [ss_TW6000_2_1cc_rak];}
+spritegroup sg_TW6000_3_1cc {	loaded:  [ss_TW6000_3_1cc];	loading: [ss_TW6000_3_1cc_rak];}
+spritegroup sg_TW6000_1_2cc {	loaded:  [ss_TW6000_1_2cc];	loading: [ss_TW6000_1_2cc_rak];}
+spritegroup sg_TW6000_2_2cc {	loaded:  [ss_TW6000_2_2cc];	loading: [ss_TW6000_2_2cc_rak];}
+spritegroup sg_TW6000_3_2cc {	loaded:  [ss_TW6000_3_2cc];	loading: [ss_TW6000_3_2cc_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_TW6000_1cc_depo, position_in_consist ) {
+    0: ss_TW6000_1_1cc_depo;
+    ss_TW6000_2_1cc_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_TW6000_1cc, position_in_consist ) {
+    1: sg_TW6000_2_1cc;
+	2: sg_TW6000_3_1cc;
+    sg_TW6000_1_1cc;
+}
+switch(FEAT_ROADVEHS, SELF, sw_TW6000_1cc_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_TW6000_1cc_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_TW6000_1cc; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, ss_TW6000_2cc_depo, position_in_consist ) {
+    0: ss_TW6000_1_2cc_depo;
+    ss_TW6000_2_2cc_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_TW6000_2cc, position_in_consist ) {
+    1: sg_TW6000_2_2cc;
+	2: sg_TW6000_3_2cc;
+    sg_TW6000_1_2cc;
+}
+switch(FEAT_ROADVEHS, SELF, sw_TW6000_2cc_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_TW6000_2cc_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_TW6000_2cc; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_TW6000_ss, cargo_subtype) {
+	1: sw_TW6000_2cc_ss;
+	sw_TW6000_1cc_ss;
+}
+switch (FEAT_ROADVEHS, SELF, sw_TW6000_articulated, extra_callback_info1) {
+    0..2: item_TW6000;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_TW6000_capacity, position_in_consist) {
+	1: return 40;
+	2: return 55;
+	return 55;
+}
+switch (FEAT_ROADVEHS, SELF, sw_TW6000_length, position_in_consist) {
+	1: return 4;
+	2: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_TW6000_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1CC);
+	1: return string(STR_COLOUR_SCHEME_2CC);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_TW6000) {
+	property {
+        name:								string(STR_TW6000_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(2007,01,01);
+        model_life:						25;
+        vehicle_life:						50;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								80 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								436 kW;
+        weight:							39 ton;
+        cargo_capacity:					10;
+		cargo_age_period:					74;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_TW6000_ss;
+		purchase:						ss_TW6000_purchase;
+		articulated_part:        		sw_TW6000_articulated;
+		length:                  		sw_TW6000_length;
+		cargo_subtype_text: 			sw_TW6000_livery_text;
+		cargo_capacity: 				sw_TW6000_capacity;
+		purchase_cargo_capacity:		return 150 / 3;
+		additional_text: 				string(STR_TW6000_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------TW6000 End

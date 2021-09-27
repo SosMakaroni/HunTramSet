@@ -1,0 +1,147 @@
+// --------------------------------------------------------------------------------ICS2
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_ICS2_purchase, "src/ICS2.png")		{tmpl_purchase()}
+spriteset(ss_ICS2_1_1cc_depo, "src/ICS2.png")		{tmpl_depo(1,1)}
+spriteset(ss_ICS2_2_1cc_depo, "src/ICS2.png")		{tmpl_depo(1,2)}
+spriteset(ss_ICS2_1_2cc_depo, "src/ICS2.png")		{tmpl_depo(2,1)}
+spriteset(ss_ICS2_2_2cc_depo, "src/ICS2.png")		{tmpl_depo(2,2)}
+spriteset(ss_ICS2_1_1cc, "src/ICS2.png")			{tmpl_1(1,1,0,-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+spriteset(ss_ICS2_2_1cc, "src/ICS2.png")			{tmpl_1(1,2,0,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(ss_ICS2_3_1cc, "src/ICS2.png")			{tmpl_1(1,3,0,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(ss_ICS2_4_1cc, "src/ICS2.png")			{tmpl_1(1,4,0,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(ss_ICS2_5_1cc, "src/ICS2.png")			{tmpl_1(1,5,0,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(ss_ICS2_6_1cc, "src/ICS2.png")			{tmpl_1(1,6,0,-3,-4,-9,-9,-8,-10,-1,-4,-3,-4,-18,-5,-8,-10,-9,-12)}
+spriteset(ss_ICS2_1_2cc, "src/ICS2.png")			{tmpl_1(2,1,0,-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+spriteset(ss_ICS2_2_2cc, "src/ICS2.png")			{tmpl_1(2,2,0,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(ss_ICS2_3_2cc, "src/ICS2.png")			{tmpl_1(2,3,0,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(ss_ICS2_4_2cc, "src/ICS2.png")			{tmpl_1(2,4,0,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(ss_ICS2_5_2cc, "src/ICS2.png")			{tmpl_1(2,5,0,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(ss_ICS2_6_2cc, "src/ICS2.png")			{tmpl_1(2,6,0,-3,-4,-9,-9,-8,-10,-1,-4,-3,-4,-18,-5,-8,-10,-9,-12)}
+spriteset(ss_ICS2_1_1cc_rak, "src/ICS2.png")		{tmpl_1(1,1,1,-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+spriteset(ss_ICS2_2_1cc_rak, "src/ICS2.png")		{tmpl_1(1,2,1,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(ss_ICS2_3_1cc_rak, "src/ICS2.png")		{tmpl_1(1,3,1,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(ss_ICS2_4_1cc_rak, "src/ICS2.png")		{tmpl_1(1,4,1,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(ss_ICS2_5_1cc_rak, "src/ICS2.png")		{tmpl_1(1,5,1,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(ss_ICS2_6_1cc_rak, "src/ICS2.png")		{tmpl_1(1,6,1,-3,-4,-9,-9,-8,-10,-1,-4,-3,-4,-18,-5,-8,-10,-9,-12)}
+spriteset(ss_ICS2_1_2cc_rak, "src/ICS2.png")		{tmpl_1(2,1,1,-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+spriteset(ss_ICS2_2_2cc_rak, "src/ICS2.png")		{tmpl_1(2,2,1,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(ss_ICS2_3_2cc_rak, "src/ICS2.png")		{tmpl_1(2,3,1,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(ss_ICS2_4_2cc_rak, "src/ICS2.png")		{tmpl_1(2,4,1,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(ss_ICS2_5_2cc_rak, "src/ICS2.png")		{tmpl_1(2,5,1,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(ss_ICS2_6_2cc_rak, "src/ICS2.png")		{tmpl_1(2,6,1,-3,-4,-9,-9,-8,-10,-1,-4,-3,-4,-18,-5,-8,-10,-9,-12)}
+
+spritegroup sg_ICS2_1_1cc {	loaded:  [ss_ICS2_1_1cc];	loading: [ss_ICS2_1_1cc_rak];}
+spritegroup sg_ICS2_2_1cc {	loaded:  [ss_ICS2_2_1cc];	loading: [ss_ICS2_2_1cc_rak];}
+spritegroup sg_ICS2_3_1cc {	loaded:  [ss_ICS2_3_1cc];	loading: [ss_ICS2_3_1cc_rak];}
+spritegroup sg_ICS2_4_1cc {	loaded:  [ss_ICS2_4_1cc];	loading: [ss_ICS2_4_1cc_rak];}
+spritegroup sg_ICS2_5_1cc {	loaded:  [ss_ICS2_5_1cc];	loading: [ss_ICS2_5_1cc_rak];}
+spritegroup sg_ICS2_6_1cc {	loaded:  [ss_ICS2_6_1cc];	loading: [ss_ICS2_6_1cc_rak];}
+spritegroup sg_ICS2_1_2cc {	loaded:  [ss_ICS2_1_2cc];	loading: [ss_ICS2_1_2cc_rak];}
+spritegroup sg_ICS2_2_2cc {	loaded:  [ss_ICS2_2_2cc];	loading: [ss_ICS2_2_2cc_rak];}
+spritegroup sg_ICS2_3_2cc {	loaded:  [ss_ICS2_3_2cc];	loading: [ss_ICS2_3_2cc_rak];}
+spritegroup sg_ICS2_4_2cc {	loaded:  [ss_ICS2_4_2cc];	loading: [ss_ICS2_4_2cc_rak];}
+spritegroup sg_ICS2_5_2cc {	loaded:  [ss_ICS2_5_2cc];	loading: [ss_ICS2_5_2cc_rak];}
+spritegroup sg_ICS2_6_2cc {	loaded:  [ss_ICS2_6_2cc];	loading: [ss_ICS2_6_2cc_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_ICS2_1cc_depo, position_in_consist ) {
+    0: ss_ICS2_1_1cc_depo;
+    ss_ICS2_2_1cc_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_1cc, position_in_consist ) {
+    1: sg_ICS2_2_1cc;
+	2: sg_ICS2_3_1cc;
+	3: sg_ICS2_4_1cc;
+	4: sg_ICS2_5_1cc;
+	5: sg_ICS2_6_1cc;
+    sg_ICS2_1_1cc;
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS2_1cc_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_ICS2_1cc_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_ICS2_1cc; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, ss_ICS2_2cc_depo, position_in_consist ) {
+    0: ss_ICS2_1_2cc_depo;
+    ss_ICS2_2_2cc_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_2cc, position_in_consist ) {
+    1: sg_ICS2_2_2cc;
+	2: sg_ICS2_3_2cc;
+	3: sg_ICS2_4_2cc;
+	4: sg_ICS2_5_2cc;
+	5: sg_ICS2_6_2cc;
+    sg_ICS2_1_2cc;
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS2_2cc_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_ICS2_2cc_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_ICS2_2cc; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_ss, cargo_subtype) {
+	1: sw_ICS2_2cc_ss;
+	sw_ICS2_1cc_ss;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_articulated, extra_callback_info1) {
+    0..5: item_ICS2;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_capacity, position_in_consist) {
+	1: return 46;
+	2: return 76;
+	3: return 76;
+	4: return 46;
+	5: return 76;
+	return 76;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_length, position_in_consist) {
+	1: return 4;
+	2: return 8;
+	3: return 8;
+	4: return 4;
+	5: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS2_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1CC);
+	1: return string(STR_COLOUR_SCHEME_2CC);
+	CB_RESULT_NO_TEXT;
+}
+
+item(FEAT_ROADVEHS, item_ICS2) {
+	property {
+        name:								string(STR_ICS2_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1977,09,01);
+        model_life:						26;
+        vehicle_life:						40;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					200;
+        cost_factor:						98;
+        running_cost_factor:				200;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+		speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								528 kW;
+        weight:							63 ton;
+        cargo_capacity:					10;
+		cargo_age_period:					74;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_ICS2_ss;
+		purchase:						ss_ICS2_purchase;
+		articulated_part:        		sw_ICS2_articulated;
+		length:                  		sw_ICS2_length;
+		cargo_subtype_text: 			sw_ICS2_livery_text;
+		cargo_capacity: 				sw_ICS2_capacity;
+		purchase_cargo_capacity:		return 396 / 6;
+		additional_text: 				string(STR_ICS2_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------ICS2 End
