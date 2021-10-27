@@ -25,26 +25,32 @@ template tmpl_1(szin,csuklo,rakodas,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8
 template tmpl_toldat() {
 	[0,	0,	1,	1,	1,	1]}	
 
-template tmpl_cng() {
-	[20,	80,	17,	12,	1,	1]}	
-template tmpl_hybrid() {
-	[60,	80,	25,	12,	1,	1]}	
-template tmpl_diesel() {
-	[110,	80,	25,	12,	1,	1]}	
+template tmpl_1x2(szin,csuklo,rakodas,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8){
+	[rakodas*560+20,	((szin-1)*540)+((csuklo-1)*60)+160,	18,	58,	x1,	y1, ANIM]
+	[rakodas*560+40,	((szin-1)*540)+((csuklo-1)*60)+160,	78,	58,	x2,	y2, ANIM]
+	[rakodas*560+120,	((szin-1)*540)+((csuklo-1)*60)+160,	98,	58,	x3,	y3, ANIM]
+	[rakodas*560+220,	((szin-1)*540)+((csuklo-1)*60)+160,	78,	58,	x4,	y4, ANIM]
+	[rakodas*560+300,	((szin-1)*540)+((csuklo-1)*60)+160,	18,	58,	x5,	y5, ANIM]
+	[rakodas*560+320,	((szin-1)*540)+((csuklo-1)*60)+160,	78,	58,	x6,	y6, ANIM]
+	[rakodas*560+400,	((szin-1)*540)+((csuklo-1)*60)+160,	98,	58,	x7,	y7, ANIM]
+	[rakodas*560+500,	((szin-1)*540)+((csuklo-1)*60)+160,	78,	58,	x8,	y8, ANIM]}
+
+template tmpl_1x4(szin,csuklo,rakodas,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8){
+	[rakodas*1120+40,	((szin-1)*1080)+((csuklo-1)*120)+320,	36,	116,	x1,	y1, ANIM]
+	[rakodas*1120+80,	((szin-1)*1080)+((csuklo-1)*120)+320,	156,	116,	x2,	y2, ANIM]
+	[rakodas*1120+240,	((szin-1)*1080)+((csuklo-1)*120)+320,	196,	116,	x3,	y3, ANIM]
+	[rakodas*1120+440,	((szin-1)*1080)+((csuklo-1)*120)+320,	156,	116,	x4,	y4, ANIM]
+	[rakodas*1120+600,	((szin-1)*1080)+((csuklo-1)*120)+320,	36,	116,	x5,	y5, ANIM]
+	[rakodas*1120+640,	((szin-1)*1080)+((csuklo-1)*120)+320,	156,	116,	x6,	y6, ANIM]
+	[rakodas*1120+800,	((szin-1)*1080)+((csuklo-1)*120)+320,	196,	116,	x7,	y7, ANIM]
+	[rakodas*1120+1000,	((szin-1)*1080)+((csuklo-1)*120)+320,	156,	116,	x8,	y8, ANIM]}
 	
-alternative_sprites(ico_cng, ZOOM_LEVEL_NORMAL, BIT_DEPTH_8BPP, "src/icons.png") {
-  [20,	80,	17,	12,	1,	1]
-}
-
-font_glyph ico_cng (NORMAL, 65, "src/icons.png") {
-	[20,	80,	17,	12,	1,	1]}	
+template tmpl_purchase4() {
+	[40,				252,									396,	64,	-100,-36]}
 	
-
-/*spriteset(ss_cng, "src/icons.png")			{tmpl_cng()}
-spriteset(ss_hybrid, "src/icons.png")			{tmpl_hybrid()}
-spriteset(ss_diesel, "src/icons.png")			{tmpl_diesel()}
-
-*/// --------------------------------------------------------------------------------2300
+template tmpl_depo4(szin,csuklo) {
+	[2280,				((szin-1)*1080)+((csuklo-1)*120)+320,	796,64,	-60,-40]}
+// --------------------------------------------------------------------------------2300
 
 // ss=spriteset, sg=spritegroup, sw=switch
 // tmpl_1(szin,csuklo,rakodas,poziciok)
@@ -1385,7 +1391,7 @@ item(FEAT_ROADVEHS, item_CAFdeb) {
 		cargo_subtype_text: 			sw_CAFdeb_livery_text;
 		cargo_capacity: 				sw_CAFdeb_capacity;
 		purchase_cargo_capacity:		return 220 / 5;
-		additional_text: 				return string(STR_CAFdeb_ADAT)+ string(ico_cng);
+		additional_text: 				return string(STR_CAFdeb_ADAT);
     }
 }
 // --------------------------------------------------------------------------------CAFdeb End// --------------------------------------------------------------------------------Combino
@@ -4666,14 +4672,18 @@ item(FEAT_ROADVEHS, item_TW6000) {
 // tmpl_1(szin,csuklo,rakodas,poziciok)
 // tmpl_depo(szin,csuklo)
 
-spriteset(ss_UV_purchase, "src/UV.png")			{tmpl_purchase()}
-spriteset(ss_UV_1_1cc_depo, "src/UV.png")		{tmpl_depo(1,1)}
+spriteset(ss_UV_purchase, "src/UVx4.png")			{tmpl_purchase4()}
+spriteset(ss_UV_1_1cc_depo, "src/UVx4.png")		{tmpl_depo4(1,1)}
 spriteset(ss_UV_1_2cc_depo, "src/UV.png")		{tmpl_depo(2,1)}
-spriteset(ss_UV_1_1cc, "src/UV.png")			{tmpl_1(1,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV_1_1cc, "src/UVx1.png")			{tmpl_1(1,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
 spriteset(ss_UV_1_2cc, "src/UV.png")			{tmpl_1(2,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
-spriteset(ss_UV_1_1cc_rak, "src/UV.png")	{tmpl_1(1,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV_1_1cc_rak, "src/UVx1.png")	{tmpl_1(1,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
 spriteset(ss_UV_1_2cc_rak, "src/UV.png")	{tmpl_1(2,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
 
+alternative_sprites(ss_UV_1_1cc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/UVx2.png") {tmpl_1x2(1,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+alternative_sprites(ss_UV_1_1cc_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/UVx2.png") {tmpl_1x2(1,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+alternative_sprites(ss_UV_1_1cc, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/UVx4.png") {tmpl_1x4(1,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+alternative_sprites(ss_UV_1_1cc_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/UVx4.png") {tmpl_1x4(1,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
 
 spritegroup sg_UV_1_1cc {	loaded:  [ss_UV_1_1cc];	loading: [ss_UV_1_1cc_rak];}
 spritegroup sg_UV_1_2cc {	loaded:  [ss_UV_1_2cc];	loading: [ss_UV_1_2cc_rak];}

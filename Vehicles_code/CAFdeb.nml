@@ -133,7 +133,7 @@ item(FEAT_ROADVEHS, item_CAFdeb) {
 		cargo_subtype_text: 			sw_CAFdeb_livery_text;
 		cargo_capacity: 				sw_CAFdeb_capacity;
 		purchase_cargo_capacity:		return 220 / 5;
-		additional_text: 				return string(STR_CAFdeb_ADAT)+ string(ico_cng);
+		additional_text: 				return string(STR_CAFdeb_ADAT);
     }
 }
 // --------------------------------------------------------------------------------CAFdeb End

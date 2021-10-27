@@ -25,23 +25,28 @@ template tmpl_1(szin,csuklo,rakodas,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8
 template tmpl_toldat() {
 	[0,	0,	1,	1,	1,	1]}	
 
-template tmpl_cng() {
-	[20,	80,	17,	12,	1,	1]}	
-template tmpl_hybrid() {
-	[60,	80,	25,	12,	1,	1]}	
-template tmpl_diesel() {
-	[110,	80,	25,	12,	1,	1]}	
+template tmpl_1x2(szin,csuklo,rakodas,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8){
+	[rakodas*560+20,	((szin-1)*540)+((csuklo-1)*60)+160,	18,	58,	x1,	y1, ANIM]
+	[rakodas*560+40,	((szin-1)*540)+((csuklo-1)*60)+160,	78,	58,	x2,	y2, ANIM]
+	[rakodas*560+120,	((szin-1)*540)+((csuklo-1)*60)+160,	98,	58,	x3,	y3, ANIM]
+	[rakodas*560+220,	((szin-1)*540)+((csuklo-1)*60)+160,	78,	58,	x4,	y4, ANIM]
+	[rakodas*560+300,	((szin-1)*540)+((csuklo-1)*60)+160,	18,	58,	x5,	y5, ANIM]
+	[rakodas*560+320,	((szin-1)*540)+((csuklo-1)*60)+160,	78,	58,	x6,	y6, ANIM]
+	[rakodas*560+400,	((szin-1)*540)+((csuklo-1)*60)+160,	98,	58,	x7,	y7, ANIM]
+	[rakodas*560+500,	((szin-1)*540)+((csuklo-1)*60)+160,	78,	58,	x8,	y8, ANIM]}
+
+template tmpl_1x4(szin,csuklo,rakodas,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8){
+	[rakodas*1120+40,	((szin-1)*1080)+((csuklo-1)*120)+320,	36,	116,	x1,	y1, ANIM]
+	[rakodas*1120+80,	((szin-1)*1080)+((csuklo-1)*120)+320,	156,	116,	x2,	y2, ANIM]
+	[rakodas*1120+240,	((szin-1)*1080)+((csuklo-1)*120)+320,	196,	116,	x3,	y3, ANIM]
+	[rakodas*1120+440,	((szin-1)*1080)+((csuklo-1)*120)+320,	156,	116,	x4,	y4, ANIM]
+	[rakodas*1120+600,	((szin-1)*1080)+((csuklo-1)*120)+320,	36,	116,	x5,	y5, ANIM]
+	[rakodas*1120+640,	((szin-1)*1080)+((csuklo-1)*120)+320,	156,	116,	x6,	y6, ANIM]
+	[rakodas*1120+800,	((szin-1)*1080)+((csuklo-1)*120)+320,	196,	116,	x7,	y7, ANIM]
+	[rakodas*1120+1000,	((szin-1)*1080)+((csuklo-1)*120)+320,	156,	116,	x8,	y8, ANIM]}
 	
-alternative_sprites(ico_cng, ZOOM_LEVEL_NORMAL, BIT_DEPTH_8BPP, "src/icons.png") {
-  [20,	80,	17,	12,	1,	1]
-}
-
-font_glyph ico_cng (NORMAL, 65, "src/icons.png") {
-	[20,	80,	17,	12,	1,	1]}	
+template tmpl_purchase4() {
+	[40,				252,									396,	64,	-100,-36]}
 	
-
-/*spriteset(ss_cng, "src/icons.png")			{tmpl_cng()}
-spriteset(ss_hybrid, "src/icons.png")			{tmpl_hybrid()}
-spriteset(ss_diesel, "src/icons.png")			{tmpl_diesel()}
-
-*/
+template tmpl_depo4(szin,csuklo) {
+	[2280,				((szin-1)*1080)+((csuklo-1)*120)+320,	796,64,	-60,-40]}

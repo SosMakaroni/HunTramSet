@@ -7,11 +7,15 @@
 spriteset(ss_UV_purchase, "src/UV.png")			{tmpl_purchase()}
 spriteset(ss_UV_1_1cc_depo, "src/UV.png")		{tmpl_depo(1,1)}
 spriteset(ss_UV_1_2cc_depo, "src/UV.png")		{tmpl_depo(2,1)}
-spriteset(ss_UV_1_1cc, "src/UV.png")			{tmpl_1(1,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV_1_1cc, "src/UVx1.png")			{tmpl_1(1,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
 spriteset(ss_UV_1_2cc, "src/UV.png")			{tmpl_1(2,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
-spriteset(ss_UV_1_1cc_rak, "src/UV.png")	{tmpl_1(1,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV_1_1cc_rak, "src/UVx1.png")	{tmpl_1(1,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
 spriteset(ss_UV_1_2cc_rak, "src/UV.png")	{tmpl_1(2,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
 
+alternative_sprites(ss_UV_1_1cc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/UVx2.png") {tmpl_1x2(1,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+alternative_sprites(ss_UV_1_1cc_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/UVx2.png") {tmpl_1x2(1,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+alternative_sprites(ss_UV_1_1cc, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/UVx4.png") {tmpl_1x4(1,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+alternative_sprites(ss_UV_1_1cc_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/UVx4.png") {tmpl_1x4(1,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
 
 spritegroup sg_UV_1_1cc {	loaded:  [ss_UV_1_1cc];	loading: [ss_UV_1_1cc_rak];}
 spritegroup sg_UV_1_2cc {	loaded:  [ss_UV_1_2cc];	loading: [ss_UV_1_2cc_rak];}
