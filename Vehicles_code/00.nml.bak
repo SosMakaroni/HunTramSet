@@ -83,7 +83,7 @@ font_glyph (MONO, 0x0110, "src/icons.png") {
 
 //Twin logo, replaces Ń 0x0143
 font_glyph (NORMAL, 0x0143, "src/icons.png") {
-	[20,110,21,10,0,0]
+	[20,80,21,10,0,0]
 }
 font_glyph (SMALL, 0x0143, "src/icons.png") {
 	[10,80,1,1,0,0]

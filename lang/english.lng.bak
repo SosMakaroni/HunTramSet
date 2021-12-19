@@ -25,13 +25,13 @@ STR_2300_NAME:2300 {BROWN}ł{BLACK}
 STR_2300_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
 STR_2300p_NAME:2300 + Ł {BROWN}ł{BLACK}
 STR_2300p_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
-STR_2300t_a_NAME:2300 Ń {BROWN}ł{BLACK}
+STR_2300t_a_NAME:2300 twin {BROWN}ł{BLACK}
 STR_2300t_a_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
-STR_2300t_b_NAME:2300 Ń
+STR_2300t_b_NAME:2300 twin
 STR_2300t_b_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
 STR_ADEL_NAME:ADEL
 STR_ADEL_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
-STR_O2_NAME:O Ń
+STR_O2_NAME:O twin
 STR_O2_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
 STR_RV2_NAME:RV đ
 STR_RV2_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
