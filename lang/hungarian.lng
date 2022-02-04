@@ -1,9 +1,9 @@
-﻿##grflangid 0x01
-# This is the English language file
+﻿##grflangid 0x24
+# Ez a magyar nyelvi fájl
 
 # GRF name and description definitions
 STR_GRF_NAME	:HunTramSet
-STR_GRF_DESC	:{}{RED}H{WHITE}U{DKGREEN}N{LTBLUE}garian Tram Set {}{BLACK}Last update:{WHITE} 2022.01.25 {}{BLACK}Coded and drawn:{GREEN}SosMakaroni & Collosal404{} {COPYRIGHT}2022 SosMakaroni & {COPYRIGHT}2022 Collosal404{}{GRAY}License: GPLv2{}{BLACK}Trams used in Hungary.{}Imported trams were not given a date of manufacture but an date of import.{}There are realistic prototypes among them.
+STR_GRF_DESC	:{}{RED}MA{WHITE}GY{DKGREEN}AR{LTBLUE} Villamos Set {}{BLACK}Utolsó freissítés:{WHITE} 2022.01.25 {}{BLACK}Coded and drawn:{GREEN}SosMakaroni & Collosal404{} {COPYRIGHT}2022 SosMakaroni & {COPYRIGHT}2022 Collosal404{}{GRAY}License: GPLv2{}{BLACK}Trams used in Hungary.{}Imported trams were not given a date of manufacture but an date of import.{}There are realistic prototypes among them.
 
 STR_A_a_NAME:A {BROWN}ł{BLACK}
 STR_A_a_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BURV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}{BROWN}ł frame{BLACK}{}

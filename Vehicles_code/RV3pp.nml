@@ -87,18 +87,22 @@ switch (FEAT_ROADVEHS, SELF, sw_RV3pp_articulated, extra_callback_info1) {
     CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 switch (FEAT_ROADVEHS, SELF, sw_RV3pp_capacity, position_in_consist) {
-	1: return 76;
-	2: return 74;
-	3: return 76;
+	1: return 77;
+	2: return 75;
+	3: return 77;
 	4: return 74;
 	return 74;
 }
+//switch (FEAT_ROADVEHS, SELF, sw_RV3pp_weight, position_in_articulated_veh) {
+//	1..4: return 0;
+//	return 68*4;
+//}
 switch (FEAT_ROADVEHS, SELF, sw_RV3pp_length, position_in_consist) {
-	1: return 6;
-	2: return 6;
-	3: return 6;
+	1: return 8;
+	2: return 8;
+	3: return 8;
 	4: return 8;
-    return 6;
+    return 8;
 }
 switch (FEAT_ROADVEHS, SELF, sw_RV3pp_livery_text, cargo_subtype) {
 	0: return string(STR_COLOUR_SCHEME_1CC);
@@ -117,16 +121,16 @@ item(FEAT_ROADVEHS, item_RV3pp) {
         reliability_decay:				80;
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
-        loading_speed:					48;
+        loading_speed:					120;
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								45 km/h;
+        speed:								50 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
         power:								381 hp;
-        weight:							63 ton;
+        weight:							0 ton;
         cargo_capacity:					10;
 		cargo_age_period:					74;
         sound_effect:						SOUND_ELECTRIC_SPARK;
@@ -137,8 +141,10 @@ item(FEAT_ROADVEHS, item_RV3pp) {
 		articulated_part:        		sw_RV3pp_articulated;
 		length:                  		sw_RV3pp_length;
 		cargo_subtype_text: 			sw_RV3pp_livery_text;
+		weight:						68*4;
+		purchase_weight:				68*4;
 		cargo_capacity: 				sw_RV3pp_capacity;
-		purchase_cargo_capacity:		return 374 / 4;
+		purchase_cargo_capacity:		return 377 / 5;
 		additional_text: 				string(STR_RV3pp_ADAT);
     }
 }

@@ -62,7 +62,7 @@ switch (FEAT_ROADVEHS, SELF, sw_RV2_capacity, position_in_consist) {
 }
 switch (FEAT_ROADVEHS, SELF, sw_RV2_length, position_in_consist) {
 	1: return 8;
-    return 6;
+    return 8;
 }
 switch (FEAT_ROADVEHS, SELF, sw_RV2_livery_text, cargo_subtype) {
 	0: return string(STR_COLOUR_SCHEME_1CC);
@@ -77,7 +77,7 @@ item(FEAT_ROADVEHS, item_RV2) {
         climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
         introduction_date:				date(1930,01,01);
         model_life:						30;
-        vehicle_life:						50;
+        vehicle_life:						39;
         reliability_decay:				80;
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
@@ -85,7 +85,7 @@ item(FEAT_ROADVEHS, item_RV2) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								45 km/h;
+        speed:								50 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;

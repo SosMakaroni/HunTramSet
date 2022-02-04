@@ -2,8 +2,8 @@ grf {
 	grfid: "HS\15\01";
 	name: string(STR_GRF_NAME);
 	desc: string(STR_GRF_DESC);
-	version: 0;
-	min_compatible_version: 0;
+	version: 10;
+	min_compatible_version: 5722;
 }
 
 template tmpl_purchase() {
@@ -25,32 +25,75 @@ template tmpl_1(szin,csuklo,rakodas,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8
 template tmpl_toldat() {
 	[0,	0,	1,	1,	1,	1]}	
 
-template tmpl_1x2(szin,csuklo,rakodas,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8){
-	[rakodas*560+20,	((szin-1)*540)+((csuklo-1)*60)+160,	18,	58,	x1,	y1, ANIM]
-	[rakodas*560+40,	((szin-1)*540)+((csuklo-1)*60)+160,	78,	58,	x2,	y2, ANIM]
-	[rakodas*560+120,	((szin-1)*540)+((csuklo-1)*60)+160,	98,	58,	x3,	y3, ANIM]
-	[rakodas*560+220,	((szin-1)*540)+((csuklo-1)*60)+160,	78,	58,	x4,	y4, ANIM]
-	[rakodas*560+300,	((szin-1)*540)+((csuklo-1)*60)+160,	18,	58,	x5,	y5, ANIM]
-	[rakodas*560+320,	((szin-1)*540)+((csuklo-1)*60)+160,	78,	58,	x6,	y6, ANIM]
-	[rakodas*560+400,	((szin-1)*540)+((csuklo-1)*60)+160,	98,	58,	x7,	y7, ANIM]
-	[rakodas*560+500,	((szin-1)*540)+((csuklo-1)*60)+160,	78,	58,	x8,	y8, ANIM]}
+//Wood logo, replaces ł 0x0142
+font_glyph (NORMAL, 0x0142, "src/icons.png") {
+	[20,80,24,10,0,0]
+}
+font_glyph (SMALL, 0x0142, "src/icons.png") {
+	[10,80,1,1,0,0]
+}
+font_glyph (LARGE, 0x0142, "src/icons.png") {
+	[10,80,1,1,0,0]
+}
+font_glyph (MONO, 0x0142, "src/icons.png") {
+	[10,80,1,1,0,0]
+}
 
-template tmpl_1x4(szin,csuklo,rakodas,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8){
-	[rakodas*1120+40,	((szin-1)*1080)+((csuklo-1)*120)+320,	36,	116,	x1,	y1, ANIM]
-	[rakodas*1120+80,	((szin-1)*1080)+((csuklo-1)*120)+320,	156,	116,	x2,	y2, ANIM]
-	[rakodas*1120+240,	((szin-1)*1080)+((csuklo-1)*120)+320,	196,	116,	x3,	y3, ANIM]
-	[rakodas*1120+440,	((szin-1)*1080)+((csuklo-1)*120)+320,	156,	116,	x4,	y4, ANIM]
-	[rakodas*1120+600,	((szin-1)*1080)+((csuklo-1)*120)+320,	36,	116,	x5,	y5, ANIM]
-	[rakodas*1120+640,	((szin-1)*1080)+((csuklo-1)*120)+320,	156,	116,	x6,	y6, ANIM]
-	[rakodas*1120+800,	((szin-1)*1080)+((csuklo-1)*120)+320,	196,	116,	x7,	y7, ANIM]
-	[rakodas*1120+1000,	((szin-1)*1080)+((csuklo-1)*120)+320,	156,	116,	x8,	y8, ANIM]}
-	
-template tmpl_purchase4() {
-	[40,				252,									396,	64,	-100,-36]}
-	
-template tmpl_depo4(szin,csuklo) {
-	[2280,				((szin-1)*1080)+((csuklo-1)*120)+320,	796,64,	-60,-40]}
-// --------------------------------------------------------------------------------2300
+//Trailer logo, replaces Ł 0x0141
+font_glyph (NORMAL, 0x0141, "src/icons.png") {
+	[60,80,29,10,0,0]
+}
+font_glyph (SMALL, 0x0141, "src/icons.png") {
+	[10,80,1,1,0,0]
+}
+font_glyph (LARGE, 0x0141, "src/icons.png") {
+	[10,80,1,1,0,0]
+}
+font_glyph (MONO, 0x0141, "src/icons.png") {
+	[10,80,1,1,0,0]
+}
+
+//Double logo, replaces đ 0x0111
+font_glyph (NORMAL, 0x0111, "src/icons.png") {
+	[110,80,29,10,0,0]
+}
+font_glyph (SMALL, 0x0111, "src/icons.png") {
+	[10,80,1,1,0,0]
+}
+font_glyph (LARGE, 0x0111, "src/icons.png") {
+	[10,80,1,1,0,0]
+}
+font_glyph (MONO, 0x0111, "src/icons.png") {
+	[10,80,1,1,0,0]
+}
+
+//Triple logo, replaces Đ 0x0110
+font_glyph (NORMAL, 0x0110, "src/icons.png") {
+	[160,80,25,10,0,0]
+}
+font_glyph (SMALL, 0x0110, "src/icons.png") {
+	[10,80,1,1,0,0]
+}
+font_glyph (LARGE, 0x0110, "src/icons.png") {
+	[10,80,1,1,0,0]
+}
+font_glyph (MONO, 0x0110, "src/icons.png") {
+	[10,80,1,1,0,0]
+}
+
+//Twin logo, replaces Ń 0x0143
+font_glyph (NORMAL, 0x0143, "src/icons.png") {
+	[20,110,21,10,0,0]
+}
+font_glyph (SMALL, 0x0143, "src/icons.png") {
+	[10,80,1,1,0,0]
+}
+font_glyph (LARGE, 0x0143, "src/icons.png") {
+	[10,80,1,1,0,0]
+}
+font_glyph (MONO, 0x0143, "src/icons.png") {
+	[10,80,1,1,0,0]
+}// --------------------------------------------------------------------------------2300
 
 // ss=spriteset, sg=spritegroup, sw=switch
 // tmpl_1(szin,csuklo,rakodas,poziciok)
@@ -107,7 +150,7 @@ item(FEAT_ROADVEHS, item_2300) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								40 km/h;
+        speed:								47 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
@@ -214,7 +257,7 @@ item(FEAT_ROADVEHS, item_2300p) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								40 km/h;
+        speed:								47 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
@@ -322,13 +365,13 @@ item(FEAT_ROADVEHS, item_2300t_a) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								40 km/h;
+        speed:								47 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
-        power:								140 hp;
+        power:								110 hp;
         weight:							20 ton;
-        cargo_capacity:					10;
+        cargo_capacity:					120;
 		cargo_age_period:					74;
         sound_effect:						SOUND_ELECTRIC_SPARK;
     }
@@ -430,13 +473,13 @@ item(FEAT_ROADVEHS, item_2300t_b) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								40 km/h;
+        speed:								47 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
         power:								132 hp;
         weight:							22 ton;
-        cargo_capacity:					10;
+        cargo_capacity:					100;
 		cargo_age_period:					74;
         sound_effect:						SOUND_ELECTRIC_SPARK;
     }
@@ -548,7 +591,7 @@ item(FEAT_ROADVEHS, item_ADEL) {
         cost_factor:						49;
         running_cost_factor:				100;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								40 km/h;
+        speed:								42 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
@@ -629,7 +672,7 @@ switch (FEAT_ROADVEHS, SELF, sw_Ap_a_articulated, extra_callback_info1) {
     CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 switch (FEAT_ROADVEHS, SELF, sw_Ap_a_capacity, position_in_consist) {
-	1: return 30;
+	1: return 36;
 	return 30;
 }
 switch (FEAT_ROADVEHS, SELF, sw_Ap_a_length, position_in_consist) {
@@ -657,12 +700,12 @@ item(FEAT_ROADVEHS, item_Ap_a) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								40 km/h;
+        speed:								35 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
-        power:								40 kW;
-        weight:							10 ton;
+        power:								30 hp;
+        weight:							11 ton;
         cargo_capacity:					60;
 		cargo_age_period:					74;
         sound_effect:						SOUND_ELECTRIC_SPARK;
@@ -674,7 +717,7 @@ item(FEAT_ROADVEHS, item_Ap_a) {
 		length:                  		sw_Ap_a_length;
 		cargo_subtype_text: 			sw_Ap_a_livery_text;
 		cargo_capacity: 				sw_Ap_a_capacity;
-		purchase_cargo_capacity:		return 60 / 2;
+		purchase_cargo_capacity:		return 66 / 2;
 		additional_text: 				string(STR_Ap_a_ADAT);
     }
 }
@@ -737,8 +780,8 @@ switch (FEAT_ROADVEHS, SELF, sw_Ap_b_articulated, extra_callback_info1) {
     CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 switch (FEAT_ROADVEHS, SELF, sw_Ap_b_capacity, position_in_consist) {
-	1: return 30;
-	return 30;
+	1: return 34;
+	return 28;
 }
 switch (FEAT_ROADVEHS, SELF, sw_Ap_b_length, position_in_consist) {
 	1: return 8;
@@ -765,13 +808,13 @@ item(FEAT_ROADVEHS, item_Ap_b) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								40 km/h;
+        speed:								35 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
-        power:								40 kW;
+        power:								60 hp;
         weight:							12 ton;
-        cargo_capacity:					60;
+        cargo_capacity:					62;
 		cargo_age_period:					74;
         sound_effect:						SOUND_ELECTRIC_SPARK;
     }
@@ -782,7 +825,7 @@ item(FEAT_ROADVEHS, item_Ap_b) {
 		length:                  		sw_Ap_b_length;
 		cargo_subtype_text: 			sw_Ap_b_livery_text;
 		cargo_capacity: 				sw_Ap_b_capacity;
-		purchase_cargo_capacity:		return 60 / 2;
+		purchase_cargo_capacity:		return 62 / 2;
 		additional_text: 				string(STR_Ap_b_ADAT);
     }
 }
@@ -843,12 +886,12 @@ item(FEAT_ROADVEHS, item_A_a) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								40 km/h;
+        speed:								35 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
-        power:								40 kW;
-        weight:							7 ton;
+        power:								30 hp;
+        weight:							6 ton;
         cargo_capacity:					30;
 		cargo_age_period:					74;
         sound_effect:						SOUND_ELECTRIC_SPARK;
@@ -920,13 +963,13 @@ item(FEAT_ROADVEHS, item_A_b) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								40 km/h;
+        speed:								35 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
-        power:								40 kW;
-        weight:							9 ton;
-        cargo_capacity:					30;
+        power:								60 hp;
+        weight:							7 ton;
+        cargo_capacity:					28;
 		cargo_age_period:					74;
         sound_effect:						SOUND_ELECTRIC_SPARK;
     }
@@ -936,7 +979,7 @@ item(FEAT_ROADVEHS, item_A_b) {
 		length:                  		sw_A_b_length;
 		cargo_subtype_text: 			sw_A_b_livery_text;
 		cargo_capacity: 				sw_A_b_capacity;
-		purchase_cargo_capacity:		return 30;
+		purchase_cargo_capacity:		return 28;
 		additional_text: 				string(STR_A_b_ADAT);
     }
 }
@@ -1738,9 +1781,9 @@ item(FEAT_ROADVEHS, item_Fp_a) {
 	property {
         name:								string(STR_Fp_a_NAME);
         climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
-        introduction_date:				date(1914,01,01);
-        model_life:						27;
-        vehicle_life:						50;
+        introduction_date:				date(1904,01,01);
+        model_life:						20;
+        vehicle_life:						55;
         reliability_decay:				80;
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
@@ -1748,13 +1791,13 @@ item(FEAT_ROADVEHS, item_Fp_a) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								40 km/h;
+        speed:								45 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
-        power:								40 kW;
-        weight:							11 ton;
-        cargo_capacity:					10;
+        power:								48 hp;
+        weight:							16 ton;
+        cargo_capacity:					84;
 		cargo_age_period:					74;
         sound_effect:						SOUND_ELECTRIC_SPARK;
     }
@@ -1829,7 +1872,7 @@ switch (FEAT_ROADVEHS, SELF, sw_Fp_b_articulated, extra_callback_info1) {
 }
 switch (FEAT_ROADVEHS, SELF, sw_Fp_b_capacity, position_in_consist) {
 	1: return 42;
-	return 42;
+	return 40;
 }
 switch (FEAT_ROADVEHS, SELF, sw_Fp_b_length, position_in_consist) {
 	1: return 8;
@@ -1846,7 +1889,7 @@ item(FEAT_ROADVEHS, item_Fp_b) {
 	property {
         name:								string(STR_Fp_b_NAME);
         climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
-        introduction_date:				date(1941,01,01);
+        introduction_date:				date(1956,01,01);
         model_life:						20;
         vehicle_life:						50;
         reliability_decay:				80;
@@ -1856,13 +1899,13 @@ item(FEAT_ROADVEHS, item_Fp_b) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								40 km/h;
+        speed:								45 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
-        power:								40 kW;
-        weight:							13 ton;
-        cargo_capacity:					10;
+        power:								140 hp;
+        weight:							19 ton;
+        cargo_capacity:					82;
 		cargo_age_period:					74;
         sound_effect:						SOUND_ELECTRIC_SPARK;
     }
@@ -1873,7 +1916,7 @@ item(FEAT_ROADVEHS, item_Fp_b) {
 		length:                  		sw_Fp_b_length;
 		cargo_subtype_text: 			sw_Fp_b_livery_text;
 		cargo_capacity: 				sw_Fp_b_capacity;
-		purchase_cargo_capacity:		return 84 / 2;
+		purchase_cargo_capacity:		return 82 / 2;
 		additional_text: 				string(STR_Fp_b_ADAT);
     }
 }
@@ -1924,9 +1967,9 @@ item(FEAT_ROADVEHS, item_F_a) {
 	property {
         name:								string(STR_F_a_NAME);
         climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
-        introduction_date:				date(1914,01,01);
-        model_life:						27;
-        vehicle_life:						50;
+        introduction_date:				date(1904,01,01);
+        model_life:						20;
+        vehicle_life:						52;
         reliability_decay:				80;
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
@@ -1934,12 +1977,12 @@ item(FEAT_ROADVEHS, item_F_a) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								40 km/h;
+        speed:								45 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
-        power:								40 kW;
-        weight:							8 ton;
+        power:								48 hp;
+        weight:							11 ton;
         cargo_capacity:					42;
 		cargo_age_period:					74;
         sound_effect:						SOUND_ELECTRIC_SPARK;
@@ -1985,7 +2028,7 @@ switch (FEAT_ROADVEHS, SELF, sw_F_b_ss, cargo_subtype) {
 	sw_F_b_1cc_ss;
 }
 switch (FEAT_ROADVEHS, SELF, sw_F_b_capacity, position_in_consist) {
-	return 42;
+	return 40;
 }
 switch (FEAT_ROADVEHS, SELF, sw_F_b_length, position_in_consist) {
     return 8;
@@ -2001,7 +2044,7 @@ item(FEAT_ROADVEHS, item_F_b) {
 	property {
         name:								string(STR_F_b_NAME);
         climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
-        introduction_date:				date(1941,01,01);
+        introduction_date:				date(1956,01,01);
         model_life:						20;
         vehicle_life:						50;
         reliability_decay:				80;
@@ -2011,13 +2054,13 @@ item(FEAT_ROADVEHS, item_F_b) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								40 km/h;
+        speed:								45 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
-        power:								40 kW;
-        weight:							10 ton;
-        cargo_capacity:					42;
+        power:								140 hp;
+        weight:							13 ton;
+        cargo_capacity:					40;
 		cargo_age_period:					74;
         sound_effect:						SOUND_ELECTRIC_SPARK;
     }
@@ -2027,7 +2070,7 @@ item(FEAT_ROADVEHS, item_F_b) {
 		length:                  		sw_F_b_length;
 		cargo_subtype_text: 			sw_F_b_livery_text;
 		cargo_capacity: 				sw_F_b_capacity;
-		purchase_cargo_capacity:		return 42;
+		purchase_cargo_capacity:		return 40;
 		additional_text: 				string(STR_F_b_ADAT);
     }
 }
@@ -3072,7 +3115,7 @@ item(FEAT_ROADVEHS, item_O2) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								45 km/h;
+        speed:								48 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
@@ -3295,7 +3338,7 @@ switch (FEAT_ROADVEHS, SELF, sw_RV2_capacity, position_in_consist) {
 }
 switch (FEAT_ROADVEHS, SELF, sw_RV2_length, position_in_consist) {
 	1: return 8;
-    return 6;
+    return 8;
 }
 switch (FEAT_ROADVEHS, SELF, sw_RV2_livery_text, cargo_subtype) {
 	0: return string(STR_COLOUR_SCHEME_1CC);
@@ -3310,7 +3353,7 @@ item(FEAT_ROADVEHS, item_RV2) {
         climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
         introduction_date:				date(1930,01,01);
         model_life:						30;
-        vehicle_life:						50;
+        vehicle_life:						39;
         reliability_decay:				80;
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
@@ -3318,7 +3361,7 @@ item(FEAT_ROADVEHS, item_RV2) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								45 km/h;
+        speed:								50 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
@@ -3408,14 +3451,14 @@ switch (FEAT_ROADVEHS, SELF, sw_RV2p_articulated, extra_callback_info1) {
     CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 switch (FEAT_ROADVEHS, SELF, sw_RV2p_capacity, position_in_consist) {
-	1: return 76;
+	1: return 77;
 	2: return 74;
 	return 74;
 }
 switch (FEAT_ROADVEHS, SELF, sw_RV2p_length, position_in_consist) {
-	1: return 6;
+	1: return 8;
 	2: return 8;
-    return 6;
+    return 8;
 }
 switch (FEAT_ROADVEHS, SELF, sw_RV2p_livery_text, cargo_subtype) {
 	0: return string(STR_COLOUR_SCHEME_1CC);
@@ -3430,21 +3473,21 @@ item(FEAT_ROADVEHS, item_RV2p) {
         climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
         introduction_date:				date(1930,01,01);
         model_life:						30;
-        vehicle_life:						50;
+        vehicle_life:						39;
         reliability_decay:				80;
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
-        loading_speed:					48;
+        loading_speed:					72;
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								45 km/h;
+        speed:								50 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
         power:								254 hp;
         weight:							42 ton;
-        cargo_capacity:					10;
+        cargo_capacity:					225;
 		cargo_age_period:					74;
         sound_effect:						SOUND_ELECTRIC_SPARK;
     }
@@ -3455,7 +3498,7 @@ item(FEAT_ROADVEHS, item_RV2p) {
 		length:                  		sw_RV2p_length;
 		cargo_subtype_text: 			sw_RV2p_livery_text;
 		cargo_capacity: 				sw_RV2p_capacity;
-		purchase_cargo_capacity:		return 224 / 3;
+		purchase_cargo_capacity:		return 225 / 3;
 		additional_text: 				string(STR_RV2p_ADAT);
     }
 }
@@ -3544,10 +3587,10 @@ switch (FEAT_ROADVEHS, SELF, sw_RV2pp_capacity, position_in_consist) {
 	return 74;
 }
 switch (FEAT_ROADVEHS, SELF, sw_RV2pp_length, position_in_consist) {
-	1: return 6;
-	2: return 6;
+	1: return 8;
+	2: return 8;
 	3: return 8;
-    return 6;
+    return 8;
 }
 switch (FEAT_ROADVEHS, SELF, sw_RV2pp_livery_text, cargo_subtype) {
 	0: return string(STR_COLOUR_SCHEME_1CC);
@@ -3560,23 +3603,23 @@ item(FEAT_ROADVEHS, item_RV2pp) {
 	property {
         name:								string(STR_RV2pp_NAME);
         climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
-        introduction_date:				date(1930,01,01);
+        introduction_date:				date(1948,01,01);
         model_life:						30;
-        vehicle_life:						50;
+        vehicle_life:						12;
         reliability_decay:				80;
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
-        loading_speed:					48;
+        loading_speed:					96;
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								45 km/h;
+        speed:								50 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
         power:								254 hp;
         weight:							52 ton;
-        cargo_capacity:					10;
+        cargo_capacity:					1;
 		cargo_age_period:					74;
         sound_effect:						SOUND_ELECTRIC_SPARK;
     }
@@ -3680,18 +3723,22 @@ switch (FEAT_ROADVEHS, SELF, sw_RV3pp_articulated, extra_callback_info1) {
     CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 switch (FEAT_ROADVEHS, SELF, sw_RV3pp_capacity, position_in_consist) {
-	1: return 76;
-	2: return 74;
-	3: return 76;
+	1: return 77;
+	2: return 75;
+	3: return 77;
 	4: return 74;
 	return 74;
 }
+//switch (FEAT_ROADVEHS, SELF, sw_RV3pp_weight, position_in_articulated_veh) {
+//	1..4: return 0;
+//	return 68*4;
+//}
 switch (FEAT_ROADVEHS, SELF, sw_RV3pp_length, position_in_consist) {
-	1: return 6;
-	2: return 6;
-	3: return 6;
+	1: return 8;
+	2: return 8;
+	3: return 8;
 	4: return 8;
-    return 6;
+    return 8;
 }
 switch (FEAT_ROADVEHS, SELF, sw_RV3pp_livery_text, cargo_subtype) {
 	0: return string(STR_COLOUR_SCHEME_1CC);
@@ -3710,16 +3757,16 @@ item(FEAT_ROADVEHS, item_RV3pp) {
         reliability_decay:				80;
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
-        loading_speed:					48;
+        loading_speed:					120;
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								45 km/h;
+        speed:								50 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
         power:								381 hp;
-        weight:							63 ton;
+        weight:							0 ton;
         cargo_capacity:					10;
 		cargo_age_period:					74;
         sound_effect:						SOUND_ELECTRIC_SPARK;
@@ -3730,8 +3777,10 @@ item(FEAT_ROADVEHS, item_RV3pp) {
 		articulated_part:        		sw_RV3pp_articulated;
 		length:                  		sw_RV3pp_length;
 		cargo_subtype_text: 			sw_RV3pp_livery_text;
+		weight:						68*4;
+		purchase_weight:				68*4;
 		cargo_capacity: 				sw_RV3pp_capacity;
-		purchase_cargo_capacity:		return 374 / 4;
+		purchase_cargo_capacity:		return 377 / 5;
 		additional_text: 				string(STR_RV3pp_ADAT);
     }
 }
@@ -3799,7 +3848,7 @@ switch (FEAT_ROADVEHS, SELF, sw_RVp_capacity, position_in_consist) {
 }
 switch (FEAT_ROADVEHS, SELF, sw_RVp_length, position_in_consist) {
 	1: return 8;
-    return 6;
+    return 8;
 }
 switch (FEAT_ROADVEHS, SELF, sw_RVp_livery_text, cargo_subtype) {
 	0: return string(STR_COLOUR_SCHEME_1CC);
@@ -3812,9 +3861,9 @@ item(FEAT_ROADVEHS, item_RVp) {
 	property {
         name:								string(STR_RVp_NAME);
         climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
-        introduction_date:				date(1930,01,01);
+        introduction_date:				date(1954,01,01);
         model_life:						30;
-        vehicle_life:						50;
+        vehicle_life:						30;
         reliability_decay:				80;
         refittable_cargo_classes:		bitmask(CC_PASSENGERS);
         non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
@@ -3822,7 +3871,7 @@ item(FEAT_ROADVEHS, item_RVp) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								45 km/h;
+        speed:								50 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
@@ -4672,18 +4721,14 @@ item(FEAT_ROADVEHS, item_TW6000) {
 // tmpl_1(szin,csuklo,rakodas,poziciok)
 // tmpl_depo(szin,csuklo)
 
-spriteset(ss_UV_purchase, "src/UVx4.png")			{tmpl_purchase4()}
-spriteset(ss_UV_1_1cc_depo, "src/UVx4.png")		{tmpl_depo4(1,1)}
+spriteset(ss_UV_purchase, "src/UV.png")			{tmpl_purchase()}
+spriteset(ss_UV_1_1cc_depo, "src/UV.png")		{tmpl_depo(1,1)}
 spriteset(ss_UV_1_2cc_depo, "src/UV.png")		{tmpl_depo(2,1)}
-spriteset(ss_UV_1_1cc, "src/UVx1.png")			{tmpl_1(1,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV_1_1cc, "src/UV.png")			{tmpl_1(1,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
 spriteset(ss_UV_1_2cc, "src/UV.png")			{tmpl_1(2,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
-spriteset(ss_UV_1_1cc_rak, "src/UVx1.png")	{tmpl_1(1,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
+spriteset(ss_UV_1_1cc_rak, "src/UV.png")	{tmpl_1(1,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
 spriteset(ss_UV_1_2cc_rak, "src/UV.png")	{tmpl_1(2,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
 
-alternative_sprites(ss_UV_1_1cc, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/UVx2.png") {tmpl_1x2(1,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
-alternative_sprites(ss_UV_1_1cc_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/UVx2.png") {tmpl_1x2(1,1,0,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
-alternative_sprites(ss_UV_1_1cc, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/UVx4.png") {tmpl_1x4(1,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
-alternative_sprites(ss_UV_1_1cc_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/UVx4.png") {tmpl_1x4(1,1,1,-3,-6,-15,-6,-10,-10,-5,-7,0,0,-15,-8,-10,-10,-5,-9)}
 
 spritegroup sg_UV_1_1cc {	loaded:  [ss_UV_1_1cc];	loading: [ss_UV_1_1cc_rak];}
 spritegroup sg_UV_1_2cc {	loaded:  [ss_UV_1_2cc];	loading: [ss_UV_1_2cc_rak];}

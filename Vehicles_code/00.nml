@@ -2,8 +2,8 @@ grf {
 	grfid: "HS\15\01";
 	name: string(STR_GRF_NAME);
 	desc: string(STR_GRF_DESC);
-	version: 1;
-	min_compatible_version: 1;
+	version: 10;
+	min_compatible_version: 5722;
 }
 
 template tmpl_purchase() {

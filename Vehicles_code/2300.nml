@@ -55,7 +55,7 @@ item(FEAT_ROADVEHS, item_2300) {
         cost_factor:						20;
         running_cost_factor:				20;
         sprite_id:							SPRITE_ID_NEW_ROADVEH;
-        speed:								40 km/h;
+        speed:								47 km/h;
         misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
         refit_cost:						0;
         running_cost_base:				RUNNING_COST_ROADVEH;
