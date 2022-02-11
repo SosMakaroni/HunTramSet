@@ -1,5 +1,17 @@
 sort(FEAT_ROADVEHS, [
-	item_A_a,
+	item_tm_01,
+	item_tv_03,
+	item_uv1_01,
+	item_uv1_02,
+	item_uv3_02,
+	item_uv5_02,
+	item_t5c5_01,
+	item_t5c5_02,
+	item_t5c5_03,
+	item_Citylink
+
+
+/*	item_A_a,
 	item_Ap_a,
 	item_A_b,
 	item_Ap_b,
@@ -7,10 +19,10 @@ sort(FEAT_ROADVEHS, [
 	item_Fp_a,
 	item_F_b,
 	item_Fp_b,
-	item_2300,
-	item_2300p,
-	item_2300t_a,
-	item_2300t_b,
+	item_2400,
+	item_2400p,
+	item_2400t_a,
+	item_2400t_b,
 	item_ADEL,
 	item_O2,
 	item_RV2,
@@ -25,9 +37,6 @@ sort(FEAT_ROADVEHS, [
 	item_CSM3,
 	item_ICS,
 	item_ICS2,
-	item_T5C5,
-	item_T5C52,
-	item_T5C53,
 	item_Hungaroplan,
 	item_KT8D5_a,
 	item_KCSV6,
@@ -42,5 +51,5 @@ sort(FEAT_ROADVEHS, [
 	item_CAFdeb,
 	item_Skoda,
 	item_CAFbud5,
-	item_CAFbud9
+	item_CAFbud9*/
 	]);

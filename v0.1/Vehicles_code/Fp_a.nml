@@ -1,0 +1,84 @@
+// --------------------------------------------------------------------------------Fp_a
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_Fp_a_purchase, "src/Fp_a.png")			{tmpl_purchase()}
+spriteset(ss_Fp_a_1_1cc_depo, "src/Fp_a.png")		{tmpl_depo(1,1)}
+spriteset(ss_Fp_a_2_1cc_depo, "src/Fp_a.png")		{tmpl_depo(1,2)}
+spriteset(ss_Fp_a_1_1cc, "src/Fp_a.png")			{tmpl_1(1,1,0,-3,-5,-11,-5,-7,-12,-3,-9,-3,-5,-13,-10,-7,-12,-5,-8)}
+spriteset(ss_Fp_a_2_1cc, "src/Fp_a.png")			{tmpl_1(1,2,0,-3,-5,-12,-5,-7,-12,-4,-10,-3,-5,-13,-7,-7,-12,-4,-12)}
+spriteset(ss_Fp_a_1_1cc_rak, "src/Fp_a.png")	{tmpl_1(1,1,1,-3,-5,-11,-5,-7,-12,-3,-9,-3,-5,-13,-10,-7,-12,-5,-8)}
+spriteset(ss_Fp_a_2_1cc_rak, "src/Fp_a.png")	{tmpl_1(1,2,1,-3,-5,-12,-5,-7,-12,-4,-10,-3,-5,-13,-7,-7,-12,-4,-12)}
+
+
+spritegroup sg_Fp_a_1_1cc {	loaded:  [ss_Fp_a_1_1cc];	loading: [ss_Fp_a_1_1cc_rak];}
+spritegroup sg_Fp_a_2_1cc {	loaded:  [ss_Fp_a_2_1cc];	loading: [ss_Fp_a_2_1cc_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_Fp_a_1cc_depo, position_in_consist ) {
+    0: ss_Fp_a_1_1cc_depo;
+    ss_Fp_a_2_1cc_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Fp_a_1cc, position_in_consist ) {
+    1: sg_Fp_a_2_1cc;
+    sg_Fp_a_1_1cc;
+}
+switch(FEAT_ROADVEHS, SELF, sw_Fp_a_1cc_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_Fp_a_1cc_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_Fp_a_1cc; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_Fp_a_articulated, extra_callback_info1) {
+    0..1: item_Fp_a;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Fp_a_capacity, position_in_consist) {
+	1: return 42;
+	return 42;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Fp_a_length, position_in_consist) {
+	1: return 8;
+    return 6;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Fp_a_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1CC);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_Fp_a) {
+	property {
+        name:								string(STR_Fp_a_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1904,01,01);
+        model_life:						20;
+        vehicle_life:						55;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					48;
+        cost_factor:						20;
+        running_cost_factor:				20;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								45 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								48 hp;
+        weight:							16 ton;
+        cargo_capacity:					84;
+		cargo_age_period:					74;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_Fp_a_1cc_ss;
+		purchase:						ss_Fp_a_purchase;
+		articulated_part:        		sw_Fp_a_articulated;
+		length:                  		sw_Fp_a_length;
+		cargo_subtype_text: 			sw_Fp_a_livery_text;
+		cargo_capacity: 				sw_Fp_a_capacity;
+		purchase_cargo_capacity:		return 84 / 2;
+		additional_text: 				string(STR_Fp_a_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------Fp_a End

@@ -1,0 +1,197 @@
+grf {
+	grfid: "HS\15\01";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESC);
+	version: 10;
+	min_compatible_version: 5722;
+}
+
+template tmpl_purchase() {
+	[10,				63,									99,	16,	-25,-9]}
+	
+template tmpl_depo(szin,csuklo) {
+	[570,				((szin-1)*270)+((csuklo-1)*30)+80,	199,16,	-15,-10]}
+	
+template template_zoom(x, y, w, h, ox, oy, zoom) {
+  [ x*zoom, y*zoom, w*zoom, h*zoom, ox*zoom, oy*zoom - (zoom/2) ]
+	
+template tmpl_1(x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8){
+	[0,	0,		8,	48,	x1,	y1,	ANIM]
+	[0,	16,		52,	39,	x2,	y2, ANIM]
+	[0,	76,		69,	15,	x3,	y3, ANIM]
+	[0,	153,	52,	39,	x4,	y4, ANIM]
+	[0,	213,	8,	48,	x5,	y5, ANIM]
+	[0,	229,	52,	39,	x6,	y6, ANIM]
+	[0,	289,	69,	15,	x7,	y7, ANIM]
+	[0,	366,	52,	39,	x8,	y8, ANIM]}
+	
+template tmpl_toldat() {
+	[0,	0,	1,	1,	1,	1]}	
+
+//Wood logo, replaces ł 0x0142
+font_glyph (NORMAL, 0x0142, "src/icons.png") {[20,80,24,10,0,0]}
+font_glyph (SMALL, 0x0142, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (LARGE, 0x0142, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (MONO, 0x0142, "src/icons.png") {[10,80,1,1,0,0]}
+
+//Trailer logo, replaces Ł 0x0141
+font_glyph (NORMAL, 0x0141, "src/icons.png") {[60,80,29,10,0,0]}
+font_glyph (SMALL, 0x0141, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (LARGE, 0x0141, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (MONO, 0x0141, "src/icons.png") {[10,80,1,1,0,0]}
+
+//Double logo, replaces đ 0x0111
+font_glyph (NORMAL, 0x0111, "src/icons.png") {[110,80,29,10,0,0]}
+font_glyph (SMALL, 0x0111, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (LARGE, 0x0111, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (MONO, 0x0111, "src/icons.png") {[10,80,1,1,0,0]}
+
+//Triple logo, replaces Đ 0x0110
+font_glyph (NORMAL, 0x0110, "src/icons.png") {[160,80,25,10,0,0]}
+font_glyph (SMALL, 0x0110, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (LARGE, 0x0110, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (MONO, 0x0110, "src/icons.png") {[10,80,1,1,0,0]}
+
+//Twin logo, replaces Ń 0x0143
+font_glyph (NORMAL, 0x0143, "src/icons.png") {[20,110,21,10,0,0]}
+font_glyph (SMALL, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (LARGE, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (MONO, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
+// --------------------------------------------------------------------------------Citylink
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_Citylink_purchase, "src/CityLink01_1x_8bpp.png")			{tmpl_purchase()}
+spriteset(ss_Citylink_1_a_depo, "src/CityLink01_1x_8bpp.png")		{tmpl_depo(1,1)}
+spriteset(ss_Citylink_2_a_depo, "src/CityLink01_1x_8bpp.png")		{tmpl_depo(1,2)}
+spriteset(ss_Citylink_1_a, "src/CityLink01_1x_8bpp.png")			{tmpl_1(-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+spriteset(ss_Citylink_2_a, "src/CityLink02_1x_8bpp.png")			{tmpl_1(-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(ss_Citylink_3_a, "src/CityLink01_1x_8bpp.png")			{tmpl_1(-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(ss_Citylink_1_a_rak, "src/CityLink01_1x_8bpp.png")	{tmpl_1(-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+spriteset(ss_Citylink_2_a_rak, "src/CityLink02_1x_8bpp.png")	{tmpl_1(-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(ss_Citylink_3_a_rak, "src/CityLink01_1x_8bpp.png")	{tmpl_1(-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+//alternative_sprites(ss_Citylink_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/Citylink.png") {tmpl_1(1,1,0,-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+
+
+spritegroup sg_Citylink_1_a {	loaded:  [ss_Citylink_1_a];	loading: [ss_Citylink_1_a_rak];}
+spritegroup sg_Citylink_2_a {	loaded:  [ss_Citylink_2_a];	loading: [ss_Citylink_2_a_rak];}
+spritegroup sg_Citylink_3_a {	loaded:  [ss_Citylink_3_a];	loading: [ss_Citylink_3_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_Citylink_a_depo, position_in_consist ) {
+    0: ss_Citylink_1_a_depo;
+    ss_Citylink_2_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_a, position_in_consist ) {
+    1: sg_Citylink_2_a;
+	2: sg_Citylink_3_a;
+    sg_Citylink_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_Citylink_a_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_Citylink_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_Citylink_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_articulated, extra_callback_info1) {
+    0..2: item_Citylink;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_capacity, position_in_consist) {
+	1: return 46;
+	2: return 76;
+	return 76;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_length, position_in_consist) {
+	1: return 4;
+	2: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_Citylink) {
+	property {
+        name:								string(STR_Citylink_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphCitylink {
+		default:                 		sw_Citylink_a_ss;
+		purchase:						ss_Citylink_purchase;
+		articulated_part:        		sw_Citylink_articulated;
+		length:                  		sw_Citylink_length;
+		cargo_subtype_text: 			sw_Citylink_livery_text;
+		cargo_capacity: 				sw_Citylink_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_Citylink_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------Citylink End
+sort(FEAT_ROADVEHS, [
+	item_Citylink
+/*	item_A_a,
+	item_Ap_a,
+	item_A_b,
+	item_Ap_b,
+	item_F_a,
+	item_Fp_a,
+	item_F_b,
+	item_Fp_b,
+	item_2400,
+	item_2400p,
+	item_2400t_a,
+	item_2400t_b,
+	item_ADEL,
+	item_O2,
+	item_RV2,
+	item_RVp,
+	item_RV2p,
+	item_RV2pp,
+	item_RV3pp,
+	item_TM,
+	item_UV,
+	item_UV2,
+	item_UV2p,
+	item_CSM3,
+	item_ICS,
+	item_ICS2,
+	item_T5C5,
+	item_T5C52,
+	item_T5C53,
+	item_Hungaroplan,
+	item_KT8D5_a,
+	item_KCSV6,
+	item_KCSV7,
+	item_T6A2,
+	item_T6A22,
+	item_TW6000,
+	item_KT4D,
+	item_KT4D2,
+	item_Combino,
+	item_Pesa,
+	item_CAFdeb,
+	item_Skoda,
+	item_CAFbud5,
+	item_CAFbud9*/
+	]);

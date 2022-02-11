@@ -3,7 +3,7 @@
 
 # GRF name and description definitions
 STR_GRF_NAME	:HunTramSet
-STR_GRF_DESC	:{}{RED}H{WHITE}U{DKGREEN}N{LTBLUE}garian Tram Set {}{BLACK}Last update:{WHITE} 2022.01.25 {}{BLACK}Coded and drawn:{GREEN}SosMakaroni & Collosal404{} {COPYRIGHT}2022 SosMakaroni & {COPYRIGHT}2022 Collosal404{}{GRAY}License: GPLv2{}{BLACK}Trams used in Hungary.{}Imported trams were not given a date of manufacture but an date of import.{}There are realistic prototypes among them.
+STR_GRF_DESC	:{}{RED}H{WHITE}U{DKGREEN}N{LTBLUE}garian Tram Set {}{BLACK}Last update:{WHITE} 2022.02.08 {}{BLACK}Coded and drawn:{GREEN}SosMakaroni & Collosal404{} {COPYRIGHT}2022 SosMakaroni & {COPYRIGHT}2022 Collosal404{}{GRAY}License: GPLv2{}{BLACK}Trams used in Hungary.{}Imported trams were not given a date of manufacture but an date of import.{}There are realistic prototypes among them.
 
 STR_A_a_NAME:A {BROWN}ł{BLACK}
 STR_A_a_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BURV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}{BROWN}ł frame{BLACK}{}
@@ -21,14 +21,14 @@ STR_F_b_NAME:F
 STR_F_b_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}Schlick{BLACK}{}
 STR_Fp_b_NAME:F + Ł
 STR_Fp_b_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}Schlick{BLACK}{}
-STR_2300_NAME:2300 {BROWN}ł{BLACK}
-STR_2300_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}{BROWN}ł frame{BLACK}{}
-STR_2300p_NAME:2300 + Ł {BROWN}ł{BLACK}
-STR_2300p_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}{BROWN}ł frame{BLACK}{}
-STR_2300t_a_NAME:2300 Ń {BROWN}ł{BLACK}
-STR_2300t_a_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}{BROWN}ł frame{BLACK}{}
-STR_2300t_b_NAME:2300 Ń
-STR_2300t_b_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
+STR_2400_NAME:2400 {BROWN}ł{BLACK}
+STR_2400_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}{BROWN}ł frame{BLACK}{}
+STR_2400p_NAME:2400 + Ł {BROWN}ł{BLACK}
+STR_2400p_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}{BROWN}ł frame{BLACK}{}
+STR_2400t_a_NAME:2400 Ń {BROWN}ł{BLACK}
+STR_2400t_a_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}{BROWN}ł frame{BLACK}{}
+STR_2400t_b_NAME:2400 Ń
+STR_2400t_b_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
 STR_ADEL_NAME:ADEL
 STR_ADEL_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}Nickname: {GOLD}Adél{BLACK}{}
 STR_O2_NAME:O Ń
@@ -43,36 +43,42 @@ STR_RV2pp_NAME:RV đ +2 Ł
 STR_RV2pp_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
 STR_RV3pp_NAME:RV Đ +2 Ł
 STR_RV3pp_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
-STR_TM_NAME:TM
-STR_TM_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}Nickname: {GOLD}Stuka{BLACK}{}
-STR_TMp_NAME:TM + Ł
-STR_TMp_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}Nickname: {GOLD}Stuka{BLACK}{}
-STR_TV2p_NAME:TV đ + Ł
-STR_TV2p_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}Nickname: {GOLD}Stuka{BLACK}{}
-STR_UV_NAME:UV
-STR_UV_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (FVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
-STR_UV2_NAME:UV đ
-STR_UV2_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (FVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
-STR_UV2p_NAME:UV đ + Ł
-STR_UV2p_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (FVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
-STR_CSM3_NAME:CSM (3 door)
+STR_tm_01_NAME:Ganz TM
+STR_tm_01_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}Nickname: {GOLD}Stuka{BLACK}{}
+STR_tm_02_NAME:Ganz TM + Ł
+STR_tm_02_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}Nickname: {GOLD}Stuka{BLACK}{}
+STR_tv_03_NAME:Ganz TV đ + Ł
+STR_tv_03_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}Nickname: {GOLD}Stuka{BLACK}{}
+STR_uv1_01_NAME:Ganz UV
+STR_uv1_01_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (FVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}Version: {GOLD}2 driving positions{BLACK}{}
+STR_uv1_02_NAME:Ganz UV đ
+STR_uv1_02_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (FVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}Version: {GOLD}2 driving positions{BLACK}{}
+STR_uv3_01_NAME:Ganz UV
+STR_uv3_01_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (FVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}Version: {GOLD}1 driving positions{BLACK}{}
+STR_uv3_02_NAME:Ganz UV đ
+STR_uv3_02_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (FVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}Version: {GOLD}1 driving positions{BLACK}{}
+STR_uv5_02_NAME:Ganz UV đ
+STR_uv5_02_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (FVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}Version: {GOLD}Wide middle door{BLACK}{}
+STR_uv1_03_NAME:Ganz UV đ + Ł
+STR_uv1_03_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (FVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
+STR_CSM3_NAME:Füzesi CSM (3 door)
 STR_CSM3_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (FVV){BLACK}{}Manufacturer: {GOLD}Füzesi Main Workshop{BLACK}{}Nickname: {GOLD}Bengáli{BLACK}{}
-STR_CSM5_NAME:CSM (5 door)
+STR_CSM5_NAME:Füzesi CSM (5 door)
 STR_CSM5_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (FVV){BLACK}{}Manufacturer: {GOLD}Füzesi Main Workshop{BLACK}{}Nickname: {GOLD}Bengáli{BLACK}{}
-STR_CSM6_NAME:CSM (6 door)
+STR_CSM6_NAME:Füzesi CSM (6 door)
 STR_CSM6_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}{Dkv}{BLACK}{}Manufacturer: {GOLD}Füzesi Main Workshop{BLACK}{}Nickname: {GOLD}Bengáli{BLACK}{}
-STR_CSM10_NAME:CSM (10 door)
+STR_CSM10_NAME:Füzesi CSM (10 door)
 STR_CSM10_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (FVV){BLACK}{}Manufacturer: {GOLD}Füzesi Main Workshop{BLACK}{}Nickname: {GOLD}Bengáli{BLACK}{}
 STR_ICS_NAME:ICS
 STR_ICS_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}{Bkv}{BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
 STR_ICS2_NAME:ICS đ
 STR_ICS2_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}{Bkv}{BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
-STR_T5C5_NAME:T5C5
-STR_T5C5_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}{Bkv}{BLACK}{}Manufacturer: {GOLD}ČKD{BLACK}{}
-STR_T5C52_NAME:T5C5 đ
-STR_T5C52_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}{Bkv}{BLACK}{}Manufacturer: {GOLD}ČKD{BLACK}{}
-STR_T5C53_NAME:T5C5 Đ
-STR_T5C53_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}{Bkv}{BLACK}{}Manufacturer: {GOLD}ČKD{BLACK}{}
+STR_t5c5_01_NAME:Tatra T5C5
+STR_t5c5_01_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}{Bkv}{BLACK}{}Manufacturer: {GOLD}ČKD{BLACK}{}
+STR_t5c5_02_NAME:Tatra T5C5 đ
+STR_t5c5_02_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}{Bkv}{BLACK}{}Manufacturer: {GOLD}ČKD{BLACK}{}
+STR_t5c5_03_NAME:Tatra T5C5 Đ
+STR_t5c5_03_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}{Bkv}{BLACK}{}Manufacturer: {GOLD}ČKD{BLACK}{}
 STR_Hungaroplan_NAME:Hungaroplan
 STR_Hungaroplan_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}{Bkv}{BLACK}{}Manufacturer: {GOLD}GANZ (Ikarus){BLACK}{}Nickname: {GOLD}Csufi{BLACK}{}
 STR_KT8D5_a_NAME:KT8D5
@@ -103,12 +109,15 @@ STR_CAFbud5_NAME:Urbos3 (5 section)
 STR_CAFbud5_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}{Bkv}{BLACK}{}Manufacturer: {GOLD}CAF{BLACK}{}
 STR_CAFbud9_NAME:Urbos3 (9 section)
 STR_CAFbud9_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}{Bkv}{BLACK}{}Manufacturer: {GOLD}CAF{BLACK}{}
+STR_Citylink_NAME:Stadler Citylink
+STR_Citylink_ADAT:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Szeged (MÁV){BLACK}{}Manufacturer: {GOLD}Stadler{BLACK}{}
 
-STR_COLOUR_SCHEME_1CC: - Color Scheme 1
-STR_COLOUR_SCHEME_2CC: - Color Scheme 1 inverse
-STR_COLOUR_SCHEME_3CC: - Color Scheme 2
-STR_COLOUR_SCHEME_4CC: - Color Scheme 2 inverse
+STR_COLOUR_SCHEME_1: - Color Scheme 1
+STR_COLOUR_SCHEME_2: - Color Scheme 2
+STR_COLOUR_SCHEME_3: - Color Scheme 3
+STR_COLOUR_SCHEME_4: - Color Scheme 4
 STR_COLOUR_SCHEME_BP: - Budapest Color Scheme
 STR_COLOUR_SCHEME_DEB: - Debrecen Color Scheme
 STR_COLOUR_SCHEME_SZE: - Szeged Color Scheme
 STR_COLOUR_SCHEME_MI: - Miskolc Color Scheme
+STR_COLOUR_SCHEME_PE: - Pepsi Color Scheme

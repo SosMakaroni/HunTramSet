@@ -1,0 +1,91 @@
+// --------------------------------------------------------------------------------Citylink
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_Citylink_purchase, "src/CityLink01_depo.png")		{tmpl_purchase()}
+spriteset(ss_Citylink_1_a_depo, "src/CityLink01_depo.png")		{tmpl_depo()}
+spriteset(ss_Citylink_2_a_depo, "src/CityLink01_depo.png")		{tmpl_toldat()}
+spriteset(ss_Citylink_1_a, "src/CityLink01_1x_8bpp.png")		{tmpl_1(0,0,	-43,-12,	0,0,	0,0,	-15,-28,	0,0,	0,0,	-8,-14)}
+spriteset(ss_Citylink_2_a, "src/CityLink02_1x_8bpp.png")		{tmpl_1(0,0,	-43,-12,	0,0,	0,0,	-15,-28,	0,0,	0,0,	-8,-14)}
+spriteset(ss_Citylink_3_a, "src/CityLink01_1x_8bpp.png")		{tmpl_1(0,0,	-43,-12,	0,0,	0,0,	-15,-28,	0,0,	0,0,	-8,-14)}
+spriteset(ss_Citylink_1_a_rak, "src/CityLink01_1x_8bpp.png")	{tmpl_1(0,0,	0,0,	0,0,	0,0,	0,0,	0,0,	0,0,	0,0)}
+spriteset(ss_Citylink_2_a_rak, "src/CityLink02_1x_8bpp.png")	{tmpl_1(0,0,	0,0,	0,0,	0,0,	0,0,	0,0,	0,0,	0,0)}
+spriteset(ss_Citylink_3_a_rak, "src/CityLink01_1x_8bpp.png")	{tmpl_1(0,0,	0,0,	0,0,	0,0,	0,0,	0,0,	0,0,	0,0)}
+//alternative_sprites(ss_Citylink_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/Citylink.png") {tmpl_1(1,1,0,-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+
+
+spritegroup sg_Citylink_1_a {	loaded:  [ss_Citylink_1_a];	loading: [ss_Citylink_1_a_rak];}
+spritegroup sg_Citylink_2_a {	loaded:  [ss_Citylink_2_a];	loading: [ss_Citylink_2_a_rak];}
+spritegroup sg_Citylink_3_a {	loaded:  [ss_Citylink_3_a];	loading: [ss_Citylink_3_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_Citylink_a_depo, position_in_consist ) {
+    1..2: ss_Citylink_2_a_depo;
+    ss_Citylink_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_a, position_in_consist ) {
+    1: sg_Citylink_2_a;
+	2: sg_Citylink_3_a;
+    sg_Citylink_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_Citylink_a_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_Citylink_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_Citylink_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_articulated, extra_callback_info1) {
+    0..2: item_Citylink;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_capacity, position_in_consist) {
+	1: return 46;
+	2: return 76;
+	return 76;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_length, position_in_consist) {
+	1: return 8;
+	2: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_Citylink) {
+	property {
+        name:								string(STR_Citylink_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_Citylink_a_ss;
+		purchase:						ss_Citylink_purchase;
+		articulated_part:        		sw_Citylink_articulated;
+		length:                  		sw_Citylink_length;
+		cargo_subtype_text: 			sw_Citylink_livery_text;
+		cargo_capacity: 				sw_Citylink_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_Citylink_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------Citylink End

@@ -1,0 +1,119 @@
+// --------------------------------------------------------------------------------ICS
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_ICS_purchase, "src/ICS.png")			{tmpl_purchase()}
+spriteset(ss_ICS_1_1cc_depo, "src/ICS.png")		{tmpl_depo(1,1)}
+spriteset(ss_ICS_2_1cc_depo, "src/ICS.png")		{tmpl_depo(1,2)}
+spriteset(ss_ICS_1_2cc_depo, "src/ICS.png")		{tmpl_depo(2,1)}
+spriteset(ss_ICS_2_2cc_depo, "src/ICS.png")		{tmpl_depo(2,2)}
+spriteset(ss_ICS_1_1cc, "src/ICS.png")			{tmpl_1(1,1,0,-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+spriteset(ss_ICS_2_1cc, "src/ICS.png")			{tmpl_1(1,2,0,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(ss_ICS_3_1cc, "src/ICS.png")			{tmpl_1(1,3,0,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(ss_ICS_1_2cc, "src/ICS.png")			{tmpl_1(2,1,0,-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+spriteset(ss_ICS_2_2cc, "src/ICS.png")			{tmpl_1(2,2,0,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(ss_ICS_3_2cc, "src/ICS.png")			{tmpl_1(2,3,0,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(ss_ICS_1_1cc_rak, "src/ICS.png")	{tmpl_1(1,1,1,-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+spriteset(ss_ICS_2_1cc_rak, "src/ICS.png")	{tmpl_1(1,2,1,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(ss_ICS_3_1cc_rak, "src/ICS.png")	{tmpl_1(1,3,1,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+spriteset(ss_ICS_1_2cc_rak, "src/ICS.png")	{tmpl_1(2,1,1,-3,-6,-14,-5,-8,-10,-5,-8,-3,-6,-13,-9,-8,-10,-5,-8)}
+spriteset(ss_ICS_2_2cc_rak, "src/ICS.png")	{tmpl_1(2,2,1,-3,-4,-8,-6,-3,-7,1,-3,-3,-4,-16,-4,-3,-7,-7,-9)}
+spriteset(ss_ICS_3_2cc_rak, "src/ICS.png")	{tmpl_1(2,3,1,-3,-6,-14,-5,-9,-7,-5,-6,-3,-6,-13,-7,-9,-7,-5,-8)}
+
+
+spritegroup sg_ICS_1_1cc {	loaded:  [ss_ICS_1_1cc];	loading: [ss_ICS_1_1cc_rak];}
+spritegroup sg_ICS_2_1cc {	loaded:  [ss_ICS_2_1cc];	loading: [ss_ICS_2_1cc_rak];}
+spritegroup sg_ICS_3_1cc {	loaded:  [ss_ICS_3_1cc];	loading: [ss_ICS_3_1cc_rak];}
+spritegroup sg_ICS_1_2cc {	loaded:  [ss_ICS_1_2cc];	loading: [ss_ICS_1_2cc_rak];}
+spritegroup sg_ICS_2_2cc {	loaded:  [ss_ICS_2_2cc];	loading: [ss_ICS_2_2cc_rak];}
+spritegroup sg_ICS_3_2cc {	loaded:  [ss_ICS_3_2cc];	loading: [ss_ICS_3_2cc_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_ICS_1cc_depo, position_in_consist ) {
+    0: ss_ICS_1_1cc_depo;
+    ss_ICS_2_1cc_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS_1cc, position_in_consist ) {
+    1: sg_ICS_2_1cc;
+	2: sg_ICS_3_1cc;
+    sg_ICS_1_1cc;
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS_1cc_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_ICS_1cc_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_ICS_1cc; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, ss_ICS_2cc_depo, position_in_consist ) {
+    0: ss_ICS_1_2cc_depo;
+    ss_ICS_2_2cc_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS_2cc, position_in_consist ) {
+    1: sg_ICS_2_2cc;
+	2: sg_ICS_3_2cc;
+    sg_ICS_1_2cc;
+}
+switch(FEAT_ROADVEHS, SELF, sw_ICS_2cc_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_ICS_2cc_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_ICS_2cc; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS_ss, cargo_subtype) {
+	1: sw_ICS_2cc_ss;
+	sw_ICS_1cc_ss;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS_articulated, extra_callback_info1) {
+    0..2: item_ICS;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS_capacity, position_in_consist) {
+	1: return 46;
+	2: return 76;
+	return 76;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS_length, position_in_consist) {
+	1: return 4;
+	2: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_ICS_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1CC);
+	1: return string(STR_COLOUR_SCHEME_2CC);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_ICS) {
+	property {
+        name:								string(STR_ICS_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_ICS_ss;
+		purchase:						ss_ICS_purchase;
+		articulated_part:        		sw_ICS_articulated;
+		length:                  		sw_ICS_length;
+		cargo_subtype_text: 			sw_ICS_livery_text;
+		cargo_capacity: 				sw_ICS_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_ICS_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------ICS End
