@@ -5,6 +5,8 @@ sort(FEAT_ROADVEHS, [
 	item_uv1_02,
 	item_uv3_02,
 	item_uv5_02,
+	item_beng3_03,
+	item_beng1_03,	
 	item_t5c5_01,
 	item_t5c5_02,
 	item_t5c5_03,

@@ -1,0 +1,3 @@
+replace replace_trails (6012) {
+	template_norm(0,"gfx/sin2_1x_8bpp.png")
+}

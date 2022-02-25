@@ -4,6 +4,21 @@ grf {
 	desc: string(STR_GRF_DESC);
 	version: 10;
 	min_compatible_version: 5722;
+	param 0 {
+        param_zoom {
+            type: int;
+            name: string(STR_PARAM_ZOOM_NAME);
+            desc: string(STR_PARAM_ZOOM_DESC);
+            min_value: 0;
+            max_value: 2;
+            def_value: 2;
+            names: {
+					0: string(STR_PARAM_ZOOM_1);
+                    1: string(STR_PARAM_ZOOM_2);
+					2: string(STR_PARAM_ZOOM_4);
+                    };
+				}
+			}
 }
 
 template tmpl_purchase() {
@@ -56,6 +71,350 @@ font_glyph (NORMAL, 0x0143, "src/icons.png") {[20,110,21,10,0,0]}
 font_glyph (SMALL, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
 font_glyph (LARGE, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
 font_glyph (MONO, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
+// --------------------------------------------------------------------------------beng1_03
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_beng1_03_purchase, "src/beng1_03_depo.png")		{tmpl_purchase()}
+spriteset(ss_beng1_03_1_a_depo, "src/beng1_03_depo.png")		{tmpl_depo()}
+spriteset(ss_beng1_03_1_a, "src/beng1_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng1_03_2_a, "src/beng1_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng1_03_3_a, "src/beng1_03_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng1_03_1_a_rak, "src/beng1_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng1_03_2_a_rak, "src/beng1_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng1_03_3_a_rak, "src/beng1_03_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng1_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_3_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng1_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_2_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng1_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_3_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng1_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng1_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_3_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng1_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_2_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng1_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_3_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng1_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng12_03_1_a_depo, "src/beng12_03_depo.png")		{tmpl_depo()}
+spriteset(ss_beng12_03_1_a, "src/beng12_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng12_03_2_a, "src/beng12_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng12_03_3_a, "src/beng12_03_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng12_03_1_a_rak, "src/beng12_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng12_03_2_a_rak, "src/beng12_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng12_03_3_a_rak, "src/beng12_03_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng12_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng12_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_3_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng12_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng12_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_2_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng12_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_3_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng12_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng12_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng12_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_3_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng12_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng12_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_2_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng12_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_3_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng12_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+
+spritegroup sg_beng1_03_1_a {	loaded:  [ss_beng1_03_1_a];	loading: [ss_beng1_03_1_a_rak];}
+spritegroup sg_beng1_03_2_a {	loaded:  [ss_beng1_03_2_a];	loading: [ss_beng1_03_2_a_rak];}
+spritegroup sg_beng1_03_3_a {	loaded:  [ss_beng1_03_3_a];	loading: [ss_beng1_03_3_a_rak];}
+spritegroup sg_beng12_03_1_a {	loaded:  [ss_beng12_03_1_a];	loading: [ss_beng12_03_1_a_rak];}
+spritegroup sg_beng12_03_2_a {	loaded:  [ss_beng12_03_2_a];	loading: [ss_beng12_03_2_a_rak];}
+spritegroup sg_beng12_03_3_a {	loaded:  [ss_beng12_03_3_a];	loading: [ss_beng12_03_3_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_beng12_03_a_depo, position_in_consist ) {
+    1..5: ss_toldat;
+    ss_beng12_03_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng12_03_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_beng12_03_2_a;
+	3: ss_toldat;
+	4: sg_beng12_03_3_a;
+	5: ss_toldat;
+    sg_beng12_03_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_beng12_03_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_beng12_03_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_beng12_03_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, ss_beng1_03_a_depo, position_in_consist ) {
+    1..5: ss_toldat;
+    ss_beng1_03_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng1_03_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_beng1_03_2_a;
+	3: ss_toldat;
+	4: sg_beng1_03_3_a;
+	5: ss_toldat;
+    sg_beng1_03_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_beng1_03_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_beng1_03_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_beng1_03_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng1_03_cb, cargo_subtype) {
+	1: sw_beng12_03_ss;
+	sw_beng1_03_ss;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng1_03_articulated, extra_callback_info1) {
+    0..5: item_beng1_03;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng1_03_capacity, position_in_consist) {
+	1: return 0;
+	2: return 100;
+	3: return 0;
+	4: return 100;
+	5: return 0;
+	return 100;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng1_03_length, position_in_consist) {
+	1: return 2;
+	2: return 2;
+	3: return 2;
+	4: return 4;
+	5: return 4;
+    return 6;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng1_03_livery_text, cargo_subtype) {
+	1: return string(STR_COLOUR_SCHEME_2);
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_beng1_03) {
+	property {
+        name:								string(STR_beng1_03_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_beng1_03_cb;
+		purchase:						ss_beng1_03_purchase;
+		articulated_part:        		sw_beng1_03_articulated;
+		length:                  		sw_beng1_03_length;
+		cargo_subtype_text: 			sw_beng1_03_livery_text;
+		cargo_capacity: 				sw_beng1_03_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_beng1_03_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------beng1_03 End
+// --------------------------------------------------------------------------------beng3_03
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_beng3_03_purchase, "src/beng3_03_depo.png")		{tmpl_purchase()}
+spriteset(ss_beng3_03_1_a_depo, "src/beng3_03_depo.png")		{tmpl_depo()}
+spriteset(ss_beng3_03_1_a, "src/beng3_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3_03_2_a, "src/beng3_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3_03_3_a, "src/beng3_03_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3_03_1_a_rak, "src/beng3_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3_03_2_a_rak, "src/beng3_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3_03_3_a_rak, "src/beng3_03_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_3_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_2_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_3_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_3_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_2_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_3_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3pepsi_03_1_a_depo, "src/beng3pepsi_03_depo.png")		{tmpl_depo()}
+spriteset(ss_beng3pepsi_03_1_a, "src/beng3pepsi_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3pepsi_03_2_a, "src/beng3pepsi_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3pepsi_03_3_a, "src/beng3pepsi_03_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3pepsi_03_1_a_rak, "src/beng3pepsi_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3pepsi_03_2_a_rak, "src/beng3pepsi_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3pepsi_03_3_a_rak, "src/beng3pepsi_03_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3pepsi_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3pepsi_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_3_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3pepsi_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3pepsi_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_2_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3pepsi_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_3_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3pepsi_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3pepsi_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3pepsi_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_3_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3pepsi_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3pepsi_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_2_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3pepsi_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_3_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3pepsi_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3proto_03_1_a_depo, "src/beng3proto_03_depo.png")		{tmpl_depo()}
+spriteset(ss_beng3proto_03_1_a, "src/beng3proto_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3proto_03_2_a, "src/beng3proto_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3proto_03_3_a, "src/beng3proto_03_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3proto_03_1_a_rak, "src/beng3proto_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3proto_03_2_a_rak, "src/beng3proto_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3proto_03_3_a_rak, "src/beng3proto_03_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3proto_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3proto_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_3_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3proto_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3proto_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_2_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3proto_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_3_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3proto_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3proto_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3proto_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_3_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3proto_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3proto_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_2_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3proto_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_3_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3proto_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+
+spritegroup sg_beng3_03_1_a {	loaded:  [ss_beng3_03_1_a];	loading: [ss_beng3_03_1_a_rak];}
+spritegroup sg_beng3_03_2_a {	loaded:  [ss_beng3_03_2_a];	loading: [ss_beng3_03_2_a_rak];}
+spritegroup sg_beng3_03_3_a {	loaded:  [ss_beng3_03_3_a];	loading: [ss_beng3_03_3_a_rak];}
+spritegroup sg_beng3pepsi_03_1_a {	loaded:  [ss_beng3pepsi_03_1_a];	loading: [ss_beng3pepsi_03_1_a_rak];}
+spritegroup sg_beng3pepsi_03_2_a {	loaded:  [ss_beng3pepsi_03_2_a];	loading: [ss_beng3pepsi_03_2_a_rak];}
+spritegroup sg_beng3pepsi_03_3_a {	loaded:  [ss_beng3pepsi_03_3_a];	loading: [ss_beng3pepsi_03_3_a_rak];}
+spritegroup sg_beng3proto_03_1_a {	loaded:  [ss_beng3proto_03_1_a];	loading: [ss_beng3proto_03_1_a_rak];}
+spritegroup sg_beng3proto_03_2_a {	loaded:  [ss_beng3proto_03_2_a];	loading: [ss_beng3proto_03_2_a_rak];}
+spritegroup sg_beng3proto_03_3_a {	loaded:  [ss_beng3proto_03_3_a];	loading: [ss_beng3proto_03_3_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_beng3proto_03_a_depo, position_in_consist ) {
+    1..5: ss_toldat;
+    ss_beng3proto_03_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3proto_03_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_beng3proto_03_2_a;
+	3: ss_toldat;
+	4: sg_beng3proto_03_3_a;
+	5: ss_toldat;
+    sg_beng3proto_03_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_beng3proto_03_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_beng3proto_03_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_beng3proto_03_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, ss_beng3pepsi_03_a_depo, position_in_consist ) {
+    1..5: ss_toldat;
+    ss_beng3pepsi_03_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3pepsi_03_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_beng3pepsi_03_2_a;
+	3: ss_toldat;
+	4: sg_beng3pepsi_03_3_a;
+	5: ss_toldat;
+    sg_beng3pepsi_03_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_beng3pepsi_03_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_beng3pepsi_03_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_beng3pepsi_03_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, ss_beng3_03_a_depo, position_in_consist ) {
+    1..5: ss_toldat;
+    ss_beng3_03_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3_03_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_beng3_03_2_a;
+	3: ss_toldat;
+	4: sg_beng3_03_3_a;
+	5: ss_toldat;
+    sg_beng3_03_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_beng3_03_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_beng3_03_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_beng3_03_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3_03_cb, cargo_subtype) {
+	1: sw_beng3pepsi_03_ss;
+	2: sw_beng3proto_03_ss;
+	sw_beng3_03_ss;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3_03_articulated, extra_callback_info1) {
+    0..5: item_beng3_03;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3_03_capacity, position_in_consist) {
+	1: return 0;
+	2: return 100;
+	3: return 0;
+	4: return 100;
+	5: return 0;
+	return 100;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3_03_length, position_in_consist) {
+	1: return 2;
+	2: return 2;
+	3: return 2;
+	4: return 4;
+	5: return 4;
+    return 6;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3_03_livery_text, cargo_subtype) {
+	2: return string(STR_COLOUR_SCHEME_PR);
+	1: return string(STR_COLOUR_SCHEME_PE);
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_beng3_03) {
+	property {
+        name:								string(STR_beng3_03_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_beng3_03_cb;
+		purchase:						ss_beng3_03_purchase;
+		articulated_part:        		sw_beng3_03_articulated;
+		length:                  		sw_beng3_03_length;
+		cargo_subtype_text: 			sw_beng3_03_livery_text;
+		cargo_capacity: 				sw_beng3_03_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_beng3_03_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------beng3_03 End
 // --------------------------------------------------------------------------------Citylink
 
 // ss=spriteset, sg=spritegroup, sw=switch
@@ -643,17 +1002,38 @@ spriteset(ss_uv1_01_purchase, "src/uv1_01_depo.png")		{tmpl_purchase()}
 spriteset(ss_uv1_01_1_a_depo, "src/uv1_01_depo.png")		{tmpl_depo()}
 spriteset(ss_uv1_01_1_a, "src/uv1_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
 spriteset(ss_uv1_01_1_a_rak, "src/uv1_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
-alternative_sprites(ss_uv1_01_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
-alternative_sprites(ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
-alternative_sprites(ss_uv1_01_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
-alternative_sprites(ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss2_uv1_01_1_a, "src/uv1_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss2_uv1_01_1_a_rak, "src/uv1_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss2_uv1_01_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss2_uv1_01_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss4_uv1_01_1_a, "src/uv1_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss4_uv1_01_1_a_rak, "src/uv1_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss4_uv1_01_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss4_uv1_01_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss4_uv1_01_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss4_uv1_01_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
 
 
-spritegroup sg_uv1_01_1_a {	loaded:  [ss_uv1_01_1_a];	loading: [ss_uv1_01_1_a_rak];}
+//spritegroup sg_uv1_01_1_a {	loaded:  [ss_uv1_01_1_a];	loading: [ss_uv1_01_1_a_rak];}
+
+spritegroup sg1_uv1_01_1_a {	loaded:  [ss_uv1_01_1_a];	loading: [ss_uv1_01_1_a_rak];}
+spritegroup sg2_uv1_01_1_a {	loaded:  [ss2_uv1_01_1_a];	loading: [ss2_uv1_01_1_a_rak];}
+spritegroup sg4_uv1_01_1_a {	loaded:  [ss4_uv1_01_1_a];	loading: [ss4_uv1_01_1_a_rak];}
+
 
 switch (FEAT_ROADVEHS, SELF, ss_uv1_01_a_depo, position_in_consist ) {
     1: ss_toldat;
     ss_uv1_01_1_a_depo;
+}
+
+switch(FEAT_ROADVEHS, SELF, sg_uv1_01_1_a, param_zoom) {
+	1: sg2_uv1_01_1_a;
+	2: sg4_uv1_01_1_a;
+	sg1_uv1_01_1_a;
 }
 switch (FEAT_ROADVEHS, SELF, sw_uv1_01_a, position_in_consist ) {
     1: ss_toldat;
@@ -1048,6 +1428,8 @@ sort(FEAT_ROADVEHS, [
 	item_uv1_02,
 	item_uv3_02,
 	item_uv5_02,
+	item_beng3_03,
+	item_beng1_03,	
 	item_t5c5_01,
 	item_t5c5_02,
 	item_t5c5_03,

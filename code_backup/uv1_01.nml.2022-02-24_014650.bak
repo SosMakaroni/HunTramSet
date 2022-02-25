@@ -1,0 +1,99 @@
+// --------------------------------------------------------------------------------uv1_01
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_uv1_01_purchase, "src/uv1_01_depo.png")		{tmpl_purchase()}
+spriteset(ss_uv1_01_1_a_depo, "src/uv1_01_depo.png")		{tmpl_depo()}
+spriteset(ss_uv1_01_1_a, "src/uv1_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_uv1_01_1_a_rak, "src/uv1_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+
+
+
+if (param_zoom == 2) {
+		alternative_sprites(ss_uv1_01_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+		alternative_sprites(ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+			}
+		} else
+	if (param_zoom == 1) {
+		alternative_sprites(ss_uv1_01_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+		alternative_sprites(ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+			}
+		}
+
+
+
+
+spritegroup sg_uv1_01_1_a {	loaded:  [ss_uv1_01_1_a];	loading: [ss_uv1_01_1_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_uv1_01_a_depo, position_in_consist ) {
+    1: ss_toldat;
+    ss_uv1_01_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv1_01_a, position_in_consist ) {
+    1: ss_toldat;
+    sg_uv1_01_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_uv1_01_a_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_uv1_01_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_uv1_01_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv1_01_articulated, extra_callback_info1) {
+    0..1: item_uv1_01;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv1_01_capacity, position_in_consist) {
+	1: return 0;
+	return 100;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv1_01_length, position_in_consist) {
+	1: return 8;
+    return 4;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv1_01_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_uv1_01) {
+	property {
+        name:								string(STR_uv1_01_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_uv1_01_a_ss;
+		purchase:						ss_uv1_01_purchase;
+		articulated_part:        		sw_uv1_01_articulated;
+		length:                  		sw_uv1_01_length;
+		cargo_subtype_text: 			sw_uv1_01_livery_text;
+		cargo_capacity: 				sw_uv1_01_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_uv1_01_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------uv1_01 End

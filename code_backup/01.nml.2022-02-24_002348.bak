@@ -1,0 +1,38 @@
+replace replace_trail01 (6012,"src/sin2_1x_8bpp.png") {
+	tmpl_norm1(0,1)
+}
+replace replace_trail02 (6013,"src/sin2_1x_8bpp.png") {
+	tmpl_norm2(1,1)
+}
+
+alternative_sprites(replace_trail01, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/sin2_2x_8bpp.png") {
+	tmpl_norm1(0,2)
+}
+alternative_sprites(replace_trail01, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/sin2_4x_8bpp.png") {
+	tmpl_norm1(0,4)
+}
+alternative_sprites(replace_trail02, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/sin2_2x_8bpp.png") {
+	tmpl_norm2(1,2)
+}
+alternative_sprites(replace_trail02, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/sin2_4x_8bpp.png") {
+	tmpl_norm2(1,4)
+}
+/*replace replace_trail03 (5989,"src/sin3_1x_8bpp.png") {
+	tmpl_norm1(1)
+}
+replace replace_trail04 (5990,"src/sin3_1x_8bpp.png") {
+	tmpl_norm2(1)
+}
+
+alternative_sprites(replace_trail03, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/sin3_2x_8bpp.png") {
+	tmpl_norm1(2)
+}
+alternative_sprites(replace_trail03, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/sin3_4x_8bpp.png") {
+	tmpl_norm1(4)
+}
+alternative_sprites(replace_trail04, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/sin3_2x_8bpp.png") {
+	tmpl_norm2(2)
+}
+alternative_sprites(replace_trail04, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/sin3_4x_8bpp.png") {
+	tmpl_norm2(4)
+}*/

@@ -1,5 +1,10 @@
 
 
-Szkt: Hungary - Szeged (SZKT)
-Dkv: Hungary - Debrecen (DKV)
-Bkv: Hungary - Budapest (BKV)
+Szkt	:Hungary - Szeged (SZKT)
+Dkv	:Hungary - Debrecen (DKV)
+Bkv	:Hungary - Budapest (BKV)
+Wood	:ł
+Trailer	:Ł
+Double	:đ
+Triple	:Đ
+Twin	:Ń

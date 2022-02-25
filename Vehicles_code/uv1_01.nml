@@ -8,17 +8,38 @@ spriteset(ss_uv1_01_purchase, "src/uv1_01_depo.png")		{tmpl_purchase()}
 spriteset(ss_uv1_01_1_a_depo, "src/uv1_01_depo.png")		{tmpl_depo()}
 spriteset(ss_uv1_01_1_a, "src/uv1_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
 spriteset(ss_uv1_01_1_a_rak, "src/uv1_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
-alternative_sprites(ss_uv1_01_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
-alternative_sprites(ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
-alternative_sprites(ss_uv1_01_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
-alternative_sprites(ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss2_uv1_01_1_a, "src/uv1_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss2_uv1_01_1_a_rak, "src/uv1_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss2_uv1_01_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss2_uv1_01_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss4_uv1_01_1_a, "src/uv1_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss4_uv1_01_1_a_rak, "src/uv1_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss4_uv1_01_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss4_uv1_01_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss4_uv1_01_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss4_uv1_01_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
 
 
-spritegroup sg_uv1_01_1_a {	loaded:  [ss_uv1_01_1_a];	loading: [ss_uv1_01_1_a_rak];}
+//spritegroup sg_uv1_01_1_a {	loaded:  [ss_uv1_01_1_a];	loading: [ss_uv1_01_1_a_rak];}
+
+spritegroup sg1_uv1_01_1_a {	loaded:  [ss_uv1_01_1_a];	loading: [ss_uv1_01_1_a_rak];}
+spritegroup sg2_uv1_01_1_a {	loaded:  [ss2_uv1_01_1_a];	loading: [ss2_uv1_01_1_a_rak];}
+spritegroup sg4_uv1_01_1_a {	loaded:  [ss4_uv1_01_1_a];	loading: [ss4_uv1_01_1_a_rak];}
+
 
 switch (FEAT_ROADVEHS, SELF, ss_uv1_01_a_depo, position_in_consist ) {
     1: ss_toldat;
     ss_uv1_01_1_a_depo;
+}
+
+switch(FEAT_ROADVEHS, SELF, sg_uv1_01_1_a, param_zoom) {
+	1: sg2_uv1_01_1_a;
+	2: sg4_uv1_01_1_a;
+	sg1_uv1_01_1_a;
 }
 switch (FEAT_ROADVEHS, SELF, sw_uv1_01_a, position_in_consist ) {
     1: ss_toldat;

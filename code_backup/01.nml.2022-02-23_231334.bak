@@ -1,0 +1,7 @@
+replace replace_trails (6012,"gfx/sin2_1x_8bpp.png") {
+	tmpl_norm(0, 1)
+}
+/*replace replace_trails (6013) {
+	tmpl_norm(0, 2,"gfx/sin2_1x_8bpp.png")
+}
+*/

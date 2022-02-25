@@ -4,6 +4,21 @@ grf {
 	desc: string(STR_GRF_DESC);
 	version: 10;
 	min_compatible_version: 5722;
+	param 0 {
+        param_zoom {
+            type: int;
+            name: string(STR_PARAM_ZOOM_NAME);
+            desc: string(STR_PARAM_ZOOM_DESC);
+            min_value: 0;
+            max_value: 2;
+            def_value: 2;
+            names: {
+					0: string(STR_PARAM_ZOOM_1);
+                    1: string(STR_PARAM_ZOOM_2);
+					2: string(STR_PARAM_ZOOM_4);
+                    };
+				}
+			}
 }
 
 template tmpl_purchase() {

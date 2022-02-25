@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+
+<streamingInternetRadios>
+<streamingInternetRadio href="http://stream001.radio.hu:8080/mr2.mp3" />
+<streamingInternetRadio href="http://212.108.220.119:1039/stream.mp3" />
+<streamingInternetRadio href="http://stream.radio88.hu:8000/;stream" />
+<streamingInternetRadio href="http://stream.radio1pecs.hu:8200/pecs.mp3" />
+<streamingInternetRadio href="stream.radio1pecs.hu:8200/pecs.mp3" />
+<streamingInternetRadio href="icast.connectmedia.hu/5201/live.mp3" />
+<streamingInternetRadio href="icast.connectmedia.hu/5202/live.mp3" />
+</streamingInternetRadios>

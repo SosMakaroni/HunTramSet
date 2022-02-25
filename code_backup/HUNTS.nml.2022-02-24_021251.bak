@@ -1,0 +1,1480 @@
+grf {
+	grfid: "HS\15\01";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESC);
+	version: 10;
+	min_compatible_version: 5722;
+	param 0 {
+        param_zoom {
+            type: int;
+            name: string(STR_PARAM_ZOOM_NAME);
+            desc: string(STR_PARAM_ZOOM_DESC);
+            min_value: 0;
+            max_value: 2;
+            def_value: 2;
+            names: {
+					0: string(STR_PARAM_ZOOM_1);
+                    1: string(STR_PARAM_ZOOM_2);
+					2: string(STR_PARAM_ZOOM_4);
+                    };
+				}
+			}
+}
+
+template tmpl_purchase() {
+	[0,	0,	100,	16,	-25,-9]}
+	
+template tmpl_depo() {
+	[0,	20,	250,	16,	-15,-10]}
+	
+template tmpl_1(z1,x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,x7,y7,x8,y8){
+	[0*z1,		0,	8*z1,	48*z1,	x1*z1,	y1*z1,	ANIM]
+	[16*z1,	0,	52*z1,	39*z1,	x2*z1,	y2*z1, ANIM]
+	[76*z1,	0,	69*z1,	15*z1,	x3*z1,	y3*z1, ANIM]
+	[153*z1,	0,	52*z1,	39*z1,	x4*z1,	y4*z1, ANIM]
+	[213*z1,	0,	8*z1,	48*z1,	x5*z1,	y5*z1, ANIM]
+	[229*z1,	0,	52*z1,	39*z1,	x6*z1,	y6*z1, ANIM]
+	[289*z1,	0,	69*z1,	15*z1,	x7*z1,	y7*z1, ANIM]
+	[366*z1,	0,	52*z1,	39*z1,	x8*z1,	y8*z1, ANIM]}
+
+template tmpl_toldat() {
+	[0,	0,	2,	2,	1,	1]}	
+
+spriteset(ss_toldat, "src/icons.png")		{tmpl_toldat()}
+
+//Wood logo, replaces ł 0x0142
+font_glyph (NORMAL, 0x0142, "src/icons.png") {[20,80,24,10,0,0]}
+font_glyph (SMALL, 0x0142, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (LARGE, 0x0142, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (MONO, 0x0142, "src/icons.png") {[10,80,1,1,0,0]}
+
+//Trailer logo, replaces Ł 0x0141
+font_glyph (NORMAL, 0x0141, "src/icons.png") {[60,80,29,10,0,0]}
+font_glyph (SMALL, 0x0141, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (LARGE, 0x0141, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (MONO, 0x0141, "src/icons.png") {[10,80,1,1,0,0]}
+
+//Double logo, replaces đ 0x0111
+font_glyph (NORMAL, 0x0111, "src/icons.png") {[110,80,29,10,0,0]}
+font_glyph (SMALL, 0x0111, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (LARGE, 0x0111, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (MONO, 0x0111, "src/icons.png") {[10,80,1,1,0,0]}
+
+//Triple logo, replaces Đ 0x0110
+font_glyph (NORMAL, 0x0110, "src/icons.png") {[160,80,25,10,0,0]}
+font_glyph (SMALL, 0x0110, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (LARGE, 0x0110, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (MONO, 0x0110, "src/icons.png") {[10,80,1,1,0,0]}
+
+//Twin logo, replaces Ń 0x0143
+font_glyph (NORMAL, 0x0143, "src/icons.png") {[20,110,21,10,0,0]}
+font_glyph (SMALL, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (LARGE, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
+font_glyph (MONO, 0x0143, "src/icons.png") {[10,80,1,1,0,0]}
+// --------------------------------------------------------------------------------beng1_03
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_beng1_03_purchase, "src/beng1_03_depo.png")		{tmpl_purchase()}
+spriteset(ss_beng1_03_1_a_depo, "src/beng1_03_depo.png")		{tmpl_depo()}
+spriteset(ss_beng1_03_1_a, "src/beng1_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng1_03_2_a, "src/beng1_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng1_03_3_a, "src/beng1_03_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng1_03_1_a_rak, "src/beng1_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng1_03_2_a_rak, "src/beng1_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng1_03_3_a_rak, "src/beng1_03_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng1_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_3_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng1_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_2_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng1_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_3_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng1_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng1_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_3_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng1_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_2_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng1_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng1_03_3_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng1_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng12_03_1_a_depo, "src/beng12_03_depo.png")		{tmpl_depo()}
+spriteset(ss_beng12_03_1_a, "src/beng12_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng12_03_2_a, "src/beng12_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng12_03_3_a, "src/beng12_03_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng12_03_1_a_rak, "src/beng12_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng12_03_2_a_rak, "src/beng12_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng12_03_3_a_rak, "src/beng12_03_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng12_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng12_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_3_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng12_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng12_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_2_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng12_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_3_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng12_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng12_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng12_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_3_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng12_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng12_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_2_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng12_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng12_03_3_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng12_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+
+spritegroup sg_beng1_03_1_a {	loaded:  [ss_beng1_03_1_a];	loading: [ss_beng1_03_1_a_rak];}
+spritegroup sg_beng1_03_2_a {	loaded:  [ss_beng1_03_2_a];	loading: [ss_beng1_03_2_a_rak];}
+spritegroup sg_beng1_03_3_a {	loaded:  [ss_beng1_03_3_a];	loading: [ss_beng1_03_3_a_rak];}
+spritegroup sg_beng12_03_1_a {	loaded:  [ss_beng12_03_1_a];	loading: [ss_beng12_03_1_a_rak];}
+spritegroup sg_beng12_03_2_a {	loaded:  [ss_beng12_03_2_a];	loading: [ss_beng12_03_2_a_rak];}
+spritegroup sg_beng12_03_3_a {	loaded:  [ss_beng12_03_3_a];	loading: [ss_beng12_03_3_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_beng12_03_a_depo, position_in_consist ) {
+    1..5: ss_toldat;
+    ss_beng12_03_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng12_03_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_beng12_03_2_a;
+	3: ss_toldat;
+	4: sg_beng12_03_3_a;
+	5: ss_toldat;
+    sg_beng12_03_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_beng12_03_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_beng12_03_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_beng12_03_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, ss_beng1_03_a_depo, position_in_consist ) {
+    1..5: ss_toldat;
+    ss_beng1_03_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng1_03_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_beng1_03_2_a;
+	3: ss_toldat;
+	4: sg_beng1_03_3_a;
+	5: ss_toldat;
+    sg_beng1_03_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_beng1_03_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_beng1_03_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_beng1_03_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng1_03_cb, cargo_subtype) {
+	1: sw_beng12_03_ss;
+	sw_beng1_03_ss;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng1_03_articulated, extra_callback_info1) {
+    0..5: item_beng1_03;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng1_03_capacity, position_in_consist) {
+	1: return 0;
+	2: return 100;
+	3: return 0;
+	4: return 100;
+	5: return 0;
+	return 100;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng1_03_length, position_in_consist) {
+	1: return 2;
+	2: return 2;
+	3: return 2;
+	4: return 4;
+	5: return 4;
+    return 6;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng1_03_livery_text, cargo_subtype) {
+	1: return string(STR_COLOUR_SCHEME_2);
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_beng1_03) {
+	property {
+        name:								string(STR_beng1_03_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_beng1_03_cb;
+		purchase:						ss_beng1_03_purchase;
+		articulated_part:        		sw_beng1_03_articulated;
+		length:                  		sw_beng1_03_length;
+		cargo_subtype_text: 			sw_beng1_03_livery_text;
+		cargo_capacity: 				sw_beng1_03_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_beng1_03_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------beng1_03 End
+// --------------------------------------------------------------------------------beng3_03
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_beng3_03_purchase, "src/beng3_03_depo.png")		{tmpl_purchase()}
+spriteset(ss_beng3_03_1_a_depo, "src/beng3_03_depo.png")		{tmpl_depo()}
+spriteset(ss_beng3_03_1_a, "src/beng3_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3_03_2_a, "src/beng3_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3_03_3_a, "src/beng3_03_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3_03_1_a_rak, "src/beng3_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3_03_2_a_rak, "src/beng3_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3_03_3_a_rak, "src/beng3_03_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_3_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_2_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_3_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_3_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_2_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3_03_3_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3pepsi_03_1_a_depo, "src/beng3pepsi_03_depo.png")		{tmpl_depo()}
+spriteset(ss_beng3pepsi_03_1_a, "src/beng3pepsi_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3pepsi_03_2_a, "src/beng3pepsi_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3pepsi_03_3_a, "src/beng3pepsi_03_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3pepsi_03_1_a_rak, "src/beng3pepsi_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3pepsi_03_2_a_rak, "src/beng3pepsi_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3pepsi_03_3_a_rak, "src/beng3pepsi_03_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3pepsi_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3pepsi_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_3_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3pepsi_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3pepsi_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_2_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3pepsi_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_3_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3pepsi_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3pepsi_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3pepsi_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_3_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3pepsi_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3pepsi_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_2_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3pepsi_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3pepsi_03_3_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3pepsi_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3proto_03_1_a_depo, "src/beng3proto_03_depo.png")		{tmpl_depo()}
+spriteset(ss_beng3proto_03_1_a, "src/beng3proto_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3proto_03_2_a, "src/beng3proto_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3proto_03_3_a, "src/beng3proto_03_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3proto_03_1_a_rak, "src/beng3proto_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3proto_03_2_a_rak, "src/beng3proto_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_beng3proto_03_3_a_rak, "src/beng3proto_03_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3proto_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3proto_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_3_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3proto_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3proto_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_2_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3proto_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_3_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/beng3proto_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3proto_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3proto_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_3_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3proto_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3proto_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_2_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3proto_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_beng3proto_03_3_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/beng3proto_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+
+spritegroup sg_beng3_03_1_a {	loaded:  [ss_beng3_03_1_a];	loading: [ss_beng3_03_1_a_rak];}
+spritegroup sg_beng3_03_2_a {	loaded:  [ss_beng3_03_2_a];	loading: [ss_beng3_03_2_a_rak];}
+spritegroup sg_beng3_03_3_a {	loaded:  [ss_beng3_03_3_a];	loading: [ss_beng3_03_3_a_rak];}
+spritegroup sg_beng3pepsi_03_1_a {	loaded:  [ss_beng3pepsi_03_1_a];	loading: [ss_beng3pepsi_03_1_a_rak];}
+spritegroup sg_beng3pepsi_03_2_a {	loaded:  [ss_beng3pepsi_03_2_a];	loading: [ss_beng3pepsi_03_2_a_rak];}
+spritegroup sg_beng3pepsi_03_3_a {	loaded:  [ss_beng3pepsi_03_3_a];	loading: [ss_beng3pepsi_03_3_a_rak];}
+spritegroup sg_beng3proto_03_1_a {	loaded:  [ss_beng3proto_03_1_a];	loading: [ss_beng3proto_03_1_a_rak];}
+spritegroup sg_beng3proto_03_2_a {	loaded:  [ss_beng3proto_03_2_a];	loading: [ss_beng3proto_03_2_a_rak];}
+spritegroup sg_beng3proto_03_3_a {	loaded:  [ss_beng3proto_03_3_a];	loading: [ss_beng3proto_03_3_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_beng3proto_03_a_depo, position_in_consist ) {
+    1..5: ss_toldat;
+    ss_beng3proto_03_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3proto_03_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_beng3proto_03_2_a;
+	3: ss_toldat;
+	4: sg_beng3proto_03_3_a;
+	5: ss_toldat;
+    sg_beng3proto_03_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_beng3proto_03_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_beng3proto_03_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_beng3proto_03_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, ss_beng3pepsi_03_a_depo, position_in_consist ) {
+    1..5: ss_toldat;
+    ss_beng3pepsi_03_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3pepsi_03_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_beng3pepsi_03_2_a;
+	3: ss_toldat;
+	4: sg_beng3pepsi_03_3_a;
+	5: ss_toldat;
+    sg_beng3pepsi_03_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_beng3pepsi_03_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_beng3pepsi_03_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_beng3pepsi_03_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, ss_beng3_03_a_depo, position_in_consist ) {
+    1..5: ss_toldat;
+    ss_beng3_03_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3_03_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_beng3_03_2_a;
+	3: ss_toldat;
+	4: sg_beng3_03_3_a;
+	5: ss_toldat;
+    sg_beng3_03_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_beng3_03_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_beng3_03_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_beng3_03_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3_03_cb, cargo_subtype) {
+	1: sw_beng3pepsi_03_ss;
+	2: sw_beng3proto_03_ss;
+	sw_beng3_03_ss;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3_03_articulated, extra_callback_info1) {
+    0..5: item_beng3_03;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3_03_capacity, position_in_consist) {
+	1: return 0;
+	2: return 100;
+	3: return 0;
+	4: return 100;
+	5: return 0;
+	return 100;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3_03_length, position_in_consist) {
+	1: return 2;
+	2: return 2;
+	3: return 2;
+	4: return 4;
+	5: return 4;
+    return 6;
+}
+switch (FEAT_ROADVEHS, SELF, sw_beng3_03_livery_text, cargo_subtype) {
+	2: return string(STR_COLOUR_SCHEME_PR);
+	1: return string(STR_COLOUR_SCHEME_PE);
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_beng3_03) {
+	property {
+        name:								string(STR_beng3_03_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_beng3_03_cb;
+		purchase:						ss_beng3_03_purchase;
+		articulated_part:        		sw_beng3_03_articulated;
+		length:                  		sw_beng3_03_length;
+		cargo_subtype_text: 			sw_beng3_03_livery_text;
+		cargo_capacity: 				sw_beng3_03_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_beng3_03_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------beng3_03 End
+// --------------------------------------------------------------------------------Citylink
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_Citylink_purchase, "src/CityLink01_depo.png")		{tmpl_purchase()}
+spriteset(ss_Citylink_1_a_depo, "src/CityLink01_depo.png")		{tmpl_depo()}
+spriteset(ss_Citylink_1_a, "src/CityLink01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_Citylink_2_a, "src/CityLink02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_Citylink_3_a, "src/CityLink03_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_Citylink_1_a_rak, "src/CityLink01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_Citylink_2_a_rak, "src/CityLink02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_Citylink_3_a_rak, "src/CityLink03_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_Citylink_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_Citylink_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_Citylink_3_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/CityLink03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_Citylink_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_Citylink_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_Citylink_3_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/CityLink03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+
+
+spritegroup sg_Citylink_1_a {	loaded:  [ss_Citylink_1_a];	loading: [ss_Citylink_1_a_rak];}
+spritegroup sg_Citylink_2_a {	loaded:  [ss_Citylink_2_a];	loading: [ss_Citylink_2_a_rak];}
+spritegroup sg_Citylink_3_a {	loaded:  [ss_Citylink_3_a];	loading: [ss_Citylink_3_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_Citylink_a_depo, position_in_consist ) {
+    1..5: ss_toldat;
+    ss_Citylink_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_Citylink_2_a;
+	3: ss_toldat;
+	4: sg_Citylink_3_a;
+	5: ss_toldat;
+    sg_Citylink_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_Citylink_a_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_Citylink_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_Citylink_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_articulated, extra_callback_info1) {
+    0..5: item_Citylink;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_capacity, position_in_consist) {
+	1: return 0;
+	2: return 46;
+	3: return 0;
+	4: return 76;	
+	5: return 0;
+	return 76;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_length, position_in_consist) {
+	1: return 4;
+	2: return 8;
+	3: return 2;
+	4: return 4;
+	5: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_Citylink_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_Citylink) {
+	property {
+        name:								string(STR_Citylink_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_Citylink_a_ss;
+		purchase:						ss_Citylink_purchase;
+		articulated_part:        		sw_Citylink_articulated;
+		length:                  		sw_Citylink_length;
+		cargo_subtype_text: 			sw_Citylink_livery_text;
+		cargo_capacity: 				sw_Citylink_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_Citylink_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------Citylink End
+// --------------------------------------------------------------------------------t5c5_01
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_t5c5_01_purchase, "src/t5c5_01_depo.png")		{tmpl_purchase()}
+spriteset(ss_t5c5_01_1_a_depo, "src/t5c5_01_depo.png")		{tmpl_depo()}
+spriteset(ss_t5c5_01_1_a, "src/t5c5_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_t5c5_01_1_a_rak, "src/t5c5_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_t5c5_01_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/t5c5_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_t5c5_01_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/t5c5_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+
+
+spritegroup sg_t5c5_01_1_a {	loaded:  [ss_t5c5_01_1_a];	loading: [ss_t5c5_01_1_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_t5c5_01_a_depo, position_in_consist ) {
+    1: ss_toldat;
+    ss_t5c5_01_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_t5c5_01_a, position_in_consist ) {
+    1: ss_toldat;
+    sg_t5c5_01_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_t5c5_01_a_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_t5c5_01_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_t5c5_01_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_t5c5_01_articulated, extra_callback_info1) {
+    0..1: item_t5c5_01;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_t5c5_01_capacity, position_in_consist) {
+	1: return 0;
+	return 100;
+}
+switch (FEAT_ROADVEHS, SELF, sw_t5c5_01_length, position_in_consist) {
+	1: return 8;
+    return 6;
+}
+switch (FEAT_ROADVEHS, SELF, sw_t5c5_01_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_t5c5_01) {
+	property {
+        name:								string(STR_t5c5_01_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_t5c5_01_a_ss;
+		purchase:						ss_t5c5_01_purchase;
+		articulated_part:        		sw_t5c5_01_articulated;
+		length:                  		sw_t5c5_01_length;
+		cargo_subtype_text: 			sw_t5c5_01_livery_text;
+		cargo_capacity: 				sw_t5c5_01_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_t5c5_01_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------t5c5_01 End
+// --------------------------------------------------------------------------------t5c5_02
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_t5c5_02_purchase, "src/t5c5_02_depo.png")		{tmpl_purchase()}
+spriteset(ss_t5c5_02_1_a_depo, "src/t5c5_02_depo.png")		{tmpl_depo()}
+spriteset(ss_t5c5_02_1_a, "src/t5c5_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_t5c5_02_2_a, "src/t5c5_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_t5c5_02_1_a_rak, "src/t5c5_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_t5c5_02_2_a_rak, "src/t5c5_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_t5c5_02_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/t5c5_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_t5c5_02_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/t5c5_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_t5c5_02_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/t5c5_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_t5c5_02_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/t5c5_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+
+
+spritegroup sg_t5c5_02_1_a {	loaded:  [ss_t5c5_02_1_a];	loading: [ss_t5c5_02_1_a_rak];}
+spritegroup sg_t5c5_02_2_a {	loaded:  [ss_t5c5_02_2_a];	loading: [ss_t5c5_02_2_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_t5c5_02_a_depo, position_in_consist ) {
+    1..3: ss_toldat;
+    ss_t5c5_02_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_t5c5_02_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_t5c5_02_2_a;
+	3: ss_toldat;
+    sg_t5c5_02_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_t5c5_02_a_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_t5c5_02_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_t5c5_02_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_t5c5_02_articulated, extra_callback_info1) {
+    0..3: item_t5c5_02;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_t5c5_02_capacity, position_in_consist) {
+	1: return 0;
+	2: return 100;
+	3: return 0;
+	return 100;
+}
+switch (FEAT_ROADVEHS, SELF, sw_t5c5_02_length, position_in_consist) {
+	1: return 6;
+	2: return 6;
+	3: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_t5c5_02_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_t5c5_02) {
+	property {
+        name:								string(STR_t5c5_02_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_t5c5_02_a_ss;
+		purchase:						ss_t5c5_02_purchase;
+		articulated_part:        		sw_t5c5_02_articulated;
+		length:                  		sw_t5c5_02_length;
+		cargo_subtype_text: 			sw_t5c5_02_livery_text;
+		cargo_capacity: 				sw_t5c5_02_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_t5c5_02_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------t5c5_02 End
+// --------------------------------------------------------------------------------t5c5_03
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_t5c5_03_purchase, "src/t5c5_03_depo.png")		{tmpl_purchase()}
+spriteset(ss_t5c5_03_1_a_depo, "src/t5c5_03_depo.png")		{tmpl_depo()}
+spriteset(ss_t5c5_03_1_a, "src/t5c5_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_t5c5_03_2_a, "src/t5c5_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_t5c5_03_3_a, "src/t5c5_03_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_t5c5_03_1_a_rak, "src/t5c5_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_t5c5_03_2_a_rak, "src/t5c5_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_t5c5_03_3_a_rak, "src/t5c5_03_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_t5c5_03_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/t5c5_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_t5c5_03_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/t5c5_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_t5c5_03_3_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/t5c5_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_t5c5_03_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/t5c5_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_t5c5_03_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/t5c5_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_t5c5_03_3_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/t5c5_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+
+
+spritegroup sg_t5c5_03_1_a {	loaded:  [ss_t5c5_03_1_a];	loading: [ss_t5c5_03_1_a_rak];}
+spritegroup sg_t5c5_03_2_a {	loaded:  [ss_t5c5_03_2_a];	loading: [ss_t5c5_03_2_a_rak];}
+spritegroup sg_t5c5_03_3_a {	loaded:  [ss_t5c5_03_3_a];	loading: [ss_t5c5_03_3_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_t5c5_03_a_depo, position_in_consist ) {
+    1..5: ss_toldat;
+    ss_t5c5_03_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_t5c5_03_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_t5c5_03_2_a;
+	3: ss_toldat;
+	4: sg_t5c5_03_3_a;
+	5: ss_toldat;
+    sg_t5c5_03_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_t5c5_03_a_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_t5c5_03_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_t5c5_03_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_t5c5_03_articulated, extra_callback_info1) {
+    0..5: item_t5c5_03;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_t5c5_03_capacity, position_in_consist) {
+	1: return 0;
+	2: return 46;
+	3: return 0;
+	4: return 76;	
+	5: return 0;
+	return 76;
+}
+switch (FEAT_ROADVEHS, SELF, sw_t5c5_03_length, position_in_consist) {
+	1: return 6;
+	2: return 8;
+	3: return 6;
+	4: return 6;
+	5: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_t5c5_03_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_t5c5_03) {
+	property {
+        name:								string(STR_t5c5_03_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_t5c5_03_a_ss;
+		purchase:						ss_t5c5_03_purchase;
+		articulated_part:        		sw_t5c5_03_articulated;
+		length:                  		sw_t5c5_03_length;
+		cargo_subtype_text: 			sw_t5c5_03_livery_text;
+		cargo_capacity: 				sw_t5c5_03_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_t5c5_03_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------t5c5_03 End
+// --------------------------------------------------------------------------------tm_01
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_tm_01_purchase, "src/tm_01_depo.png")		{tmpl_purchase()}
+spriteset(ss_tm_01_1_a_depo, "src/tm_01_depo.png")		{tmpl_depo()}
+spriteset(ss_tm_01_1_a, "src/tm_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_tm_01_1_a_rak, "src/tm_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tm_01_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/tm_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tm_01_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/tm_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tm_01_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/tm_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tm_01_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/tm_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+
+
+spritegroup sg_tm_01_1_a {	loaded:  [ss_tm_01_1_a];	loading: [ss_tm_01_1_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_tm_01_a_depo, position_in_consist ) {
+    1: ss_toldat;
+    ss_tm_01_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_tm_01_a, position_in_consist ) {
+    1: ss_toldat;
+    sg_tm_01_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_tm_01_a_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_tm_01_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_tm_01_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_tm_01_articulated, extra_callback_info1) {
+    0..1: item_tm_01;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_tm_01_capacity, position_in_consist) {
+	1: return 0;
+	return 100;
+}
+switch (FEAT_ROADVEHS, SELF, sw_tm_01_length, position_in_consist) {
+	1: return 8;
+    return 4;
+}
+switch (FEAT_ROADVEHS, SELF, sw_tm_01_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_tm_01) {
+	property {
+        name:								string(STR_tm_01_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_tm_01_a_ss;
+		purchase:						ss_tm_01_purchase;
+		articulated_part:        		sw_tm_01_articulated;
+		length:                  		sw_tm_01_length;
+		cargo_subtype_text: 			sw_tm_01_livery_text;
+		cargo_capacity: 				sw_tm_01_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_tm_01_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------tm_01 End
+// --------------------------------------------------------------------------------tv_03
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_tv_03_purchase, "src/tv_03_depo.png")		{tmpl_purchase()}
+spriteset(ss_tv_03_1_a_depo, "src/tv_03_depo.png")		{tmpl_depo()}
+spriteset(ss_tv_03_1_a, "src/tv_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_tv_03_2_a, "src/tv_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_tv_03_3_a, "src/tv_03_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_tv_03_1_a_rak, "src/tv_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_tv_03_2_a_rak, "src/tv_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_tv_03_3_a_rak, "src/tv_03_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tv_03_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/tv_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tv_03_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/tv_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tv_03_3_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/tv_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tv_03_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/tv_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tv_03_2_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/tv_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tv_03_3_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/tv_03_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tv_03_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/tv_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tv_03_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/tv_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tv_03_3_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/tv_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tv_03_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/tv_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tv_03_2_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/tv_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_tv_03_3_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/tv_03_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+
+
+spritegroup sg_tv_03_1_a {	loaded:  [ss_tv_03_1_a];	loading: [ss_tv_03_1_a_rak];}
+spritegroup sg_tv_03_2_a {	loaded:  [ss_tv_03_2_a];	loading: [ss_tv_03_2_a_rak];}
+spritegroup sg_tv_03_3_a {	loaded:  [ss_tv_03_3_a];	loading: [ss_tv_03_3_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_tv_03_a_depo, position_in_consist ) {
+    1..5: ss_toldat;
+    ss_tv_03_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_tv_03_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_tv_03_2_a;
+	3: ss_toldat;
+	4: sg_tv_03_3_a;
+	5: ss_toldat;
+    sg_tv_03_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_tv_03_a_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_tv_03_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_tv_03_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_tv_03_articulated, extra_callback_info1) {
+    0..5: item_tv_03;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_tv_03_capacity, position_in_consist) {
+	1: return 0;
+	2: return 46;
+	3: return 0;
+	4: return 76;	
+	5: return 0;
+	return 76;
+}
+switch (FEAT_ROADVEHS, SELF, sw_tv_03_length, position_in_consist) {
+	1: return 4;
+	2: return 8;
+	3: return 4;
+	4: return 4;
+	5: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_tv_03_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_tv_03) {
+	property {
+        name:								string(STR_tv_03_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_tv_03_a_ss;
+		purchase:						ss_tv_03_purchase;
+		articulated_part:        		sw_tv_03_articulated;
+		length:                  		sw_tv_03_length;
+		cargo_subtype_text: 			sw_tv_03_livery_text;
+		cargo_capacity: 				sw_tv_03_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_tv_03_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------tv_03 End
+// --------------------------------------------------------------------------------uv1_01
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_uv1_01_purchase, "src/uv1_01_depo.png")		{tmpl_purchase()}
+spriteset(ss_uv1_01_1_a_depo, "src/uv1_01_depo.png")		{tmpl_depo()}
+spriteset(ss_uv1_01_1_a, "src/uv1_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_uv1_01_1_a_rak, "src/uv1_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+//alternative_sprites(ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(2ss_uv1_01_1_a, "src/uv1_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(2ss_uv1_01_1_a_rak, "src/uv1_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(2ss_uv1_01_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(2ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(4ss_uv1_01_1_a, "src/uv1_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(4ss_uv1_01_1_a_rak, "src/uv1_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(4ss_uv1_01_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(4ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(4ss_uv1_01_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(4ss_uv1_01_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+
+
+//spritegroup sg_uv1_01_1_a {	loaded:  [ss_uv1_01_1_a];	loading: [ss_uv1_01_1_a_rak];}
+
+spritegroup 1sg_uv1_01_1_a {	loaded:  [ss_uv1_01_1_a];	loading: [ss_uv1_01_1_a_rak];}
+spritegroup 2sg_uv1_01_1_a {	loaded:  [2ss_uv1_01_1_a];	loading: [2ss_uv1_01_1_a_rak];}
+spritegroup 4sg_uv1_01_1_a {	loaded:  [4ss_uv1_01_1_a];	loading: [4ss_uv1_01_1_a_rak];}
+
+
+switch (FEAT_ROADVEHS, SELF, ss_uv1_01_a_depo, position_in_consist ) {
+    1: ss_toldat;
+    ss_uv1_01_1_a_depo;
+}
+
+switch(FEAT_ROADVEHS, SELF, sg_uv1_01_1_a, param_zoom) {
+	1: 2sg_uv1_01_1_a;
+	2: 4sg_uv1_01_1_a;
+	1sg_uv1_01_1_a;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv1_01_a, position_in_consist ) {
+    1: ss_toldat;
+    sg_uv1_01_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_uv1_01_a_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_uv1_01_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_uv1_01_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv1_01_articulated, extra_callback_info1) {
+    0..1: item_uv1_01;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv1_01_capacity, position_in_consist) {
+	1: return 0;
+	return 100;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv1_01_length, position_in_consist) {
+	1: return 8;
+    return 4;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv1_01_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_uv1_01) {
+	property {
+        name:								string(STR_uv1_01_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_uv1_01_a_ss;
+		purchase:						ss_uv1_01_purchase;
+		articulated_part:        		sw_uv1_01_articulated;
+		length:                  		sw_uv1_01_length;
+		cargo_subtype_text: 			sw_uv1_01_livery_text;
+		cargo_capacity: 				sw_uv1_01_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_uv1_01_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------uv1_01 End
+// --------------------------------------------------------------------------------uv1_02
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_uv1_02_purchase, "src/uv1_02_depo.png")		{tmpl_purchase()}
+spriteset(ss_uv1_02_1_a_depo, "src/uv1_02_depo.png")		{tmpl_depo()}
+spriteset(ss_uv1_02_1_a, "src/uv1_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_uv1_02_2_a, "src/uv1_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_uv1_02_1_a_rak, "src/uv1_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_uv1_02_2_a_rak, "src/uv1_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv1_02_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv1_02_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv1_02_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv1_02_2_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv1_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv1_02_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv1_02_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv1_02_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv1_02_2_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv1_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+
+
+spritegroup sg_uv1_02_1_a {	loaded:  [ss_uv1_02_1_a];	loading: [ss_uv1_02_1_a_rak];}
+spritegroup sg_uv1_02_2_a {	loaded:  [ss_uv1_02_2_a];	loading: [ss_uv1_02_2_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_uv1_02_a_depo, position_in_consist ) {
+    1..3: ss_toldat;
+    ss_uv1_02_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv1_02_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_uv1_02_2_a;
+	3: ss_toldat;
+    sg_uv1_02_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_uv1_02_a_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_uv1_02_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_uv1_02_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv1_02_articulated, extra_callback_info1) {
+    0..3: item_uv1_02;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv1_02_capacity, position_in_consist) {
+	1: return 0;
+	2: return 100;
+	3: return 0;
+	return 100;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv1_02_length, position_in_consist) {
+	1: return 4;
+	2: return 4;
+	3: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv1_02_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_uv1_02) {
+	property {
+        name:								string(STR_uv1_02_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_uv1_02_a_ss;
+		purchase:						ss_uv1_02_purchase;
+		articulated_part:        		sw_uv1_02_articulated;
+		length:                  		sw_uv1_02_length;
+		cargo_subtype_text: 			sw_uv1_02_livery_text;
+		cargo_capacity: 				sw_uv1_02_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_uv1_02_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------uv1_02 End
+// --------------------------------------------------------------------------------uv3_02
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_uv3_02_purchase, "src/uv3_02_depo.png")		{tmpl_purchase()}
+spriteset(ss_uv3_02_1_a_depo, "src/uv3_02_depo.png")		{tmpl_depo()}
+spriteset(ss_uv3_02_1_a, "src/uv3_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_uv3_02_2_a, "src/uv3_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_uv3_02_1_a_rak, "src/uv3_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_uv3_02_2_a_rak, "src/uv3_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3_02_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv3_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3_02_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv3_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3_02_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv3_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3_02_2_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv3_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3_02_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv3_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3_02_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv3_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3_02_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv3_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3_02_2_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv3_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_uv3pepsi_02_1_a_depo, "src/uv3pepsi_02_depo.png")		{tmpl_depo()}
+spriteset(ss_uv3pepsi_02_1_a, "src/uv3pepsi_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_uv3pepsi_02_2_a, "src/uv3pepsi_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_uv3pepsi_02_1_a_rak, "src/uv3pepsi_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_uv3pepsi_02_2_a_rak, "src/uv3pepsi_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3pepsi_02_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv3pepsi_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3pepsi_02_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv3pepsi_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3pepsi_02_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv3pepsi_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3pepsi_02_2_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv3pepsi_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3pepsi_02_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv3pepsi_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3pepsi_02_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv3pepsi_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3pepsi_02_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv3pepsi_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv3pepsi_02_2_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv3pepsi_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+
+spritegroup sg_uv3_02_1_a {	loaded:  [ss_uv3_02_1_a];	loading: [ss_uv3_02_1_a_rak];}
+spritegroup sg_uv3_02_2_a {	loaded:  [ss_uv3_02_2_a];	loading: [ss_uv3_02_2_a_rak];}
+spritegroup sg_uv3pepsi_02_1_a {	loaded:  [ss_uv3pepsi_02_1_a];	loading: [ss_uv3pepsi_02_1_a_rak];}
+spritegroup sg_uv3pepsi_02_2_a {	loaded:  [ss_uv3pepsi_02_2_a];	loading: [ss_uv3pepsi_02_2_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_uv3pepsi_02_a_depo, position_in_consist ) {
+    1..3: ss_toldat;
+    ss_uv3pepsi_02_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv3pepsi_02_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_uv3pepsi_02_2_a;
+	3: ss_toldat;
+    sg_uv3pepsi_02_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_uv3pepsi_02_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_uv3pepsi_02_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_uv3pepsi_02_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, ss_uv3_02_a_depo, position_in_consist ) {
+    1..3: ss_toldat;
+    ss_uv3_02_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv3_02_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_uv3_02_2_a;
+	3: ss_toldat;
+    sg_uv3_02_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_uv3_02_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_uv3_02_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_uv3_02_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv3_02_cb, cargo_subtype) {
+	1: sw_uv3pepsi_02_ss;
+	sw_uv3_02_ss;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv3_02_articulated, extra_callback_info1) {
+    0..3: item_uv3_02;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv3_02_capacity, position_in_consist) {
+	1: return 0;
+	2: return 100;
+	3: return 0;
+	return 100;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv3_02_length, position_in_consist) {
+	1: return 4;
+	2: return 4;
+	3: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv3_02_livery_text, cargo_subtype) {
+	1: return string(STR_COLOUR_SCHEME_PE);
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_uv3_02) {
+	property {
+        name:								string(STR_uv3_02_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_uv3_02_cb;
+		purchase:						ss_uv3_02_purchase;
+		articulated_part:        		sw_uv3_02_articulated;
+		length:                  		sw_uv3_02_length;
+		cargo_subtype_text: 			sw_uv3_02_livery_text;
+		cargo_capacity: 				sw_uv3_02_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_uv3_02_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------uv3_02 End
+// --------------------------------------------------------------------------------uv5_02
+
+// ss=spriteset, sg=spritegroup, sw=switch
+// tmpl_1(szin,csuklo,rakodas,poziciok)
+// tmpl_depo(szin,csuklo)
+
+spriteset(ss_uv5_02_purchase, "src/uv5_02_depo.png")		{tmpl_purchase()}
+spriteset(ss_uv5_02_1_a_depo, "src/uv5_02_depo.png")		{tmpl_depo()}
+spriteset(ss_uv5_02_1_a, "src/uv5_01_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_uv5_02_2_a, "src/uv5_02_1x_8bpp.png")		{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_uv5_02_1_a_rak, "src/uv5_01_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+spriteset(ss_uv5_02_2_a_rak, "src/uv5_02_1x_8bpp.png")	{tmpl_1(1,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv5_02_1_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv5_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv5_02_2_a, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv5_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv5_02_1_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv5_01_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv5_02_2_a_rak, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/uv5_02_2x_8bpp.png") {tmpl_1(2,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv5_02_1_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv5_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv5_02_2_a, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv5_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv5_02_1_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv5_01_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+alternative_sprites(ss_uv5_02_2_a_rak, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/uv5_02_4x_8bpp.png") {tmpl_1(4,	-4,-13,	-43,-12,	-53,-10,	-38,-27,	-3,-32,	-15,-28,	-11,-9,	-8,-14)}
+
+
+spritegroup sg_uv5_02_1_a {	loaded:  [ss_uv5_02_1_a];	loading: [ss_uv5_02_1_a_rak];}
+spritegroup sg_uv5_02_2_a {	loaded:  [ss_uv5_02_2_a];	loading: [ss_uv5_02_2_a_rak];}
+
+switch (FEAT_ROADVEHS, SELF, ss_uv5_02_a_depo, position_in_consist ) {
+    1..3: ss_toldat;
+    ss_uv5_02_1_a_depo;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv5_02_a, position_in_consist ) {
+    1: ss_toldat;
+	2: sg_uv5_02_2_a;
+	3: ss_toldat;
+    sg_uv5_02_1_a;
+}
+switch(FEAT_ROADVEHS, SELF, sw_uv5_02_a_ss, (extra_callback_info1 & 0x12)) {
+   0x10..0x12: ss_uv5_02_a_depo; // 0x10 Depot GUI, 0x11 Vehicle Details/Refit GUI, 0x12 Vehicle List
+   0x00: sw_uv5_02_a; // 0x00 Vehicle in game
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv5_02_articulated, extra_callback_info1) {
+    0..3: item_uv5_02;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv5_02_capacity, position_in_consist) {
+	1: return 0;
+	2: return 100;
+	3: return 0;
+	return 100;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv5_02_length, position_in_consist) {
+	1: return 4;
+	2: return 4;
+	3: return 8;
+    return 8;
+}
+switch (FEAT_ROADVEHS, SELF, sw_uv5_02_livery_text, cargo_subtype) {
+	0: return string(STR_COLOUR_SCHEME_1);
+	CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_uv5_02) {
+	property {
+        name:								string(STR_uv5_02_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1964,01,01);
+        model_life:						26;
+        vehicle_life:						20;
+        reliability_decay:				80;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					100;
+        cost_factor:						49;
+        running_cost_factor:				100;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								55 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_TRAM);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							34 ton;
+        cargo_capacity:					189;
+		cargo_age_period:					165;
+        sound_effect:						SOUND_ELECTRIC_SPARK;
+    }
+    graphics {
+		default:                 		sw_uv5_02_a_ss;
+		purchase:						ss_uv5_02_purchase;
+		articulated_part:        		sw_uv5_02_articulated;
+		length:                  		sw_uv5_02_length;
+		cargo_subtype_text: 			sw_uv5_02_livery_text;
+		cargo_capacity: 				sw_uv5_02_capacity;
+		purchase_cargo_capacity:		return 198 / 3;
+		additional_text: 				string(STR_uv5_02_ADAT);
+    }
+}
+// --------------------------------------------------------------------------------uv5_02 End
+sort(FEAT_ROADVEHS, [
+	item_tm_01,
+	item_tv_03,
+	item_uv1_01,
+	item_uv1_02,
+	item_uv3_02,
+	item_uv5_02,
+	item_beng3_03,
+	item_beng1_03,	
+	item_t5c5_01,
+	item_t5c5_02,
+	item_t5c5_03,
+	item_Citylink
+
+
+/*	item_A_a,
+	item_Ap_a,
+	item_A_b,
+	item_Ap_b,
+	item_F_a,
+	item_Fp_a,
+	item_F_b,
+	item_Fp_b,
+	item_2400,
+	item_2400p,
+	item_2400t_a,
+	item_2400t_b,
+	item_ADEL,
+	item_O2,
+	item_RV2,
+	item_RVp,
+	item_RV2p,
+	item_RV2pp,
+	item_RV3pp,
+	item_TM,
+	item_UV,
+	item_UV2,
+	item_UV2p,
+	item_CSM3,
+	item_ICS,
+	item_ICS2,
+	item_Hungaroplan,
+	item_KT8D5_a,
+	item_KCSV6,
+	item_KCSV7,
+	item_T6A2,
+	item_T6A22,
+	item_TW6000,
+	item_KT4D,
+	item_KT4D2,
+	item_Combino,
+	item_Pesa,
+	item_CAFdeb,
+	item_Skoda,
+	item_CAFbud5,
+	item_CAFbud9*/
+	]);

@@ -1,0 +1,7 @@
+chcp 65001
+del "C:\Users\balin\Documents\GitHub\HunTramRail\Villamossin.nml"
+copy /b "C:\Users\balin\Documents\GitHub\HunTramRail\Code\*.nml" "C:\Users\balin\Documents\GitHub\HunTramRail\Villamossin.nml"
+nmlc -c --grf HunTramRail.grf Villamossin.nml
+rd /s /q ".nmlcache\"
+copy "HunTramRail.grf" "C:\Users\balin\Documents\OpenTTD\content_download\newgrf"
+pause>nul

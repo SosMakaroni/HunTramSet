@@ -1,0 +1,10 @@
+replace replace_trail01 (6012,"src/sin2_1x_8bpp.png") {
+	tmpl_norm(0, 1)
+}
+replace replace_trail02 (6013,"src/sin2_1x_8bpp.png") {
+	tmpl_norm(1, 1)
+}
+
+alternative_sprites(replace_trail01, ZOOM_LEVEL_NORMAL, BIT_DEPTH_8BPP, "src/sin2_1x_8bpp.png") {
+	tmpl_norm(0, 1)
+}

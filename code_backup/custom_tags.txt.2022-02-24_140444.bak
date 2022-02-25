@@ -1,0 +1,16 @@
+
+
+Szkt	:Hungary - Szeged (SZKT)
+Dkv	:Hungary - Debrecen (DKV)
+Bkv	:Hungary - Budapest (BKV)
+
+//Wood logo, replaces ł 0x0142
+Wood	:ł
+//Trailer logo, replaces Ł 0x0141
+Trailer	:Ł
+//Double logo, replaces đ 0x0111
+Double	:đ
+//Triple logo, replaces Đ 0x0110
+Triple	:Đ
+//Twin logo, replaces Ń 0x0143
+Twin	:Ń
