@@ -1,0 +1,7 @@
+@echo off
+echo File beolvasva: %1
+echo Rendereles...
+D:\grf\renderobject.exe -output D:\grf\z\%~n1 -palette D:\grf\files\ttd_palette.json -m D:\grf\files\haz2.json -8 -scale 1,2,4 "%~1"
+echo Kesz! %~n1 
+echo Bezarashoz nyomj 1 gombot.
+pause>nul

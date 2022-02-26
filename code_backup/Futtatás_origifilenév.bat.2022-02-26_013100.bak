@@ -1,0 +1,10 @@
+@echo off
+echo File beolvasva: %1
+del "D:\grf\MagicaVoxel\vox\%~n1*.png"
+echo Rendereles...
+D:\grf\renderobject.exe -output D:\grf\MagicaVoxel\vox\%~n1 -palette D:\grf\files\ttd_palette.json -m D:\grf\files\m_256_30.json -8 -scale 1,2,4 "%~1"
+echo Depó nézet rendereles...
+D:\grf\renderobject.exe -output D:\grf\MagicaVoxel\vox\%~n1_depo -palette D:\grf\files\ttd_palette.json -m D:\grf\files\m_256_30_depo.json -8 -scale 1 "%~1"
+echo Kesz! %~n1 
+echo Bezarashoz nyomj 1 gombot.
+pause>nul

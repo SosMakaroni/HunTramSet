@@ -11,43 +11,43 @@ STR_PARAM_ZOOM_1	:1x {SILVER} Game default{BLACK}
 STR_PARAM_ZOOM_2	:2x
 STR_PARAM_ZOOM_4	:4x {SILVER} By default{BLACK}
 
-STR_A_a_NAME	:Ganz A {BROWN}{Wood}{BLACK}
+STR_A_a_NAME	:A {BROWN}{Wood}{BLACK}
 STR_A_a_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BURV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}{BROWN}ł frame{BLACK}{}
-STR_Ap_a_NAME	:Ganz A + {Trailer} {BROWN}{Wood}{BLACK}
+STR_Ap_a_NAME	:A + {Trailer} {BROWN}{Wood}{BLACK}
 STR_Ap_a_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BURV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}{BROWN}ł frame{BLACK}{}
-STR_A_b_NAME	:Ganz A
+STR_A_b_NAME	:A
 STR_A_b_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BURV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
-STR_Ap_b_NAME	:Ganz A + {Trailer}
+STR_Ap_b_NAME	:A + {Trailer}
 STR_Ap_b_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BURV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
 STR_F_a_NAME	:F {BROWN}{Wood}{BLACK}
 STR_F_a_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BVVV){BLACK}{}Manufacturer: {GOLD}Schlick{BLACK}{}{BROWN}ł frame{BLACK}{}
-STR_Fp_a_NAME	:Schlick F + {Trailer} {BROWN}ł{BLACK}
+STR_Fp_a_NAME	:F + {Trailer} {BROWN}ł{BLACK}
 STR_Fp_a_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BVVV){BLACK}{}Manufacturer: {GOLD}Schlick{BLACK}{}{BROWN}ł frame{BLACK}{}
-STR_F_b_NAME	:Schlick F
+STR_F_b_NAME	:F
 STR_F_b_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}Schlick{BLACK}{}
-STR_Fp_b_NAME	:Schlick F + {Trailer}
+STR_Fp_b_NAME	:F + {Trailer}
 STR_Fp_b_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}Schlick{BLACK}{}
-STR_2400_NAME	:GANZ 2400 {BROWN}{Wood}{BLACK}
+STR_2400_NAME	:2400 {BROWN}{Wood}{BLACK}
 STR_2400_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}{BROWN}ł frame{BLACK}{}
-STR_2400p_NAME	:GANZ 2400 + {Trailer} {BROWN}{Wood}{BLACK}
+STR_2400p_NAME	:2400 + {Trailer} {BROWN}{Wood}{BLACK}
 STR_2400p_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}{BROWN}ł frame{BLACK}{}
-STR_2400t_a_NAME	:GANZ 2400 {Twin} {BROWN}{Wood}{BLACK}
+STR_2400t_a_NAME	:2400 {Twin} {BROWN}{Wood}{BLACK}
 STR_2400t_a_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}{BROWN}ł frame{BLACK}{}
-STR_2400t_b_NAME	:GANZ 2400 {Twin}
+STR_2400t_b_NAME	:2400 {Twin}
 STR_2400t_b_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
-STR_ADEL_NAME	:GANZ ADEL
+STR_ADEL_NAME	:ADEL
 STR_ADEL_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}Nickname: {GOLD}Adél{BLACK}{}
-STR_O2_NAME	:GANZ O {Twin}
+STR_O2_NAME	:O {Twin}
 STR_O2_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
-STR_RV2_NAME	:GANZ RV {Double}
+STR_RV2_NAME	:RV {Double}
 STR_RV2_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
-STR_RVp_NAME	:GANZ RV + Ł
+STR_RVp_NAME	:RV + Ł
 STR_RVp_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
-STR_RV2p_NAME	:GANZ RV {Double} + {Trailer}
+STR_RV2p_NAME	:RV {Double} + {Trailer}
 STR_RV2p_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
-STR_RV2pp_NAME	:GANZ RV {Double} +2 {Trailer}
+STR_RV2pp_NAME	:RV {Double} +2 {Trailer}
 STR_RV2pp_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
-STR_RV3pp_NAME	:GANZ RV Đ +2 {Trailer}
+STR_RV3pp_NAME	:RV Đ +2 {Trailer}
 STR_RV3pp_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BLVV){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}
 STR_tm_01_NAME	:Ganz TM
 STR_tm_01_ADAT	:{GOLD}----------{BLACK}{}Usage: {GOLD}Hungary - Budapest (BSzKRt){BLACK}{}Manufacturer: {GOLD}GANZ{BLACK}{}Nickname: {GOLD}Stuka{BLACK}{}
